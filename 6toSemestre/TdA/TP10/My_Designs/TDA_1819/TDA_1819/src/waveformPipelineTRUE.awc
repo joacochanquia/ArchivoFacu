@@ -1,0 +1,77 @@
+<config>
+    <version>
+        3.1
+    </version>
+    <comment>
+    </comment>
+    <databases>
+        <database id="">*virtual*</database>
+        <database id="7c8ae1bbeb0aa9765d65b8504a000c00">waveformPipelineTRUE.asdb</database>
+    </databases>
+    <gridshown/>
+    <signallists>
+        <signallist id="0">
+        <signal>/usuario/UUT/UUT2/UUT7/IR</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/IP</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R0</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R1</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R2</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R3</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R4</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R5</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R6</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R7</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R8</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R9</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/R10</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT1/EnableIF</signal>
+        <signal>/usuario/UUT/UUT2/UUT7/IP</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT2/EnableID</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT2/CodOp</signal>
+        <signal>/usuario/UUT/UUT2/UUT1/UUT1/DoneID</signal>
+        <signal>/usuario/UUT/UUT2/UUT1/UUT1/StallRAW</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT3/EnableEX</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT3/DoneEXALU</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT4/EnableMA</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT4/DataAddrBusCpu</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT4/DataCtrlBusCpu</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT4/EnableCpuToDataMem</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT5/EnableWB</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT5/DataRegInWB</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT5/IdRegWB</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT5/SizeRegWB</signal>
+        <signal>/usuario/UUT/UUT2/UUT2/UUT5/EnableRegWB</signal>
+        <signal>/usuario/UUT/UUT4/Data_Memory</signal>
+        <signal>/usuario/UUT/UUT4/Inst_Memory</signal>
+        <signal>/usuario/UUT/UUT4/DataAddrBusMem</signal>
+        <signal>/usuario/UUT/UUT2/UUT1/UUT1/InstStatesExec</signal>
+        </signallist>
+    </signallists>
+    <timebases>
+        <timebase id="0">
+            <time start_time="0" end_time="2380" />
+        </timebase>
+    </timebases>
+    <prefbases>
+        <prefbase id="0" >
+        </prefbase>
+    </prefbases>
+    <bookmarkbases>
+        <bookmarks id="0">
+        </bookmarks>
+    </bookmarkbases>
+    <cursorbases>
+        <cursors id="0">
+            <cursor value="2200" label="Cursor 1" locked="0" />
+        </cursors>
+    </cursorbases>
+    <measurementbases>
+    </measurementbases>
+    <commentbases>
+        <comments id="0">
+        </comments>
+    </commentbases>
+    <views>
+        <view signallist="0" propertybase="0" prefbase="0" type="1" bookmarks="0" cursors="0" measurements="-1" comments="-1" />
+    </views>
+</config>
