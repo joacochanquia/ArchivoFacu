@@ -1,0 +1,340 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "07/18/2023 18:07:22"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    DecOp
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module DecOp_vlg_sample_tst(
+	OP,
+	sampler_tx
+);
+input [3:0] OP;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(OP)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module DecOp_vlg_check_tst (
+	I,
+	OPE,
+	OPI,
+	sampler_rx
+);
+input  I;
+input [2:0] OPE;
+input [2:0] OPI;
+input sampler_rx;
+
+reg  I_expected;
+reg [2:0] OPE_expected;
+reg [2:0] OPI_expected;
+
+reg  I_prev;
+reg [2:0] OPE_prev;
+reg [2:0] OPI_prev;
+
+reg  I_expected_prev;
+reg [2:0] OPE_expected_prev;
+reg [2:0] OPI_expected_prev;
+
+reg  last_I_exp;
+reg [2:0] last_OPE_exp;
+reg [2:0] last_OPI_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:3] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 3'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	I_prev = I;
+	OPE_prev = OPE;
+	OPI_prev = OPI;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	I_expected_prev = I_expected;
+	OPE_expected_prev = OPE_expected;
+	OPI_expected_prev = OPI_expected;
+end
+
+
+// expected OPE[ 2 ]
+initial
+begin
+	OPE_expected[2] = 1'bX;
+end 
+// expected OPE[ 1 ]
+initial
+begin
+	OPE_expected[1] = 1'bX;
+end 
+// expected OPE[ 0 ]
+initial
+begin
+	OPE_expected[0] = 1'bX;
+end 
+// expected OPI[ 2 ]
+initial
+begin
+	OPI_expected[2] = 1'bX;
+end 
+// expected OPI[ 1 ]
+initial
+begin
+	OPI_expected[1] = 1'bX;
+end 
+// expected OPI[ 0 ]
+initial
+begin
+	OPI_expected[0] = 1'bX;
+end 
+
+// expected I
+initial
+begin
+	I_expected = 1'bX;
+end 
+// generate trigger
+always @(I_expected or I or OPE_expected or OPE or OPI_expected or OPI)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected I = %b | expected OPE = %b | expected OPI = %b | ",I_expected_prev,OPE_expected_prev,OPI_expected_prev);
+	$display("| real I = %b | real OPE = %b | real OPI = %b | ",I_prev,OPE_prev,OPI_prev);
+`endif
+	if (
+		( I_expected_prev !== 1'bx ) && ( I_prev !== I_expected_prev )
+		&& ((I_expected_prev !== last_I_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port I :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", I_expected_prev);
+		$display ("     Real value = %b", I_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_I_exp = I_expected_prev;
+	end
+	if (
+		( OPE_expected_prev[0] !== 1'bx ) && ( OPE_prev[0] !== OPE_expected_prev[0] )
+		&& ((OPE_expected_prev[0] !== last_OPE_exp[0]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OPE[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OPE_expected_prev);
+		$display ("     Real value = %b", OPE_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_OPE_exp[0] = OPE_expected_prev[0];
+	end
+	if (
+		( OPE_expected_prev[1] !== 1'bx ) && ( OPE_prev[1] !== OPE_expected_prev[1] )
+		&& ((OPE_expected_prev[1] !== last_OPE_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OPE[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OPE_expected_prev);
+		$display ("     Real value = %b", OPE_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_OPE_exp[1] = OPE_expected_prev[1];
+	end
+	if (
+		( OPE_expected_prev[2] !== 1'bx ) && ( OPE_prev[2] !== OPE_expected_prev[2] )
+		&& ((OPE_expected_prev[2] !== last_OPE_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OPE[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OPE_expected_prev);
+		$display ("     Real value = %b", OPE_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_OPE_exp[2] = OPE_expected_prev[2];
+	end
+	if (
+		( OPI_expected_prev[0] !== 1'bx ) && ( OPI_prev[0] !== OPI_expected_prev[0] )
+		&& ((OPI_expected_prev[0] !== last_OPI_exp[0]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OPI[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OPI_expected_prev);
+		$display ("     Real value = %b", OPI_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_OPI_exp[0] = OPI_expected_prev[0];
+	end
+	if (
+		( OPI_expected_prev[1] !== 1'bx ) && ( OPI_prev[1] !== OPI_expected_prev[1] )
+		&& ((OPI_expected_prev[1] !== last_OPI_exp[1]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OPI[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OPI_expected_prev);
+		$display ("     Real value = %b", OPI_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_OPI_exp[1] = OPI_expected_prev[1];
+	end
+	if (
+		( OPI_expected_prev[2] !== 1'bx ) && ( OPI_prev[2] !== OPI_expected_prev[2] )
+		&& ((OPI_expected_prev[2] !== last_OPI_exp[2]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OPI[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OPI_expected_prev);
+		$display ("     Real value = %b", OPI_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_OPI_exp[2] = OPI_expected_prev[2];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module DecOp_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [3:0] OP;
+// wires                                               
+wire I;
+wire [2:0] OPE;
+wire [2:0] OPI;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+DecOp i1 (
+// port map - connection between master ports and signals/registers   
+	.I(I),
+	.OP(OP),
+	.OPE(OPE),
+	.OPI(OPI)
+);
+// OP[ 3 ]
+initial
+begin
+	OP[3] = 1'b0;
+	OP[3] = #400000 1'b1;
+	OP[3] = #400000 1'b0;
+end 
+// OP[ 2 ]
+initial
+begin
+	repeat(2)
+	begin
+		OP[2] = 1'b0;
+		OP[2] = #200000 1'b1;
+		# 200000;
+	end
+	OP[2] = 1'b0;
+end 
+// OP[ 1 ]
+always
+begin
+	OP[1] = 1'b0;
+	OP[1] = #100000 1'b1;
+	#100000;
+end 
+// OP[ 0 ]
+always
+begin
+	OP[0] = 1'b0;
+	OP[0] = #50000 1'b1;
+	#50000;
+end 
+
+DecOp_vlg_sample_tst tb_sample (
+	.OP(OP),
+	.sampler_tx(sampler)
+);
+
+DecOp_vlg_check_tst tb_out(
+	.I(I),
+	.OPE(OPE),
+	.OPI(OPI),
+	.sampler_rx(sampler)
+);
+endmodule
+

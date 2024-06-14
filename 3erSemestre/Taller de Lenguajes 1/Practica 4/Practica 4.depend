@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1652836608 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+

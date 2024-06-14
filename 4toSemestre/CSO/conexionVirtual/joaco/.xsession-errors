@@ -1,0 +1,45 @@
+Xsession: X session started for joaco at lun 28 nov 2022 20:14:47 -03
+WARNING: tempfile is deprecated; consider using mktemp instead.
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting XAUTHORITY=/home/joaco/.Xauthority
+localuser:joaco being added to access control list
+dbus-update-activation-environment: setting GTK_MODULES=gail:atk-bridge
+dbus-update-activation-environment: setting QT_ACCESSIBILITY=1
+dbus-update-activation-environment: setting USER=joaco
+dbus-update-activation-environment: setting LANGUAGE=es_AR:es
+dbus-update-activation-environment: setting XDG_SESSION_TYPE=x11
+dbus-update-activation-environment: setting HOME=/home/joaco
+dbus-update-activation-environment: setting DESKTOP_SESSION=lightdm-xsession
+dbus-update-activation-environment: setting XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+dbus-update-activation-environment: setting GTK_MODULES=gail:atk-bridge
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting LOGNAME=joaco
+dbus-update-activation-environment: setting XDG_SESSION_CLASS=user
+dbus-update-activation-environment: setting PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+dbus-update-activation-environment: setting XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1000
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting LANG=es_AR.UTF-8
+dbus-update-activation-environment: setting XDG_SESSION_DESKTOP=lightdm-xsession
+dbus-update-activation-environment: setting XAUTHORITY=/home/joaco/.Xauthority
+dbus-update-activation-environment: setting XDG_GREETER_DATA_DIR=/var/lib/lightdm/data/joaco
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting GDMSESSION=lightdm-xsession
+dbus-update-activation-environment: setting QT_ACCESSIBILITY=1
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting PWD=/home/joaco
+dbus-update-activation-environment: setting XDG_DATA_DIRS=/usr/share/mate:/usr/local/share/:/usr/share/
+mate-session-check-accelerated: GL Helper exited with code 512
+libEGL warning: DRI2: failed to authenticate
+mate-session-check-accelerated: GLES Helper exited with code 512
+x-session-manager[16375]: WARNING: Unable to find provider '' of required component 'dock'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Advertencia del gestor de ventanas: Log level 128: unsetenv() is not thread-safe and should not be used after threads are created
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+(caja:16516): Gtk-WARNING **: 20:14:48.386: Failed to register client: GDBus.Error:org.gnome.SessionManager.AlreadyRegistered: Unable to register client
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+(mate-power-manager:16528): Gdk-CRITICAL **: 20:14:49.147: gdk_window_thaw_toplevel_updates: assertion 'window->update_and_descendants_freeze_count > 0' failed

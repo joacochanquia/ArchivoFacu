@@ -1,0 +1,71 @@
+$comment
+	File created using the following command:
+		vcd file Proyecto.msim.vcd -direction
+$end
+$date
+	Tue Jun 20 16:12:16 2023
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Prueba1_vlg_vec_tst $end
+$var reg 1 ! A $end
+$var reg 1 " B $end
+$var wire 1 # C $end
+$var wire 1 $ D $end
+$var wire 1 % sampler $end
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , D~output_o $end
+$var wire 1 - C~output_o $end
+$var wire 1 . B~input_o $end
+$var wire 1 / A~input_o $end
+$var wire 1 0 inst~combout $end
+$var wire 1 1 inst2~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+1"
+x#
+x$
+x%
+0&
+1'
+x(
+1)
+1*
+1+
+x,
+x-
+1.
+1/
+x0
+x1
+$end
+#100000
+0"
+0%
+#100681
+0.
+#104892
+01
+#104961
+00
+#108337
+1-
+1#
+#108761
+0,
+0$
+#1000000

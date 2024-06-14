@@ -1,0 +1,73 @@
+
+								página: 1 
+
+ Listado Fuente: EJ8.LST
+ Programa Fuente en: EJ8.ASM
+ Fecha: Sat Apr 23 16:49:19 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	PIC 	EQU 	20H
+			      2	HAND 	EQU 	40H
+			      3	N_HND 	EQU 	10
+			      4	
+			      5		ORG 	40
+ 0028 00 30		      6	IP_HND 	DW 	RUT_HND
+			      7	
+			      8		ORG 	1000H
+ 1000 55 4E 49 56 45 52	      9	MSJ 	DB 	"UNIVERSIDAD "
+ 1006 53 49 44 41 44 20
+ 100C 4E 41 43 49 4F 4E	     10		DB 	"NACIONAL DE LA PLATA" 
+ 1012 41 4C 20 44 45 20
+ 1018 4C 41 20 50 4C 41
+ 101E 54 41
+ 1020 4E		     11	FIN 	DB 	?
+			     12	
+			     13		ORG 3000H
+ 3000 50		     14	RUT_HND:PUSH AX
+ 3001 8A 07		     15		MOV AL, [BX] 
+ 3003 E6 40		     16		OUT HAND, AL
+ 3005 FF C3		     17		INC BX
+ 3007 FE C9		     18		DEC CL
+ 3009 B0 20		     19		MOV AL, 20H
+ 300B E6 20		     20		OUT PIC, AL
+ 300D 58		     21		POP AX
+ 300E CF		     22		IRET
+			     23	
+			     24		ORG 	2000H
+ 2000 BB 00 10		     25		MOV 	BX, OFFSET MSJ
+ 2003 B1 20		     26		MOV 	CL, OFFSET FIN-OFFSET MSJ
+ 2005 FA		     27		CLI
+ 2006 B0 FB		     28		MOV 	AL, 0FBH
+ 2008 E6 21		     29		OUT 	PIC+1, AL
+ 200A B0 0A		     30		MOV 	AL, N_HND
+ 200C E6 26		     31		OUT 	PIC+6, AL
+ 200E B0 80		     32		MOV 	AL, 80H
+ 2010 E6 41		     33		OUT 	HAND+1, AL
+ 2012 FB		     34		STI
+ 2013 80 F9 00		     35	LAZO: 	CMP 	CL, 0
+ 2016 75 FB		     36		JNZ 	LAZO
+ 2018 E4 41		     37		IN 	AL, HAND+1
+ 201A 80 E0 7F		     38		AND 	AL, 7FH
+ 201D E6 41		     39		OUT 	HAND+1, AL
+ 201F CD 00		     40		INT 	0
+			     41		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ PIC     	Constante	  20h
+ HAND    	Constante	  40h
+ N_HND   	Constante	   Ah
+ IP_HND  	Mem. Word	  28h	No usado
+
+
+
+								página: 2 
+
+ MSJ     	Mem. Byte	1000h
+ FIN     	Mem. Byte	1020h
+ RUT_HND 	Etiqueta	3000h
+ LAZO    	Etiqueta	2013h

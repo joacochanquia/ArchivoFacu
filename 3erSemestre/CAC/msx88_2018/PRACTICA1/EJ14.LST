@@ -1,0 +1,74 @@
+
+								página: 1 
+
+ Listado Fuente: EJ14.LST
+ Programa Fuente en: EJ14.ASM
+ Fecha: Tue Apr 12 18:54:57 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	;memoria datos
+			      2		 ORG 	1000H
+ 1000 48 4F 4F 4C 41 20	      3	CADENA	 DB	"HOOLA Gabii toOdo BiEn?!"
+ 1006 47 61 62 69 69 20
+ 100C 74 6F 4F 64 6F 20
+ 1012 42 69 45 6E 3F 21
+ 1018 00		      4	FINAL	 DB	0
+ 1019 41 45 49 4F 55 61	      5	C_VOCAL	 DB	"AEIOUaeiou"
+ 101F 65 69 6F 75
+			      6	;memoria instrucciones
+			      7	;subrutinas
+			      8		 ORG	3000H
+ 3000 53		      9	ES_VOCAL:PUSH	BX
+ 3001 51		     10		 PUSH	CX
+ 3002 BB 19 10		     11		 MOV	BX, OFFSET C_VOCAL
+ 3005 B1 0A		     12		 MOV	CL, 10
+ 3007 B2 00		     13		 MOV	DL, 00H
+ 3009 38 37		     14	COMP:	 CMP	[BX], DH
+ 300B 75 05		     15		 JNZ	NO_ES
+ 300D B2 FF		     16		 MOV	DL, 0FFH
+ 300F E9 18 30		     17		 JMP	FINES_
+ 3012 FF C3		     18	NO_ES:	 INC 	BX
+ 3014 FE C9		     19		 DEC	CL
+ 3016 75 F1		     20		 JNZ	COMP
+ 3018 59		     21	FINES_:	 POP	CX
+ 3019 5B		     22		 POP    BX
+ 301A C3		     23		 RET
+ 301B 80 3F 00		     24	VOCALES: CMP 	BYTE PTR [BX], 00H
+ 301E 74 11		     25		 JZ	FIN
+ 3020 8A 37		     26		 MOV	DH, [BX]
+ 3022 E8 00 30		     27		 CALL	ES_VOCAL
+ 3025 80 FA FF		     28		 CMP	DL, 0FFH
+ 3028 75 02		     29		 JNZ	NO
+ 302A FE C1		     30		 INC	CL
+ 302C FF C3		     31	NO:	 INC 	BX
+ 302E E9 1B 30		     32		 JMP	VOCALES
+ 3031 C3		     33	FIN:	 RET
+			     34	;prog principal
+			     35		 ORG 	2000H	
+ 2000 BB 00 10		     36		 MOV	BX, OFFSET CADENA
+ 2003 BA 00 00		     37		 MOV	DX, 0
+ 2006 E8 1B 30		     38		 CALL	VOCALES
+ 2009 F4		     39		 HLT
+			     40		 END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ CADENA  	Mem. Byte	1000h
+ FINAL   	Mem. Byte	1018h	No usado
+ C_VOCAL 	Mem. Byte	1019h
+ ES_VOCAL	Etiqueta	3000h
+ COMP    	Etiqueta	3009h
+
+
+
+								página: 2 
+
+ NO_ES   	Etiqueta	3012h
+ FINES_  	Etiqueta	3018h
+ VOCALES 	Etiqueta	301Bh
+ NO      	Etiqueta	302Ch
+ FIN     	Etiqueta	3031h

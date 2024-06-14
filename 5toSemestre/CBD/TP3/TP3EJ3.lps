@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="TP3EJ3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="40" Y="27"/>
+        <UsageCount Value="168"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP3EJ1.lpr"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="44"/>
+        <CursorPos X="80" Y="59"/>
+        <UsageCount Value="85"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP3EJ2.pas"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="32" Y="32"/>
+        <UsageCount Value="85"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-objpas\src\inc\strutils.pp"/>
+        <UnitName Value="StrUtils"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="198"/>
+        <CursorPos X="10" Y="210"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\TP2\TP2EJ7.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\TP2\TP2EJ4.pas"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP3EJ4.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="30"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="7">
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="152" Column="19" TopLine="136"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="15" Column="34" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="27" Column="30" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="48" Column="30" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="27" Column="47" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="38" Column="35" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="7" Column="21"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="30" Column="15" TopLine="20"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

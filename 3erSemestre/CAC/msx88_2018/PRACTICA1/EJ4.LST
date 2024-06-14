@@ -1,0 +1,33 @@
+
+								página: 1 
+
+ Listado Fuente: EJ4.LST
+ Programa Fuente en: EJ4.ASM
+ Fecha: Tue Apr 05 20:37:29 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG	1000H
+ 1000 02		      2	NUM0	DB	2
+ 1001 02		      3	NUM1	DB	2
+			      4		ORG	2000H
+ 2000 8A 06 00 10	      5		MOV	AL, NUM0
+ 2004 8A 1E 01 10	      6		MOV	BL, NUM1
+ 2008 3A C3		      7		CMP	AL, BL
+ 200A 79 05		      8		JNS	ELSE
+ 200C 8A C8		      9	IF:	MOV	CL, AL
+ 200E E9 13 20		     10		JMP	FIN
+ 2011 8A CB		     11	ELSE:	MOV	CL, BL
+ 2013 F4		     12	FIN:	HLT
+			     13		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM0    	Mem. Byte	1000h
+ NUM1    	Mem. Byte	1001h
+ IF      	Etiqueta	200Ch	No usado
+ ELSE    	Etiqueta	2011h
+ FIN     	Etiqueta	2013h

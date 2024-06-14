@@ -1,0 +1,107 @@
+
+								página: 1 
+
+ Listado Fuente: EJ14.LST
+ Programa Fuente en: EJ14.ASM
+ Fecha: Sat Apr 23 17:44:22 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	TIMER 	EQU 	10H
+			      2	PIC 	EQU 	20H
+			      3	EOI 	EQU 	20H
+			      4	N_CLK 	EQU 	20
+			      5	N_F10	EQU	10
+			      6	
+			      7	;vector de interrupciones
+			      8		ORG 	40
+ 0028 00 30		      9	IP_F10	DW	RUT_F10
+			     10		ORG	80
+ 0050 0E 30		     11	IP_CLK 	DW 	RUT_CLK
+			     12	
+			     13	;datos
+			     14		ORG 	1000H
+ 1000 30		     15	SEG 	DB 	30H
+ 1001 30		     16		DB 	30H
+ 1002 30		     17	FIN_SEG	DB 	?
+			     18	
+			     19	;subrutinas
+			     20		ORG 	3000H
+ 3000 50		     21	RUT_F10:PUSH	AX
+ 3001 E4 21		     22		IN	AL, PIC+1
+ 3003 80 F0 02		     23		XOR	AL, 02H
+ 3006 E6 21		     24		OUT	PIC+1, AL
+ 3008 B0 20		     25		MOV 	AL, EOI
+ 300A E6 20		     26		OUT 	PIC, AL
+ 300C 58		     27		POP 	AX
+ 300D CF		     28		IRET
+ 300E 50		     29	RUT_CLK:PUSH 	AX
+ 300F FE 06 01 10	     30		INC 	SEG+1
+ 3013 80 3E 01 10 3A	     31		CMP 	SEG+1, 3AH
+ 3018 75 1B		     32		JNZ 	RESET
+ 301A C6 06 01 10 30	     33		MOV 	SEG+1, 30H
+ 301F FE 06 00 10	     34		INC 	SEG
+ 3023 80 3E 00 10 33	     35		CMP 	SEG, 33H
+ 3028 75 0B		     36		JNZ 	RESET
+ 302A 50		     37		PUSH	AX
+ 302B E4 21		     38		IN	AL, PIC+1
+ 302D 80 C8 02		     39		OR	AL, 2
+ 3030 E6 21		     40		OUT	PIC+1, AL
+ 3032 58		     41		POP	AX
+ 3033 B2 FF		     42		MOV 	DL, 0FFH
+ 3035 CD 07		     43	RESET:	INT 	7
+ 3037 B0 00		     44		MOV 	AL, 0
+ 3039 E6 10		     45		OUT 	TIMER, AL
+ 303B B0 20		     46		MOV 	AL, EOI
+ 303D E6 20		     47		OUT 	PIC, AL
+ 303F 58		     48		POP 	AX
+ 3040 CF		     49		IRET
+			     50	
+			     51	;programa principal
+			     52		ORG 	2000H
+ 2000 FA		     53		CLI
+ 2001 B0 FC		     54		MOV 	AL, 0FCH
+ 2003 E6 21		     55		OUT 	PIC+1, AL ; PIC: registro IMR
+
+
+
+								página: 2 
+
+ 2005 B0 0A		     56		MOV 	AL, N_F10
+ 2007 E6 24		     57		OUT 	PIC+4, AL ; PIC: registro INT0
+ 2009 B0 14		     58		MOV 	AL, N_CLK
+ 200B E6 25		     59		OUT 	PIC+5, AL ; PIC: registro INT1
+ 200D B0 01		     60		MOV 	AL, 1
+ 200F E6 11		     61		OUT 	TIMER+1, AL ; TIMER: registro C
+				OMP
+ 2011 B0 00		     62		MOV 	AL, 0
+ 2013 E6 10		     63		OUT 	TIMER, AL ; TIMER: registro CON
+				T
+ 2015 BB 00 10		     64		MOV 	BX, OFFSET SEG
+ 2018 B0 02		     65		MOV 	AL, OFFSET FIN_SEG-OFFSET SEG
+ 201A B2 00		     66		MOV	DL, 00H
+ 201C FB		     67		STI
+ 201D 80 FA FF		     68	LAZO:	CMP 	DL, 0FFH
+ 2020 75 FB		     69		JNZ 	LAZO
+ 2022 F4		     70	FIN:	HLT
+			     71		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ TIMER   	Constante	  10h
+ PIC     	Constante	  20h
+ EOI     	Constante	  20h
+ N_CLK   	Constante	  14h
+ N_F10   	Constante	   Ah
+ IP_F10  	Mem. Word	  28h	No usado
+ IP_CLK  	Mem. Word	  50h	No usado
+ SEG     	Mem. Byte	1000h
+ FIN_SEG 	Mem. Byte	1002h
+ RUT_F10 	Etiqueta	3000h
+ RUT_CLK 	Etiqueta	300Eh
+ RESET   	Etiqueta	3035h
+ LAZO    	Etiqueta	201Dh
+ FIN     	Etiqueta	2022h	No usado

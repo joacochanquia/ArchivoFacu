@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="TP3EJ3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="20"/>
+        <CursorPos X="15" Y="30"/>
+        <UsageCount Value="130"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP3EJ1.lpr"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="6"/>
+        <UsageCount Value="66"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP3EJ2.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="32" Y="32"/>
+        <UsageCount Value="66"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-objpas\src\inc\strutils.pp"/>
+        <UnitName Value="StrUtils"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="198"/>
+        <CursorPos X="10" Y="210"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="6">
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="152" Column="19" TopLine="136"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="15" Column="34" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="27" Column="30" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="48" Column="30" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="27" Column="47" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="38" Column="35" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="TP3EJ3.pas"/>
+        <Caret Line="7" Column="21"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="TP3EJ3.pas"/>
+        <Line Value="29"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,58 @@
+modificar el idpais o futbolistas cuando agrego a la tabla?
+
+documento de futbolista
+
+botones en la tabla
+
+
+
+
+serial number
+
+todas las pantallas modales
+
+JOptionPane para errores y confirmar eliminar
+
+idioma en pais
+
+paises sin header
+
+cant de torneos en paises no tiene en cuenta lo de friendly??
+
+ordenar tabla por columnas
+
+choice para pais esta bien? no Swing
+
+donde se guardan los csv exportados (System.getProperty(User.HOME))
+
+
+
+refreshTable
+warning en myModel
+
+
+
+en el csv uso , o ; (en excel para que lo tome bien tiene que ser ;)
+
+Al comprobar nombres que hacer con la Ñ
+
+abrir configuracion tiene que resetear la coneccion? {si}///////////
+
+cuando cerrar la coneccion  {al frame windowslistener override windowsclosing}
+https://stackoverflow.com/questions/9093448/how-to-capture-a-jframes-close-button-click-event
+
+espacios en blanco?¿ //////////////
+
+construccion de las ventanas en el constructor o en el ver?
+
+run que cosas faltan
+
+timer
+
+
+
+DAO trycatch o throws
+
+final de results.csv
+
+no anda el importar en el jar

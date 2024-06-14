@@ -1,0 +1,95 @@
+public void reemplazarPresidente() {
+                ArbolGeneral<Empleados> aux, aux2, empMaxAnt = null;
+                aux = empleados;
+                while (aux.tieneHijos()) {
+                        int antg = 0;
+                        ListaGenerica<ArbolGeneral<Empleados>> hijos = aux.getHijos();
+                        hijos.comenzar();
+                        while (!hijos.fin()) {
+                                aux2 = hijos.proximo();
+                                if (antg < aux2.getDato().getAntiguedad()) {
+                                        antg = aux2.getDato().getAntiguedad();
+                                        empMaxAnt = aux2;
+                                }
+                        }
+                        aux.setDato(empMaxAnt.getDato());
+                        if (!empMaxAnt.tieneHijos()) {
+                                aux.eliminarHijo(empMaxAnt);
+                        }
+                        aux = empMaxAnt;
+                }
+
+
+package prog3.empresa;
+
+import prog3.arbolgeneral.ArbolGeneral;
+import prog3.listagenerica.ListaGenerica;
+import prog3.listagenerica.ListaGenericaEnlazada;
+
+public class TestEmpresa {
+
+        public static void main(String[] args) {
+                ListaGenerica<ArbolGeneral<Empleado>> l = new ListaGenericaEnlazada<ArbolGeneral<Empleado>>();
+                ListaGenerica<ArbolGeneral<Empleado>> l2 = new ListaGenericaEnlazada<ArbolGeneral<Empleado>>();
+                ListaGenerica<ArbolGeneral<Empleado>> l3 = new ListaGenericaEnlazada<ArbolGeneral<Empleado>>();
+                Empresa e = new Empresa();
+                
+                Empleado e1=new Empleado("Jefe",50,1);
+                Empleado e2=new Empleado("Jose",16,2);
+                Empleado e3=new Empleado("Juan",24,2);
+                Empleado e4=new Empleado("Julian",43,3);
+                Empleado e5=new Empleado("Joaquin",19,4);
+                Empleado e6=new Empleado("Jota",24,4);
+                Empleado e7=new Empleado("Jaja",42,4);
+                
+                l.agregarFinal(new ArbolGeneral<Empleado>(e2));
+                l.agregarFinal(new ArbolGeneral<Empleado>(e3));   
+                ArbolGeneral<Empleado> a = new ArbolGeneral<Empleado>(e1,l);
+                
+                l2.agregarFinal(new ArbolGeneral<Empleado>(e4));
+                a.getHijos().elemento(0).setHijos(l2);
+                
+                l3.agregarFinal(new ArbolGeneral<Empleado>(e5));
+                l3.agregarFinal(new ArbolGeneral<Empleado>(e6));
+                l3.agregarFinal(new ArbolGeneral<Empleado>(e7));
+                a.getHijos().elemento(0).getHijos().elemento(0).setHijos(l3);; 
+                
+                //System.out.println("Categ:"+e.empleadosPorCategoria(4));
+                //System.out.println("Mayor:"+e.categoriaConMasEmpleados());
+                //System.out.println("Total:"+e.cantidadTotalDeEmpleados());
+                
+                e.reemplazarPresidente();
+                
+                System.out.println("Total:"+e.cantidadTotalDeEmpleados());
+                
+        }
+
+}
+
+
+
+
+public void reemplazarPresidente() {
+                ArbolGeneral<Empleado> aux, aux2, empMaxAnt = null;
+                aux = empleados;
+                boolean check=false;
+                while (!check) {
+                        int antg = 0;
+                        ListaGenerica<ArbolGeneral<Empleado>> hijos = aux.getHijos();
+                        hijos.comenzar();
+                        while (!hijos.fin()) {
+                                aux2 = hijos.proximo();
+                                if (antg < aux2.getDato().getAntiguedad()) {
+                                        antg = aux2.getDato().getAntiguedad();
+                                        empMaxAnt = aux2;
+                                }
+                        }
+                        aux.setDato(empMaxAnt.getDato());
+                        if (!empMaxAnt.tieneHijos()) {
+                                aux.eliminarHijo(empMaxAnt);
+                                check=true;
+                        }
+                        aux = empMaxAnt;
+                }
+
+        }

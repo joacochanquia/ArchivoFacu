@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1649992017 source:c:\users\joaco\desktop\taller de lenguajes 1\figuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

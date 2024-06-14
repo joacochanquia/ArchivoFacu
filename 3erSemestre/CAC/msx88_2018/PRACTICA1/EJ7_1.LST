@@ -1,0 +1,38 @@
+
+								página: 1 
+
+ Listado Fuente: EJ7_1.LST
+ Programa Fuente en: EJ7_1.ASM
+ Fecha: Thu Apr 07 19:46:34 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	; Memoria de Datos
+			      2		ORG 	1000H
+ 1000 05		      3	NUM1 	DB 	5H
+ 1001 03		      4	NUM2 	DB 	3H
+			      5	; Memoria de Instrucciones
+			      6		ORG 	2000H
+ 2000 BA 00 00		      7		MOV 	DX, 0
+ 2003 B4 00		      8		MOV 	AH, 0
+ 2005 8A 06 00 10	      9		MOV 	AL, NUM1
+ 2009 80 F8 00		     10		CMP 	AL, 0
+ 200C 74 10		     11		JZ 	FIN
+ 200E 8A 0E 01 10	     12		MOV 	CL, NUM2
+ 2012 80 F9 00		     13	LOOP: 	CMP 	CL, 0
+ 2015 74 07		     14		JZ 	FIN
+ 2017 03 D0		     15		ADD 	DX, AX
+ 2019 FE C9		     16		DEC 	CL
+ 201B E9 12 20		     17		JMP 	LOOP
+ 201E F4		     18	FIN: 	HLT
+			     19		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM1    	Mem. Byte	1000h
+ NUM2    	Mem. Byte	1001h
+ LOOP    	Etiqueta	2012h
+ FIN     	Etiqueta	201Eh

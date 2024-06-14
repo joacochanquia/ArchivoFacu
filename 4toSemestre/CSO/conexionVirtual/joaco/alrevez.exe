@@ -1,0 +1,9 @@
+vim prueba.exe
+ls -l
+ls
+
+vim prueba.exe
+ls -l
+ls
+prueba hola
+hola

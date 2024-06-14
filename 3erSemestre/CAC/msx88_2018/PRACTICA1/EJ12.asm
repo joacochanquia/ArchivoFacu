@@ -1,0 +1,24 @@
+;memoria datos
+	 ORG 	1000H
+NUM0	 DB	6
+NUM1	 DB	1
+;memoria instrucciones
+;subrutinas
+	 ORG	3000H
+ROTARIZ: ADD 	AL, AL
+	 ADC	AL, 0
+	 DEC	CL
+	 JNZ	ROTARIZ
+	 RET
+ROTARDER:MOV 	CL, 7
+	 CALL	ROTARIZ
+	 DEC	CH
+	 JNZ	ROTARDER
+	 RET
+;prog principal
+	 ORG 	2000H
+	 MOV	AL, NUM0
+	 MOV	CH, NUM1
+	 CALL	ROTARDER
+	 HLT
+	 END

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1653437968 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1653437272 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 5\verbinario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

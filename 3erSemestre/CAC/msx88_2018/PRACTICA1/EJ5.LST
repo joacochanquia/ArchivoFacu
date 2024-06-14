@@ -1,0 +1,47 @@
+
+								página: 1 
+
+ Listado Fuente: EJ5.LST
+ Programa Fuente en: EJ5.ASM
+ Fecha: Tue Apr 05 19:21:53 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 1[		      2	TABLA 	DB 	DUP(2,4,6,8,10,12,14,16,18,20)
+	     02
+	     04
+	     06
+	     08
+	     0A
+	     0C
+	     0E
+	     10
+	     12
+	     14
+		      ]
+ 100A 02		      3	FIN 	DB 	?
+ 100B 02		      4	TOTAL 	DB 	?
+ 100C 0D		      5	MAX 	DB 	13
+			      6		ORG 	2000H
+ 2000 B0 00		      7		MOV 	AL, 0
+ 2002 B1 0A		      8		MOV 	CL, OFFSET FIN-OFFSET TABLA
+ 2004 BB 00 10		      9		MOV 	BX, OFFSET TABLA
+ 2007 02 07		     10	SUMA: 	ADD 	AL, [BX]
+ 2009 FF C3		     11		INC 	BX
+ 200B FE C9		     12		DEC 	CL
+ 200D 75 F8		     13		JNZ 	SUMA
+ 200F 88 06 0B 10	     14		MOV	TOTAL, AL;
+ 2013 F4		     15		HLT
+			     16		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ TABLA   	Mem. Byte	1000h
+ FIN     	Mem. Byte	100Ah
+ TOTAL   	Mem. Byte	100Bh
+ MAX     	Mem. Byte	100Ch	No usado
+ SUMA    	Etiqueta	2007h

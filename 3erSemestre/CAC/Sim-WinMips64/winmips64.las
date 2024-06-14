@@ -1,0 +1,1 @@
+C:\Users\Joaco\Desktop\CAC\Sim-WinMips64\PRACTICA 6\RecibeFlotante.s

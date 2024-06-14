@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1652439783 source:c:\users\joaco\desktop\taller de lenguajes 1\buscaminas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+

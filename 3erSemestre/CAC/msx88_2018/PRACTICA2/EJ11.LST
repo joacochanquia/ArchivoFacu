@@ -1,0 +1,73 @@
+
+								página: 1 
+
+ Listado Fuente: EJ11.LST
+ Programa Fuente en: EJ11.ASM
+ Fecha: Wed Apr 20 14:27:23 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	PIC 	EQU 	20H
+			      2	EOI 	EQU 	20H
+			      3	N_F10 	EQU 	10
+			      4		ORG 	40
+ 0028 00 30		      5	IP_F10 	DW 	RUT_F10
+			      6	
+			      7		ORG	1000H
+ 1000 41		      8	CHAR	DB	41H
+			      9	
+			     10		ORG 	2000H
+ 2000 FA		     11		CLI
+ 2001 B0 FE		     12		MOV 	AL, 0FEH
+ 2003 E6 21		     13		OUT 	PIC+1, AL ; PIC: registro IMR
+ 2005 B0 0A		     14		MOV 	AL, N_F10
+ 2007 E6 24		     15		OUT 	PIC+4, AL ; PIC: registro INT0
+ 2009 BA 00 00		     16		MOV 	DX, 0
+ 200C B4 41		     17		MOV	AH, 41H
+ 200E FB		     18		STI
+			     19	
+ 200F 80 FE 01		     20	LAZO: 	CMP	DH, 01H
+ 2012 74 0F		     21		JZ	IMP
+ 2014 80 FC 5B		     22		CMP	AH, 5BH
+ 2017 75 05		     23		JNZ	LETRA
+ 2019 B4 41		     24		MOV	AH, 41H
+ 201B E9 0F 20		     25		JMP	LAZO
+ 201E FE C4		     26	LETRA:	INC	AH
+ 2020 E9 0F 20		     27		JMP 	LAZO
+			     28	
+ 2023 FA		     29	IMP:	CLI
+ 2024 BB 00 10		     30		MOV	BX, OFFSET CHAR
+ 2027 88 27		     31		MOV	[BX], AH
+ 2029 B0 01		     32		MOV	AL, 1
+ 202B CD 07		     33		INT	7
+ 202D CD 00		     34		INT	0
+ 202F FB		     35		STI
+			     36	
+			     37		ORG 	3000H
+ 3000 50		     38	RUT_F10:PUSH 	AX
+ 3001 B6 01		     39		MOV	DH, 01H
+ 3003 B0 20		     40		MOV 	AL, EOI
+ 3005 E6 20		     41		OUT 	EOI, AL ; PIC: registro EOI
+ 3007 58		     42		POP 	AX
+ 3008 CF		     43		IRET
+			     44		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ PIC     	Constante	  20h
+ EOI     	Constante	  20h
+ N_F10   	Constante	   Ah
+ IP_F10  	Mem. Word	  28h	No usado
+ CHAR    	Mem. Byte	1000h
+
+
+
+								página: 2 
+
+ LAZO    	Etiqueta	200Fh
+ LETRA   	Etiqueta	201Eh
+ IMP     	Etiqueta	2023h
+ RUT_F10 	Etiqueta	3000h

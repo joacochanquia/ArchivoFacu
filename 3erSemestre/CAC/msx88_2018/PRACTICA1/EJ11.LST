@@ -1,0 +1,48 @@
+
+								página: 1 
+
+ Listado Fuente: EJ11.LST
+ Programa Fuente en: EJ11.ASM
+ Fecha: Thu Apr 07 21:17:18 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	;memoria datos
+			      2		ORG 	1000H
+ 1000 48 4F 69 4C 41 20	      3	CADENA	DB	"HOiLA Gabi toido BiEni?!"
+ 1006 47 61 62 69 20 74
+ 100C 6F 69 64 6F 20 42
+ 1012 69 45 6E 69 3F 21
+ 1018 00		      4	FINAL	DB	0
+ 1019 69		      5	CHAR	DB	"i"
+			      6	;memoria instrucciones
+			      7	;subrutinas
+			      8		ORG	3000H
+ 3000 80 3F 00		      9	CONCAR:	CMP 	BYTE PTR [BX], 0
+ 3003 74 0B		     10		JZ	FIN
+ 3005 38 07		     11		CMP	[BX], AL
+ 3007 75 02		     12		JNZ	NO_ES
+ 3009 FF C2		     13		INC	DX
+ 300B FF C3		     14	NO_ES:	INC 	BX
+ 300D E9 00 30		     15		JMP	CONCAR
+ 3010 C3		     16	FIN:	RET
+			     17	;prog principal
+			     18		ORG 	2000H	
+ 2000 BB 00 10		     19		MOV	BX, OFFSET CADENA
+ 2003 BA 00 00		     20		MOV	DX, 0
+ 2006 8A 06 19 10	     21		MOV	AL, CHAR
+ 200A E8 00 30		     22		CALL	CONCAR
+ 200D F4		     23		HLT
+			     24		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ CADENA  	Mem. Byte	1000h
+ FINAL   	Mem. Byte	1018h	No usado
+ CHAR    	Mem. Byte	1019h
+ CONCAR  	Etiqueta	3000h
+ NO_ES   	Etiqueta	300Bh
+ FIN     	Etiqueta	3010h

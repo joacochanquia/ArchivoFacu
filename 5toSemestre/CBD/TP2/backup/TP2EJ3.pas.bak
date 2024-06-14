@@ -1,0 +1,107 @@
+program TP2EJ3;
+
+const
+	VALORALTO = 30000;
+
+type
+	tZapMast = record
+		cod : integer;
+		num : integer;
+		descrip : string[100];
+		precio : integer;
+		color : string[40];
+		stock : longint;
+                stockmin : longint;
+	end;
+	tArchMast = File of tZapMast;
+	tZapDet = record
+		cod : integer;
+		num : integer;
+		cant : longint;
+	end;
+        tArchDet = File of tZapDet;
+	vecArchDec = array [1 .. 20] of tArchDet;
+	vecZapDet = array [1 .. 20] of tZapDet;
+var 
+	zd : vecZapDet;
+	zm : tZapMast;
+	m : tArchMast;
+	d : vecArchDec;
+	i : integer;
+        min : integer;
+        sins : Text;
+
+procedure Leer(var d:tArchDet; var zd:tZapDet);
+begin
+	if (not eof(d)) then begin
+		read(d,zd);
+        end
+        else
+		zd.cod := VALORALTO;
+end;
+
+function Fin(var zd : vecZapDet) : boolean;
+begin
+     Fin := true;
+     for i:=1 to 20 do begin
+         if (zd[i].cod <> VALORALTO) then
+            Fin := false;
+     end;
+end;
+
+function Minimo(zd : vecZapDet) : integer;
+begin
+     Minimo := VALORALTO;
+     for i:=0 to 20 do begin
+         if (zd[i].cod < VALORALTO) then begin
+                 Minimo := i;
+         end;
+     end;
+end;
+
+BEGIN
+	assign(m,'zapamaster.txt');
+	assign(d[1], 'zapadet1.txt');	assign(d[2], 'zapadet2.txt');
+	assign(d[3], 'zapadet3.txt');	assign(d[4], 'zapadet4.txt');
+	assign(d[5], 'zapadet5.txt');	assign(d[6], 'zapadet6.txt');
+	assign(d[7], 'zapadet7.txt');	assign(d[8], 'zapadet8.txt');
+	assign(d[9], 'zapadet9.txt');	assign(d[10], 'zapadet10.txt');
+	assign(d[11], 'zapadet11.txt');	assign(d[12], 'zapadet12.txt');
+	assign(d[13], 'zapadet13.txt');	assign(d[14], 'zapadet14.txt');
+	assign(d[15], 'zapadet15.txt');	assign(d[16], 'zapadet16.txt');
+	assign(d[17], 'zapadet17.txt');	assign(d[18], 'zapadet18.txt');
+	assign(d[19], 'zapadet19.txt');	assign(d[20], 'zapadet20.txt');
+        assign(sins, 'calzadosinstock.txt');
+        rewrite(sins);
+        close(sins);
+	for i := 1 to 20 do begin
+		reset(d[i]);
+		Leer(d[i],zd[i]);
+	end;
+        reset(m);
+        zm.cod := VALORALTO;
+        while (not Fin(zd)) do begin
+            min := Minimo(zd);
+            while (zm.cod <> zd[min].cod) do begin
+                write('El zapato con codigo ');
+                write(zm.cod);
+                writeln(' no tuvo ventas.');
+                read (m,zm);
+            end;
+            zm.stock := zm.stock - zd[min].cant;
+            if (zm.stock < zm.stockmin) then begin
+               reset (sins);
+               write(sins,'El zapato con codigo ');
+               write(sins,zm.cod);
+               writeln(sins,' se quedo sin stock.');
+               close(sins);
+            end;
+            Leer(d[min],zd[min]);
+        end;
+	close(m);
+
+
+
+	readln();
+END.
+

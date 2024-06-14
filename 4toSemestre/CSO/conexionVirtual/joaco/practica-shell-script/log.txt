@@ -1,0 +1,15 @@
+/usr/lib/x86_64-linux-gnu/libuno_cppuhelpergcc3.so.3
+/usr/lib/x86_64-linux-gnu/libuno_purpenvhelpergcc3.so.3
+/usr/lib/x86_64-linux-gnu/libuno_salhelpergcc3.so.3
+/usr/share/doc/libgcc-s1
+/usr/share/bash-completion/completions/gccgo-7
+/usr/share/bash-completion/completions/gccgo
+/usr/share/bash-completion/completions/gcc-5
+/usr/share/bash-completion/completions/gccgo-6
+/usr/share/bash-completion/completions/gcc-8
+/usr/share/bash-completion/completions/gcc-7
+/usr/share/bash-completion/completions/gcc-6
+/usr/share/bash-completion/completions/gccgo-5
+/usr/share/bash-completion/completions/gccgo-8
+/var/lib/ghostscript/CMap/HKgccs-B5-V
+/var/lib/ghostscript/CMap/HKgccs-B5-H

@@ -1,0 +1,41 @@
+
+								página: 1 
+
+ Listado Fuente: EJ1.LST
+ Programa Fuente en: EJ1.ASM
+ Fecha: Fri Apr 15 14:06:31 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 43 4F 4E 43 45 50	      2	MSJ 	DB 	"CONCEPTOS DE "
+ 1006 54 4F 53 20 44 45
+ 100C 20
+ 100D 41 52 51 55 49 54	      3		DB 	"ARQUITECTURA DE COMPUTADORAS-"
+ 1013 45 43 54 55 52 41
+ 1019 20 44 45 20 43 4F
+ 101F 4D 50 55 54 41 44
+ 1025 4F 52 41 53 2D
+ 102A 46 41 43 55 4C 54	      4		DB 	"FACULTAD DE INFORMATICA-"
+ 1030 41 44 20 44 45 20
+ 1036 49 4E 46 4F 52 4D
+ 103C 41 54 49 43 41 2D
+ 1042 55		      5		DB 	55H
+ 1043 4E		      6		DB 	4EH
+ 1044 4C		      7		DB 	4CH
+ 1045 50		      8		DB 	50H
+ 1046 50		      9	FIN 	DB 	?
+			     10		ORG 	2000H
+ 2000 BB 00 10		     11		MOV 	BX, OFFSET MSJ
+ 2003 B0 46		     12		MOV 	AL, OFFSET FIN-OFFSET MSJ
+ 2005 CD 07		     13		INT 	7
+ 2007 CD 00		     14		INT 	0
+			     15		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ MSJ     	Mem. Byte	1000h
+ FIN     	Mem. Byte	1046h

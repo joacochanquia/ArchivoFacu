@@ -1,0 +1,42 @@
+
+								página: 1 
+
+ Listado Fuente: EJ7_3.LST
+ Programa Fuente en: EJ7_3.ASM
+ Fecha: Thu Apr 07 19:47:29 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	; Memoria de datos
+			      2		ORG 	1000H
+ 1000 05 00		      3	NUM1 	DW 	5H ; NUM1 y NUM2 deben ser mayo
+				res que cero
+ 1002 03 00		      4	NUM2 	DW 	3H
+			      5	; Memoria de Instrucciones
+			      6		ORG 	3000H ; Subrutina MUL
+ 3000 8B D8		      7	MUL: 	MOV 	BX, AX
+ 3002 03 17		      8		ADD 	DX, [BX]
+ 3004 52		      9		PUSH 	DX
+ 3005 8B D9		     10		MOV 	BX, CX
+ 3007 8B 17		     11		MOV 	DX, [BX]
+ 3009 FF CA		     12		DEC 	DX 
+ 300B 89 17		     13		MOV 	[BX], DX
+ 300D 5A		     14		POP 	DX
+ 300E 75 F0		     15		JNZ 	MUL
+ 3010 C3		     16		RET
+			     17		ORG 	2000H ; Programa principal
+ 2000 B8 00 10		     18		MOV 	AX, OFFSET NUM1
+ 2003 B9 02 10		     19		MOV 	CX, OFFSET NUM2
+ 2006 BA 00 00		     20		MOV 	DX, 0
+ 2009 E8 00 30		     21		CALL 	MUL
+ 200C F4		     22		HLT
+			     23		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM1    	Mem. Word	1000h
+ NUM2    	Mem. Word	1002h
+ MUL     	Etiqueta	3000h

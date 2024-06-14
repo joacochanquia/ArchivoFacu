@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="TP2EJ4.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="58"/>
+        <CursorPos X="41" Y="69"/>
+        <UsageCount Value="108"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP2EJ3aux.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="48"/>
+        <CursorPos X="7" Y="70"/>
+        <UsageCount Value="2"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP2EJ3.pas"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="102"/>
+        <CursorPos X="38" Y="76"/>
+        <UsageCount Value="53"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="12">
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="78" Column="50" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="30" Column="10" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="41" Column="15" TopLine="33"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="48" Column="29" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="59" Column="12" TopLine="47"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="63" Column="34" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="64" Column="22" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="66" Column="40" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="79" Column="18" TopLine="65"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="84" Column="52" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="6" Column="15"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="107" Column="13" TopLine="86"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ4.pas"/>
+        <Caret Line="98" Column="32" TopLine="89"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

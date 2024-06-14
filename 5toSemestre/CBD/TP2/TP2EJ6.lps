@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="TP2EJ6.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="32"/>
+        <CursorPos X="21" Y="47"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="TP2EJ5.pas"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="4" Y="34"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="9">
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="39" Column="27" TopLine="20"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="45" Column="16" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="21" Column="8" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="6" Column="23"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="27" Column="14" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="46" Column="12" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="42" Column="22" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="39" Column="28" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="56" Column="21" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="TP2EJ6.pas"/>
+        <Caret Line="52" Column="24" TopLine="39"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

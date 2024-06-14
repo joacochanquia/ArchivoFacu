@@ -1,0 +1,94 @@
+
+								página: 1 
+
+ Listado Fuente: EJ9.LST
+ Programa Fuente en: EJ9.ASM
+ Fecha: Mon Apr 18 22:27:59 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 2A 2A 2A 2A	      2	CLAVE 	DB  	"****"
+ 1004 38 38 39 39	      3	CLADEF	DB  	"8899"
+ 1008 49 4E 47 52 45 53	      4	MSJ 	DB 	"INGRESE LA CLAVE:"
+ 100E 45 20 4C 41 20 43
+ 1014 4C 41 56 45 3A
+ 1019 49		      5	FIN_M 	DB 	?
+ 101A 41 63 63 65 73 6F	      6	PERM	DB 	"Acceso permitido"
+ 1020 20 70 65 72 6D 69
+ 1026 74 69 64 6F
+ 102A 41		      7	FIN_PE	DB 	? 
+ 102B 41 63 63 65 73 6F	      8	DENEG	DB 	"Acceso denegado" 
+ 1031 20 64 65 6E 65 67
+ 1037 61 64 6F
+ 103A 41		      9	FIN_DE	DB 	?
+			     10		
+			     11		ORG	3000H
+ 3000 B6 04		     12	CONTRA:	MOV 	DH, 4
+ 3002 BB 00 10		     13		MOV 	BX, OFFSET CLAVE ;direccion de 
+				la clave 	
+ 3005 CD 06		     14	INCLAV:	INT 	6 
+ 3007 FF C3		     15		INC 	BX 
+ 3009 FE CE		     16		DEC 	DH
+ 300B 75 F8		     17		JNZ 	INCLAV 	
+ 300D B8 04 10		     18		MOV	AX, OFFSET CLADEF
+ 3010 B9 00 10		     19		MOV	CX, OFFSET CLAVE
+ 3013 B6 04		     20		MOV	DH, 4
+ 3015 8A 17		     21	LAZO:	MOV	DL, [BX]
+ 3017 FF C1		     22		INC	CX
+ 3019 8B D8		     23		MOV	BX, AX
+			     24	; COMPARO AMBOS VALORES
+ 301B 38 17		     25		CMP	[BX], DL
+ 301D 75 0D		     26		JNZ	NO_VAL
+ 301F FF C0		     27		INC 	AX
+ 3021 8B D9		     28		MOV	BX, CX
+ 3023 FE CE		     29		DEC	DH
+ 3025 75 EE		     30		JNZ	LAZO
+ 3027 B6 FF		     31		MOV	DH, 0FFH
+ 3029 E9 2E 30		     32		JMP	FIN_S
+ 302C B6 00		     33	NO_VAL:	MOV	DH, 00H
+ 302E C3		     34	FIN_S:	RET
+			     35		
+			     36		ORG 	2000H
+ 2000 BB 08 10		     37		MOV 	BX, OFFSET MSJ
+ 2003 B0 11		     38		MOV 	AL, OFFSET FIN_M-OFFSET MSJ
+ 2005 CD 07		     39		INT 	7
+ 2007 E8 00 30		     40		CALL	CONTRA
+ 200A 80 FE FF		     41		CMP	DH, 0FFH
+ 200D 75 0A		     42		JNZ	ELSE
+ 200F BB 1A 10		     43		MOV 	BX, OFFSET PERM
+ 2012 B0 10		     44		MOV 	AL, OFFSET FIN_PE - OFFSET PERM
+ 2014 CD 07		     45		INT 	7 
+ 2016 E9 20 20		     46		JMP 	FIN 
+ 2019 BB 2B 10		     47	ELSE:	MOV 	BX, OFFSET DENEG
+ 201C B0 0F		     48		MOV 	AL, OFFSET FIN_DE - OFFSET DENE
+
+
+
+								página: 2 
+
+				G
+ 201E CD 07		     49		INT 	7
+ 2020 CD 00		     50	FIN:	INT 	0
+			     51		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ CLAVE   	Mem. Byte	1000h
+ CLADEF  	Mem. Byte	1004h
+ MSJ     	Mem. Byte	1008h
+ FIN_M   	Mem. Byte	1019h
+ PERM    	Mem. Byte	101Ah
+ FIN_PE  	Mem. Byte	102Ah
+ DENEG   	Mem. Byte	102Bh
+ FIN_DE  	Mem. Byte	103Ah
+ CONTRA  	Etiqueta	3000h
+ INCLAV  	Etiqueta	3005h
+ LAZO    	Etiqueta	3015h
+ NO_VAL  	Etiqueta	302Ch
+ FIN_S   	Etiqueta	302Eh
+ ELSE    	Etiqueta	2019h
+ FIN     	Etiqueta	2020h

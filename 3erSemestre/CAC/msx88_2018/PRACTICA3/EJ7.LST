@@ -1,0 +1,43 @@
+
+								página: 1 
+
+ Listado Fuente: EJ7.LST
+ Programa Fuente en: EJ7.ASM
+ Fecha: Sat Apr 23 14:48:48 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	HAND 	EQU 	40H
+			      2		ORG 	1000H
+ 1000 49 4E 47 45 4E 49	      3	MSJ 	DB 	"INGENIERIA E "
+ 1006 45 52 49 41 20 45
+ 100C 20
+ 100D 49 4E 46 4F 52 4D	      4		DB 	"INFORMATICA"
+ 1013 41 54 49 43 41
+ 1018 49		      5	FIN 	DB 	?
+			      6		ORG 	2000H
+ 2000 E4 41		      7		IN 	AL, HAND+1
+ 2002 80 E0 7F		      8		AND 	AL, 7FH
+ 2005 E6 41		      9		OUT 	HAND+1, AL
+ 2007 BB 00 10		     10		MOV 	BX, OFFSET MSJ
+ 200A B1 18		     11		MOV 	CL, OFFSET FIN-OFFSET MSJ
+ 200C E4 41		     12	POLL: 	IN 	AL, HAND+1
+ 200E 80 E0 01		     13		AND	AL, 1
+ 2011 75 F9		     14		JNZ 	POLL
+ 2013 8A 07		     15		MOV 	AL, [BX]
+ 2015 E6 40		     16		OUT 	HAND, AL
+ 2017 FF C3		     17		INC 	BX
+ 2019 FE C9		     18		DEC 	CL
+ 201B 75 EF		     19		JNZ 	POLL
+ 201D CD 00		     20		INT 	0
+			     21		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ HAND    	Constante	  40h
+ MSJ     	Mem. Byte	1000h
+ FIN     	Mem. Byte	1018h
+ POLL    	Etiqueta	200Ch

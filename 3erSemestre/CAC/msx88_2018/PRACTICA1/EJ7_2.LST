@@ -1,0 +1,42 @@
+
+								página: 1 
+
+ Listado Fuente: EJ7_2.LST
+ Programa Fuente en: EJ7_2.ASM
+ Fecha: Thu Apr 07 19:47:06 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	; Memoria de Datos
+			      2		ORG 	1000H
+ 1000 05		      3	NUM1 	DB 	5H
+ 1001 03		      4	NUM2 	DB 	3H
+			      5	; Memoria de Instrucciones
+			      6		ORG 	3000H ; Subrutina MUL
+ 3000 80 F8 00		      7	MUL: 	CMP 	AL, 0
+ 3003 74 0B		      8		JZ 	FIN
+ 3005 80 F9 00		      9		CMP 	CL, 0
+ 3008 74 06		     10		JZ 	FIN
+ 300A 03 D0		     11	LAZO: 	ADD 	DX, AX
+ 300C FF C9		     12		DEC 	CX
+ 300E 75 FA		     13		JNZ 	LAZO
+ 3010 C3		     14	FIN: 	RET
+			     15		ORG 	2000H ; Programa principal
+ 2000 8A 06 00 10	     16		MOV 	AL, NUM1
+ 2004 8A 0E 01 10	     17		MOV 	CL, NUM2
+ 2008 BA 00 00		     18		MOV 	DX, 0
+ 200B B4 00		     19		MOV 	AH, 0
+ 200D E8 00 30		     20		CALL 	MUL
+ 2010 F4		     21		HLT
+			     22		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM1    	Mem. Byte	1000h
+ NUM2    	Mem. Byte	1001h
+ MUL     	Etiqueta	3000h
+ LAZO    	Etiqueta	300Ah
+ FIN     	Etiqueta	3010h

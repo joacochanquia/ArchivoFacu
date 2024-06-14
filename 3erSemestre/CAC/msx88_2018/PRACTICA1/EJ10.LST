@@ -1,0 +1,71 @@
+
+								página: 1 
+
+ Listado Fuente: EJ10.LST
+ Programa Fuente en: EJ10.ASM
+ Fecha: Thu Apr 07 20:56:16 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	;memoria datos
+			      2		ORG 	1000H
+ 1000 34 12		      3	NUM0	DW	1234H
+ 1002 CD AB		      4	NUM1	DW	0ABCDH
+			      5	;memoria instrucciones
+			      6	;subrutinas
+			      7		ORG	3000H
+ 3000 53		      8	SWAP:	PUSH	BX
+ 3001 8B DC		      9		MOV	BX, SP
+ 3003 50		     10		PUSH	AX
+ 3004 51		     11		PUSH	CX
+ 3005 52		     12		PUSH	DX
+ 3006 81 C3 04 00	     13		ADD	BX, 4
+			     14	;guardo la dir de 1 a AX
+ 300A 8B 07		     15		MOV	AX, [BX]
+ 300C 81 C3 02 00	     16		ADD	BX, 2
+			     17	;muevo la dir de 0 a BX
+ 3010 8B 1F		     18		MOV	BX, [BX]
+			     19	;guardo el contenido de 0 en DX
+ 3012 8B 17		     20		MOV	DX, [BX]
+			     21	;guardo la direccion de 0 a CX
+ 3014 8B CB		     22		MOV	CX, BX
+			     23	;muevo la dir de 1 a BX
+ 3016 8B D8		     24		MOV	BX, AX
+			     25	;guardo el contenido de 1 en AX
+ 3018 8B 07		     26		MOV	AX, [BX]
+			     27	;muevo 1 en el lugar de 0
+ 301A 89 17		     28		MOV	[BX], DX
+			     29	;muevo la direccion de 0 en BX
+ 301C 8B D9		     30		MOV 	BX, CX
+			     31	;muevo 1 en el lugar de 0
+ 301E 89 07		     32		MOV	[BX], AX
+ 3020 5A		     33		POP	DX
+ 3021 59		     34		POP 	CX
+ 3022 58		     35		POP 	AX
+ 3023 5B		     36		POP 	BX
+ 3024 C3		     37		RET
+			     38	;prog principal
+			     39		ORG 	2000H	
+ 2000 B8 00 10		     40		MOV	AX, OFFSET NUM0
+ 2003 50		     41		PUSH 	AX
+ 2004 B8 02 10		     42		MOV	AX, OFFSET NUM1
+ 2007 50		     43		PUSH	AX
+ 2008 E8 00 30		     44		CALL	SWAP
+ 200B 58		     45		POP	AX
+ 200C 59		     46		POP 	CX
+ 200D F4		     47		HLT
+			     48		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM0    	Mem. Word	1000h
+
+
+
+								página: 2 
+
+ NUM1    	Mem. Word	1002h
+ SWAP    	Etiqueta	3000h

@@ -1,0 +1,10 @@
+comprobar que un archivo existe?
+
+negacion de un booleano (!eof())
+
+EJ4 linea 22 eof(aInt) file acces denied https://www.freepascal.org/docs-html/user/userap4.html
+
+EJ5 consigna dice altura dos veces
+EJ5 seek hacia atras para lo de victoria
+
+eof funciona como en c?

@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TPEntregables/Entregable4/TPEntregable4/GenQ3.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TPEntregables/Entregable4/TPEntregable4/GenQ2.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TPEntregables/Entregable4/TPEntregable4/GenQ1.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TPEntregables/Entregable4/TPEntregable4/db/Proyecto4.cbx.xml
+design_name = GenQ3
+instance = comp, \Q3m~output\, Q3m~output, GenQ3, 1
+instance = comp, \Q[5]~input\, Q[5]~input, GenQ3, 1
+instance = comp, \Q[4]~input\, Q[4]~input, GenQ3, 1
+instance = comp, \Q[3]~input\, Q[3]~input, GenQ3, 1
+instance = comp, \Q[2]~input\, Q[2]~input, GenQ3, 1
+instance = comp, \Q[1]~input\, Q[1]~input, GenQ3, 1
+instance = comp, \Q[0]~input\, Q[0]~input, GenQ3, 1

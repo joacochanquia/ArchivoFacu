@@ -1,0 +1,72 @@
+
+								página: 1 
+
+ Listado Fuente: EJ5.LST
+ Programa Fuente en: EJ5.ASM
+ Fecha: Sat Apr 23 12:21:25 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	PIO 	EQU 	30H
+			      2		ORG 	1000H
+ 1000 05		      3	NUM_CAR DB 	5
+ 1001 05		      4	CAR 	DB 	?
+			      5	; SUBRUTINA DE INICIALIZACION 
+			      6	; PIO PARA IMPRESORA 
+			      7		ORG 	3000H 
+ 3000 B0 FD		      8	INI_IMP:MOV 	AL, 0FDH 
+ 3002 E6 32		      9		OUT 	PIO+2, AL 
+ 3004 B0 00		     10		MOV 	AL, 0 
+ 3006 E6 33		     11		OUT 	PIO+3, AL 
+ 3008 E4 30		     12		IN 	AL, PIO 
+ 300A 80 E0 FD		     13		AND 	AL, 0FDH 
+ 300D E6 30		     14		OUT 	PIO, AL 
+ 300F C3		     15		RET
+			     16	; SUBRUTINA DE GENERACIÃ“N
+			     17	; DE PULSO 'STROBE'
+			     18		ORG	4000H
+ 4000 E4 30		     19	PULSO: 	IN 	AL, PIO
+ 4002 80 C8 02		     20		OR 	AL, 02H
+ 4005 E6 30		     21		OUT 	PIO, AL
+ 4007 E4 30		     22		IN 	AL, PIO
+ 4009 80 E0 FD		     23		AND 	AL, 0FDH
+ 400C E6 30		     24		OUT 	PIO, AL
+ 400E C3		     25		RET
+			     26	; PROGRAMA PRINCIPAL
+			     27		ORG 	2000H
+ 2000 50		     28		PUSH 	AX
+ 2001 E8 00 30		     29		CALL 	INI_IMP
+ 2004 58		     30		POP 	AX
+ 2005 BB 01 10		     31		MOV 	BX, OFFSET CAR
+ 2008 8A 0E 00 10	     32		MOV 	CL, NUM_CAR
+ 200C CD 06		     33	LAZO: 	INT 	6
+ 200E E4 30		     34	POLL: 	IN 	AL, PIO
+ 2010 80 E0 01		     35		AND 	AL, 1
+ 2013 75 F9		     36		JNZ 	POLL
+ 2015 8A 07		     37		MOV 	AL, [BX]
+ 2017 E6 31		     38		OUT 	PIO+1, AL
+ 2019 50		     39		PUSH 	AX
+ 201A E8 00 40		     40		CALL 	PULSO
+ 201D 58		     41		POP 	AX
+ 201E FE C9		     42		DEC 	CL
+ 2020 75 EA		     43		JNZ 	LAZO
+ 2022 CD 00		     44		INT 	0
+			     45		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ PIO     	Constante	  30h
+ NUM_CAR 	Mem. Byte	1000h
+ CAR     	Mem. Byte	1001h
+ INI_IMP 	Etiqueta	3000h
+
+
+
+								página: 2 
+
+ PULSO   	Etiqueta	4000h
+ LAZO    	Etiqueta	200Ch
+ POLL    	Etiqueta	200Eh

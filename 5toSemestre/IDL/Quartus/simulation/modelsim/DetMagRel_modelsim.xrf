@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Joaco/Desktop/IDL/Quartus/DetMagRel1bit.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/Quartus/db/DetMagRel.cbx.xml
+design_name = DetMagRel1bit
+instance = comp, \M~output\, M~output, DetMagRel1bit, 1
+instance = comp, \N~output\, N~output, DetMagRel1bit, 1
+instance = comp, \P~output\, P~output, DetMagRel1bit, 1
+instance = comp, \X~input\, X~input, DetMagRel1bit, 1
+instance = comp, \Y~input\, Y~input, DetMagRel1bit, 1

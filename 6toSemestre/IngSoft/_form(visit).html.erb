@@ -1,0 +1,89 @@
+<body>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card p-5">
+      <%= form_with(model: visit) do |form| %>
+        <% if visit.errors.any? %>
+          <div style="color: red">
+            <ul>
+              <% visit.errors.each do |error| %>
+                <li><%= error.message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div>
+          <%= form.label :Día, style: "display: block" %>
+          <%= form.date_field :day, value: Date.today %>
+        </div>
+
+        <div>
+          <%= form.label :Hora, style: "display: block" %>
+          <%= form.time_field :hour, value: Time.now.strftime("%H:%M") %>
+        </div>
+
+        <div>
+          <%= form.label :Servicio, style: "display: block" %>
+          <%= form.select :service, options_for_select(@services, visit.service), id: "service-select" %>
+        </div>
+        <br>
+        <div class="card p-3" id="vaccine-subform" style="display: none;"> <!-- Add style="display: none;" to hide the subform by default -->
+          <%= form.fields_for :vaccine do |vaccine_subform| %>
+            <%= vaccine_subform.label :Vacuna, style: "display: block" %>
+            <div>
+              <%= vaccine_subform.label :Tipo_de_vacuna, style: "display: block" %>
+              <%= vaccine_subform.text_field :name %>
+            </div>
+            <div>
+              <%= vaccine_subform.label :Dosis, style: "display: block" %>
+              <%= vaccine_subform.number_field :dose %>
+            </div>
+            <div>
+              <%= vaccine_subform.label :Marca, style: "display: block" %>
+              <%= vaccine_subform.text_field :manufacturer %>
+            </div>
+            <div>
+              <%= vaccine_subform.label :Lote, style: "display: block" %>
+              <%= vaccine_subform.text_field :lot %>
+            </div>
+          <% end %>
+        </div>
+
+        
+        <div>
+          <%= form.label :Descripción, style: "display: block" %>
+          <%= form.text_area :description %>
+        </div>
+
+        <%= form.hidden_field :dog_id, value: @dog_id %>
+
+        <div>
+          <%= form.submit "Finalizar", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</body>
+
+<script defer>
+  console.log("DOMContentLoaded event fired");
+  document.addEventListener("DOMContentLoaded", function() {
+  var serviceSelect = document.getElementById("visit_service");
+  var vaccineSubform = document.getElementById("vaccine-subform");
+  function toggleVaccineSubform() {
+    console.log("Service value:", serviceSelect.value);
+
+    if (serviceSelect.value === "Vacunación") {
+      console.log("Displaying vaccine subform");
+      vaccineSubform.style.display = "block";
+    } else {
+      console.log("Hiding vaccine subform");
+      vaccineSubform.style.display = "none";
+    }
+  }
+  serviceSelect.addEventListener("change", toggleVaccineSubform);
+  toggleVaccineSubform(); // Initial state
+});
+</script>

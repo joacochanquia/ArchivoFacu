@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1654275797 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"imath.h"
+	"slist.h"
+	"istack.h"
+	"slist.h"
+	"diccionario.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1653659951 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\imath.c
+
+1653661174 c:\users\joaco\desktop\taller de lenguajes 1\practica 6\imath.h
+
+1654090186 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\istack.c
+	<stdlib.h>
+
+1654090047 c:\users\joaco\desktop\taller de lenguajes 1\practica 6\istack.h
+
+1654274862 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\diccionario.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"slist.h"
+
+1654275496 c:\users\joaco\desktop\taller de lenguajes 1\practica 6\diccionario.h
+
+1654087294 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\diccionario_antes.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1654270763 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\ilist.c
+	<stdlib.h>
+	<stdio.h>
+
+1654100259 c:\users\joaco\desktop\taller de lenguajes 1\practica 6\ilist.h
+
+1654275620 source:c:\users\joaco\desktop\taller de lenguajes 1\practica 6\slist.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1654275620 c:\users\joaco\desktop\taller de lenguajes 1\practica 6\slist.h
+

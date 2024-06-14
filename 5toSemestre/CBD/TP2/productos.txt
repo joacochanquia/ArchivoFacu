@@ -1,0 +1,10 @@
+1 1000 50000 2000 taza;Se usa para tomar el cafe
+2 800 60000 2000 cepillo de dientes;Se usa para cepillarse los dientes
+3 1200 30000 2000 libro;Deberias leer mas
+4 300 10000 2000 llave;Si las perdes me voy a reir
+5 200 40000 2000 pelota;Vas a hacer deporte?
+6 700 30000 2000 vaso;Hidratate mejor
+7 900 20000 2000 paraguas;En serio?
+8 50 70000 2000 tenedor;No te pinches
+9 150 100000 2000 lapiz;No te olvides del sacapuntas
+10 15000 5000 2000 reloj;Che amigo tenes hora?

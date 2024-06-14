@@ -1,0 +1,10 @@
+GUARDAR CAMBIOS EN GITHUB:
+
+git status
+
+git add [FILES]
+
+git commit -m "MENSAJE"
+
+git push origin [BRANCH]
+

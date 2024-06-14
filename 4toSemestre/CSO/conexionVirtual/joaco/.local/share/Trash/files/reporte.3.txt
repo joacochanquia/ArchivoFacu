@@ -1,0 +1,33 @@
+dom 09 oct 2022 14:40:38 -03
+
+
+dom 09 oct 2022 14:41:12 -03
+sync		0
+dnsmasq		0
+joaco		28
+
+
+dom 09 oct 2022 14:41:51 -03
+sync		0
+dnsmasq		0
+joaco		28
+
+
+dom 09 oct 2022 14:42:45 -03
+joaco		28
+
+
+dom 09 oct 2022 14:46:22 -03
+joaco		28
+
+
+dom 09 oct 2022 14:50:12 -03
+
+
+dom 09 oct 2022 14:50:44 -03
+
+
+dom 09 oct 2022 14:51:02 -03
+joaco		28
+
+

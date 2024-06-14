@@ -1,0 +1,9 @@
+# GIMP action-history
+
+(history-item "brushes-edit" 0)
+(history-item "file-quit" 1)
+(history-item "image-new" 0)
+(history-item "file-save" 0)
+(history-item "file-open" 1)
+
+# end of action-history

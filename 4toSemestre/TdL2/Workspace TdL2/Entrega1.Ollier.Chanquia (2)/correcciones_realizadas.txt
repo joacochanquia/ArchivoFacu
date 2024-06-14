@@ -1,0 +1,24 @@
+Modificamos solamente el UML ya que fue lo unico con correcciones.
+
+Respecto a los roles de personas decidimos representar los tipos de arbitros como un enumerativo, 
+para que quede claro que los roles que puede tomar un arbitro son acotados.
+
+Las calificaciones aclaramos nuestra idea original de tener informacion sobre los paises excluidos
+creando una clase nueva llamada excluidos, en la cual se incluye un pais y la informacion de porque
+se encuentra fuera del mundial.
+
+Premios: para reducir la ambiguedad sobre el nombre de los premios, decidimos crear un enumerativo,
+el cual contiene los nombres de los cuatro tipos de premios que se otorgan al finalizar el mundial.
+Ademas creamos dos clases de premio para distinguir entre aquellos que tienen una subclasificacion
+(premio de oro, plata y bronce) y aquellos que son simplemente para un jugador.
+
+Creamos la clase gol, la cual guarda informacion sobre el minuto en el que se realizo y el jugador
+que lo anoto, teniendo a traves de este, acceso al pais del cual es el gol.
+El resultado del partido se puede obtener mediante de los metodos ganador() y perdedor() de la clase
+Partido. Y si se quiere conocer informacion mas detallada sobre los goles se puede utilizar el
+metodo getGoles().
+
+Y respecto a la ultima correccion, sobre la matriz de info en la fase de frupos, la suplantamos
+por una clase resultados, la cual se guarda directamente en el organizador del mundial. Y la cual
+posee informacion que antes quedaba menos clara a la vista. Los getter y setter de la clase Resultados
+no los agregamos porque ensuciaba mucho el diagrama y lo hacia mas dificil de leer.

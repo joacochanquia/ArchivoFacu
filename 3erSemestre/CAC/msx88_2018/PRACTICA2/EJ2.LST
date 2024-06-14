@@ -1,0 +1,29 @@
+
+								página: 1 
+
+ Listado Fuente: EJ2.LST
+ Programa Fuente en: EJ2.ASM
+ Fecha: Fri Apr 15 16:31:44 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG	1000H
+ 1000 01		      2	CHAR	DB	01H
+			      3		ORG 	2000H
+ 2000 BB 00 10		      4		MOV 	BX, OFFSET CHAR
+ 2003 B0 01		      5		MOV 	AL, 1
+ 2005 B4 01		      6		MOV	AH, 1
+ 2007 88 27		      7	LAZO:	MOV	[BX], AH
+ 2009 CD 07		      8		INT 	7
+ 200B FE C4		      9		INC	AH
+ 200D 75 F8		     10		JNZ	LAZO
+ 200F CD 00		     11		INT 	0
+			     12		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ CHAR    	Mem. Byte	1000h
+ LAZO    	Etiqueta	2007h

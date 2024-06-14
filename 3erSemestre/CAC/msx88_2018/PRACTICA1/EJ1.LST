@@ -1,0 +1,28 @@
+
+								página: 1 
+
+ Listado Fuente: EJ1.LST
+ Programa Fuente en: EJ1.ASM
+ Fecha: Sun Apr 03 19:50:13 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 CA		      2	NUM0 	DB 	0CAH
+ 1001 00		      3	NUM1 	DB 	0
+ 1002 00 07		      4	NUM2 	DW 	?
+ 1004 CD AB		      5	NUM3 	DW 	0ABCDH
+ 1006 CD AB		      6	NUM4 	DW 	?
+			      7		ORG 	2000H
+ 2000 8A 1E 00 10	      8		MOV 	BL, NUM0
+ 2004 B7 FF		      9		MOV 	BH, 0FFH
+ 2006 8A EB		     10		MOV 	CH, BL
+ 2008 8B C3		     11		MOV 	AX, BX
+ 200A 88 06 01 10	     12		MOV 	NUM1, AL
+ 200E C7 06 02 10 34 12	     13		MOV 	NUM2, 1234H
+ 2014 BB 04 10		     14		MOV 	BX, OFFSET NUM3
+ 2017 8A 17		     15		MOV 	DL, [BX]
+ 2019 8B 07		     16		MOV 	AX, [BX]
+ 201B BB 06 10		     17		MOV 	BX, 1006H
+ 201E C7 07 06 10	     18		MOV 	WORD PTR [BX], 1006H
+ 2022 F4		     19		HLT

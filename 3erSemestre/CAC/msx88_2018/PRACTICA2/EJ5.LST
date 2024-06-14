@@ -1,0 +1,64 @@
+
+								página: 1 
+
+ Listado Fuente: EJ5.LST
+ Programa Fuente en: EJ5.ASM
+ Fecha: Sat Apr 16 20:00:01 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 49 4E 47 52 45 53	      2	MSJ 	DB 	"INGRESE UN NUMERO:"
+ 1006 45 20 55 4E 20 4E
+ 100C 55 4D 45 52 4F 3A
+ 1012 49		      3	FIN_M 	DB 	?
+ 1013 43 41 52 41 43 54	      4	MSJ2 	DB 	"CARACTER NO VALIDO"
+ 1019 45 52 20 4E 4F 20
+ 101F 56 41 4C 49 44 4F
+ 1025 43		      5	FIN_M2 	DB 	?
+			      6		ORG 	1500H
+ 1500 43		      7	NUM 	DB 	?
+			      8		ORG	3000H
+ 3000 B5 30		      9	ES_NUM:	MOV	CH, 30H
+ 3002 3A CD		     10	LAZO:	CMP	CL, CH
+ 3004 74 0C		     11		JZ	SI_ES
+ 3006 FE C5		     12		INC	CH
+ 3008 80 FD 3A		     13		CMP	CH, 3AH
+ 300B 75 F5		     14		JNZ	LAZO
+ 300D B5 00		     15		MOV	CH, 00H
+ 300F E9 14 30		     16		JMP	FIN_S
+ 3012 B5 FF		     17	SI_ES:	MOV	CH, 0FFH
+ 3014 C3		     18	FIN_S:	RET
+			     19		ORG 	2000H
+ 2000 BB 00 10		     20		MOV 	BX, OFFSET MSJ
+ 2003 B0 12		     21		MOV 	AL, OFFSET FIN_M-OFFSET MSJ
+ 2005 CD 07		     22		INT 	7
+ 2007 BB 00 15		     23		MOV 	BX, OFFSET NUM
+ 200A CD 06		     24		INT 	6
+ 200C B0 01		     25		MOV 	AL, 1
+ 200E CD 07		     26		INT 	7
+ 2010 8A 0E 00 15	     27		MOV 	CL, NUM
+ 2014 E8 00 30		     28		CALL	ES_NUM
+ 2017 80 FD FF		     29		CMP	CH, 0FFH
+ 201A 74 07		     30		JZ	FIN
+ 201C BB 13 10		     31		MOV 	BX, OFFSET MSJ2
+ 201F B0 12		     32		MOV 	AL, OFFSET FIN_M2-OFFSET MSJ2
+ 2021 CD 07		     33		INT 	7
+ 2023 CD 00		     34	FIN:	INT 	0
+			     35		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ MSJ     	Mem. Byte	1000h
+ FIN_M   	Mem. Byte	1012h
+ MSJ2    	Mem. Byte	1013h
+ FIN_M2  	Mem. Byte	1025h
+ NUM     	Mem. Byte	1500h
+ ES_NUM  	Etiqueta	3000h
+ LAZO    	Etiqueta	3002h
+ SI_ES   	Etiqueta	3012h
+ FIN_S   	Etiqueta	3014h
+ FIN     	Etiqueta	2023h

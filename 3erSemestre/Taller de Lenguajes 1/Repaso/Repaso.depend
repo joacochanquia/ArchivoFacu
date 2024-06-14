@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1654658152 source:c:\users\joaco\desktop\taller de lenguajes 1\repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1654654179 source:c:\users\joaco\desktop\taller de lenguajes 1\repaso\ejmatrices.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,77 @@
+public void LoadImages() {
+		URL urlConf = getClass().getClassLoader().getResource(imgConfFile);
+		try {
+			if (urlConf == null) {
+				System.err.println("No se encuentra el archivo:" + imgConfFile);
+			} else {
+				imgConf = ImageIO.read(urlConf);
+			}
+			URL urlEst = getClass().getClassLoader().getResource(imgEstFile);
+			if (urlEst == null) {
+				System.err.println("No se encuentra el archivo:" + imgEstFile);
+			} else {
+				imgEst = ImageIO.read(urlEst);
+			}
+			URL urlFutb = getClass().getClassLoader().getResource(imgFutbFile);
+			if (urlFutb == null) {
+				System.err.println("No se encuentra el archivo:" + imgFutbFile);
+			} else {
+				imgFutb = ImageIO.read(urlFutb);
+			}
+			URL urlPais = getClass().getClassLoader().getResource(imgPaisFile);
+			if (urlPais == null) {
+				System.err.println("No se encuentra el archivo:" + imgPaisFile);
+			} else {
+				imgPais = ImageIO.read(urlPais);
+			}
+			dibujar();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+public void LoadImages() {
+		URL urlConf = getClass().getClassLoader().getResource(imgConfFile);
+		if (urlConf == null) {
+			System.err.println("No se encuentra el archivo:" + imgConfFile);
+		} else {
+			try {
+				imgConf = ImageIO.read(urlConf);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		URL urlEst = getClass().getClassLoader().getResource(imgEstFile);
+		if (urlEst == null) {
+			System.err.println("No se encuentra el archivo:" + imgEstFile);
+		} else {
+			try {
+				imgEst = ImageIO.read(urlEst);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		URL urlFutb = getClass().getClassLoader().getResource(imgFutbFile);
+		if (urlFutb == null) {
+			System.err.println("No se encuentra el archivo:" + imgFutbFile);
+		} else {
+			try {
+				imgFutb = ImageIO.read(urlFutb);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		URL urlPais = getClass().getClassLoader().getResource(imgPaisFile);
+		if (urlPais == null) {
+			System.err.println("No se encuentra el archivo:" + imgPaisFile);
+		} else {
+			try {
+				imgPais = ImageIO.read(urlPais);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		dibujar();
+	}

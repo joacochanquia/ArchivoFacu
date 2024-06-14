@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.System.LoggerFinder"/>
+    <fullyQualifiedTypeName name="prog3.arbol.binario.util.Adivinanza"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="prog3.arbolgeneral.ArbolGeneral"/>
+    <fullyQualifiedTypeName name="prog3.arbol.binario.ArbolBinario"/>
+    <fullyQualifiedTypeName name="prog3.grafos.ejercicios.Mapa"/>
+    <fullyQualifiedTypeName name="prog3.grafos.utiles.Recorridos"/>
+    <fullyQualifiedTypeName name="prog3.listagenerica.ListaGenericaEnlazada"/>
+    <fullyQualifiedTypeName name="prog3.grafos.utiles.GuiaDeTurismo"/>
+    <fullyQualifiedTypeName name="prog3.listagenerica.ListaGenerica"/>
+    <fullyQualifiedTypeName name="prog3.util.Cola"/>
+    <fullyQualifiedTypeName name="prog3.grafos.Grafo"/>
+    <fullyQualifiedTypeName name="prog3.grafos.utiles.GradosDeSeparacion"/>
+</qualifiedTypeNameHistroy>

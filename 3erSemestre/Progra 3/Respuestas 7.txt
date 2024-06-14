@@ -1,0 +1,54 @@
+1)a) ¿Cuál es la diferencia entre un grafo y un árbol?
+	Un arbol es un tipo de grafo en el cual solo existe un camino entre cada nodo
+  b) Indicar para cada uno de los siguientes casos si la relación se representa a través de un
+     grafo no dirigido o de un grafo dirigido (digrafo)
+	i. Vértices: países. Aristas: es limítrofe. 
+		NO DIRIGIDO
+	ii. Vértices: países. Aristas: principales mercados de exportación. 
+		DIRIGIDO
+	iii. Vértices: dispositivos en una red de computadoras. Aristas: conectividad. 
+		DIRIGIDO
+	iv. Vértices: variables de un programa. Aristas: relación “usa”. (Decimos que la variable
+	    x usa la variable y, si y aparece del lado derecho de una expresión y x aparece del
+	    lado izquierdo, por ejemplo x = y). 
+		DIRIGIDO
+
+2)a) En un grafo no dirigido de n vértices, ¿Cuál es el número de aristas que puede tener?
+	i. ¿Cuál es el mínimo número de aristas que puede tener se exige que el grafo sea
+	   conexo? 
+		[n-1]
+	ii. ¿Cuál es el máximo número de aristas que puede tener si se exige que el grafo sea
+	   acíclico? 
+		[n-1]
+	iii. ¿Cuál es el número de aristas que puede tener si se exige que el grafo sea conexo y
+	   acíclico? 
+		[n-1]
+	iv. ¿Cuál es el mínimo número de aristas que puede tener si se exige que el grafo sea
+	   completo? (Un grafo es completo si hay una arista entre cada par de vértices.) 
+		[(n(n-1))/2]
+  b) En un grafo dirigido y que no tiene aristas que vayan de un nodo a sí mismo, ¿Cuál es el
+     mayor número de aristas que puede tener? 
+	n*(n-1)
+
+3)   Teniendo en cuenta las dos representaciones de grafos: Matriz de Adyacencias y Lista de
+     Adyacencias.
+	a. Bajo qué condiciones usaría una Matriz de Adyacencias en lugar de una Lista de
+	   Adyacencias para representar un grafo. Y una Lista de Adyacencias en lugar de una Matriz
+	   de Adyacencias. Fundamentar.
+		Usaria una matriz en el caso de tener un grafo muy denso ya que con la lista se 
+		perderia mucho tiempo recorriendo todas las aristas 
+	b. ¿En función de qué parámetros resulta apropiado realizar la estimación del orden de
+	   ejecución para algoritmos sobre grafos densos? ¿Y para algoritmos sobre grafos dispersos?
+	   Fundamentar.
+		Para un grafo denso resultaria apropiado usar la cantidad de aristas
+		Para un grafo disperso seria mejor usar la cantidad de vertices
+	c. Si representamos un grafo no dirigido usando una Matriz de Adyacencias, ¿cómo sería la
+	   matriz resultante? Fundamentar.
+		Resulta una matriz simetrica desde la diagonal
+
+
+
+
+
+
+

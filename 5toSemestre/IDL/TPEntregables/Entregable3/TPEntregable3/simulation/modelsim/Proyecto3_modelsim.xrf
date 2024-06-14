@@ -1,0 +1,7 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TPEntregables/Entregable3/TPEntregable3/DiagCont2.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TPEntregables/Entregable3/TPEntregable3/db/Proyecto3.cbx.xml
+design_name = DiagCont2
+instance = comp, \Q0~output\, Q0~output, DiagCont2, 1
+instance = comp, \CLK~input\, CLK~input, DiagCont2, 1
+instance = comp, \inst~0\, inst~0, DiagCont2, 1

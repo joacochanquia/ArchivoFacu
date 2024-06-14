@@ -1,0 +1,36 @@
+
+								página: 1 
+
+ Listado Fuente: EJ4.LST
+ Programa Fuente en: EJ4.ASM
+ Fecha: Sat Apr 16 18:42:13 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 49 4E 47 52 45 53	      2	MSJ 	DB 	"INGRESE UN NUMERO:"
+ 1006 45 20 55 4E 20 4E
+ 100C 55 4D 45 52 4F 3A
+ 1012 49		      3	FIN 	DB 	?
+			      4		ORG 	1500H
+ 1500 49		      5	NUM 	DB 	?
+			      6		ORG 	2000H
+ 2000 BB 00 10		      7		MOV 	BX, OFFSET MSJ
+ 2003 B0 12		      8		MOV 	AL, OFFSET FIN-OFFSET MSJ
+ 2005 CD 07		      9		INT 	7
+ 2007 BB 00 15		     10		MOV 	BX, OFFSET NUM
+ 200A CD 06		     11		INT 	6
+ 200C B0 01		     12		MOV 	AL, 1
+ 200E CD 07		     13		INT 	7
+ 2010 8A 0E 00 15	     14		MOV 	CL, NUM
+ 2014 CD 00		     15		INT 	0
+			     16		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ MSJ     	Mem. Byte	1000h
+ FIN     	Mem. Byte	1012h
+ NUM     	Mem. Byte	1500h

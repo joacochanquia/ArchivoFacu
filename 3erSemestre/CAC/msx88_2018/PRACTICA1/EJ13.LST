@@ -1,0 +1,49 @@
+
+								página: 1 
+
+ Listado Fuente: EJ13.LST
+ Programa Fuente en: EJ13.ASM
+ Fecha: Fri Apr 08 17:58:39 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	;memoria datos
+			      2		 ORG 	1000H
+ 1000 41 45 49 4F 55 61	      3	VOCALES	 DB	"AEIOUaeiou"
+ 1006 65 69 6F 75
+ 100A 00		      4	FINAL	 DB	0
+ 100B 43		      5	CHAR	 DB	"C"
+			      6	;memoria instrucciones
+			      7	;subrutinas
+			      8		 ORG	3000H
+ 3000 BB 00 10		      9	ES_VOCAL:MOV	BX, OFFSET VOCALES
+ 3003 B1 0A		     10		 MOV	CL, 10
+ 3005 B2 00		     11		 MOV	DL, 00H
+ 3007 38 07		     12	COMP:	 CMP	[BX], AL
+ 3009 75 05		     13		 JNZ	NO_ES
+ 300B B2 FF		     14		 MOV	DL, 0FFH
+ 300D E9 16 30		     15		 JMP	FIN
+ 3010 FF C3		     16	NO_ES:	 INC 	BX
+ 3012 FE C9		     17		 DEC	CL
+ 3014 75 F1		     18		 JNZ	COMP
+ 3016 C3		     19	FIN:	 RET
+			     20	;prog principal
+			     21		 ORG 	2000H	
+ 2000 BA 00 00		     22		 MOV	DX, 0
+ 2003 8A 06 0B 10	     23		 MOV	AL, CHAR
+ 2007 E8 00 30		     24		 CALL	ES_VOCAL
+ 200A F4		     25		 HLT
+			     26		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ VOCALES 	Mem. Byte	1000h
+ FINAL   	Mem. Byte	100Ah	No usado
+ CHAR    	Mem. Byte	100Bh
+ ES_VOCAL	Etiqueta	3000h
+ COMP    	Etiqueta	3007h
+ NO_ES   	Etiqueta	3010h
+ FIN     	Etiqueta	3016h

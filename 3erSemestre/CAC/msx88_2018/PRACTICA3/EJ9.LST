@@ -1,0 +1,73 @@
+
+								página: 1 
+
+ Listado Fuente: EJ9.LST
+ Programa Fuente en: EJ9.ASM
+ Fecha: Sat Apr 23 18:32:48 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	HAND 	EQU 	40H
+			      2		ORG 	1000H
+ 1000 49 6E 67 72 65 73	      3	MSJ 	DB 	"Ingrese caracteres:"
+ 1006 65 20 63 61 72 61
+ 100C 63 74 65 72 65 73
+ 1012 3A
+ 1013 49		      4	FINMSJ	DB	?
+			      5		ORG	1500H
+ 1500 2A 2A 2A 2A 2A	      6	CHARS	DB	"*****"
+			      7		ORG 	2000H
+ 2000 E4 41		      8		IN 	AL, HAND+1
+ 2002 80 E0 7F		      9		AND 	AL, 7FH
+ 2005 E6 41		     10		OUT 	HAND+1, AL
+ 2007 BB 00 10		     11		MOV 	BX, OFFSET MSJ
+ 200A B0 13		     12		MOV 	AL, OFFSET FINMSJ-OFFSET MSJ
+ 200C CD 07		     13		INT 	7
+ 200E B6 05		     14		MOV	DH, 5
+ 2010 BB 00 15		     15		MOV 	BX, OFFSET CHARS
+ 2013 CD 06		     16	INCHARS:INT 	6
+ 2015 B0 01		     17		MOV 	AL, 1
+ 2017 CD 07		     18		INT 	7
+ 2019 FF C3		     19		INC 	BX 
+ 201B FE CE		     20		DEC 	DH
+ 201D 75 F4		     21		JNZ 	INCHARS 
+ 201F BB 00 10		     22		MOV	BX, OFFSET MSJ
+ 2022 B1 05		     23		MOV	CL, 5
+ 2024 E4 41		     24	POLL: 	IN 	AL, HAND+1
+ 2026 80 E0 01		     25		AND	AL, 1
+ 2029 75 F9		     26		JNZ 	POLL
+ 202B 8A 07		     27		MOV 	AL, [BX]
+ 202D E6 40		     28		OUT 	HAND, AL
+ 202F FF C3		     29		INC 	BX
+ 2031 FE C9		     30		DEC 	CL
+ 2033 75 EF		     31		JNZ 	POLL
+ 2035 B1 05		     32		MOV	CL, 5
+ 2037 FF CB		     33		DEC	BX
+ 2039 E4 41		     34	POLL2: 	IN 	AL, HAND+1
+ 203B 80 E0 01		     35		AND	AL, 1
+ 203E 75 F9		     36		JNZ 	POLL2
+ 2040 8A 07		     37		MOV 	AL, [BX]
+ 2042 E6 40		     38		OUT 	HAND, AL
+ 2044 FF CB		     39		DEC 	BX
+ 2046 FE C9		     40		DEC 	CL
+ 2048 75 EF		     41		JNZ 	POLL2
+ 204A CD 00		     42		INT 	0
+			     43		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ HAND    	Constante	  40h
+ MSJ     	Mem. Byte	1000h
+ FINMSJ  	Mem. Byte	1013h
+
+
+
+								página: 2 
+
+ CHARS   	Mem. Byte	1500h
+ INCHARS 	Etiqueta	2013h
+ POLL    	Etiqueta	2024h
+ POLL2   	Etiqueta	2039h

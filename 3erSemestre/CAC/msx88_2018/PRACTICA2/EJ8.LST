@@ -1,0 +1,92 @@
+
+								página: 1 
+
+ Listado Fuente: EJ8.LST
+ Programa Fuente en: EJ8.ASM
+ Fecha: Mon Apr 18 16:57:51 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 49 4E 47 52 45 53	      2	MSJ 	DB 	"INGRESE UN NUMERO:"
+ 1006 45 20 55 4E 20 4E
+ 100C 55 4D 45 52 4F 3A
+ 1012 49		      3	FIN_M 	DB 	?
+ 1013 43 41 52 41 43 54	      4	MSJ2 	DB 	"CARACTER NO VALIDO"
+ 1019 45 52 20 4E 4F 20
+ 101F 56 41 4C 49 44 4F
+ 1025 43		      5	FIN_M2 	DB 	?
+			      6		ORG 	1500H
+ 1500 43		      7	NUM1 	DB 	?
+ 1501 43		      8	NUM2	DB	?
+ 1502 43		      9	RES	DB	?
+ 1503 43		     10		DB	?
+			     11		ORG	3000H
+ 3000 80 ED 30		     12	RESTA:	SUB	CH, 30H
+ 3003 8A F1		     13		MOV	DH, CL
+ 3005 2A F5		     14		SUB	DH, CH
+ 3007 80 FE 30		     15		CMP	DH, 30H
+ 300A 79 18		     16		JNS	POS
+ 300C BB 02 15		     17		MOV 	BX, OFFSET RES
+ 300F B2 2D		     18		MOV 	DL, 45   ; SIGNO -
+ 3011 88 17		     19		MOV	[BX], DL
+ 3013 81 C3 01 00	     20		ADD	BX, 1
+ 3017 B2 30		     21		MOV	DL, 30H
+ 3019 2A D6		     22		SUB	DL, DH
+ 301B B6 30		     23		MOV	DH, 30H
+ 301D 02 F2		     24		ADD	DH, DL
+ 301F 88 37		     25		MOV	[BX], DH
+ 3021 E9 31 30		     26		JMP	FIN_S
+ 3024 BB 02 15		     27	POS:	MOV 	BX, OFFSET RES
+ 3027 B2 2B		     28		MOV 	DL, 43   ; SIGNO +
+ 3029 88 17		     29		MOV	[BX], DL
+ 302B 81 C3 01 00	     30		ADD	BX, 1
+ 302F 88 37		     31		MOV	[BX], DH
+ 3031 C3		     32	FIN_S:	RET
+			     33		ORG 	2000H
+ 2000 BB 00 10		     34		MOV 	BX, OFFSET MSJ
+ 2003 B0 12		     35		MOV 	AL, OFFSET FIN_M-OFFSET MSJ
+ 2005 CD 07		     36		INT 	7
+ 2007 BB 00 15		     37		MOV 	BX, OFFSET NUM1
+ 200A CD 06		     38		INT 	6
+ 200C B0 01		     39		MOV 	AL, 1
+ 200E CD 07		     40		INT 	7
+			     41	;CARGO NUM1
+ 2010 BB 00 10		     42		MOV 	BX, OFFSET MSJ
+ 2013 B0 12		     43		MOV 	AL, OFFSET FIN_M-OFFSET MSJ
+ 2015 CD 07		     44		INT 	7
+ 2017 BB 01 15		     45		MOV 	BX, OFFSET NUM2
+ 201A CD 06		     46		INT 	6
+ 201C B0 01		     47		MOV 	AL, 1
+ 201E CD 07		     48		INT 	7
+			     49	;CARGO NUM2
+ 2020 8A 0E 00 15	     50		MOV 	CL, NUM1
+ 2024 8A 2E 01 15	     51		MOV	CH, NUM2
+
+
+
+								página: 2 
+
+ 2028 E8 00 30		     52		CALL	RESTA
+ 202B BB 02 15		     53		MOV 	BX, OFFSET RES
+ 202E B0 02		     54		MOV 	AL, 2
+ 2030 CD 07		     55		INT 	7
+ 2032 CD 00		     56	FIN:	INT	0
+			     57		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ MSJ     	Mem. Byte	1000h
+ FIN_M   	Mem. Byte	1012h
+ MSJ2    	Mem. Byte	1013h	No usado
+ FIN_M2  	Mem. Byte	1025h	No usado
+ NUM1    	Mem. Byte	1500h
+ NUM2    	Mem. Byte	1501h
+ RES     	Mem. Byte	1502h
+ RESTA   	Etiqueta	3000h
+ POS     	Etiqueta	3024h
+ FIN_S   	Etiqueta	3031h
+ FIN     	Etiqueta	2032h	No usado

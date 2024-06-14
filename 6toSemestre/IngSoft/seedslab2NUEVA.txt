@@ -1,0 +1,13 @@
+Attack.destroy_all
+Monster.destroy_all
+Victim.destroy_all
+
+ActiveRecord::Base.connection.execute("ALTER SEQUENCE monsters_id_seq RESTART WITH 1")
+ActiveRecord::Base.connection.execute("ALTER SEQUENCE victims_id_seq RESTART WITH 1")
+ActiveRecord::Base.connection.execute("ALTER SEQUENCE attacks_id_seq RESTART WITH 1")
+
+dracula = Monster.create(scare_level: 8, name: "Dracula", description: "Chupa sange. Hincha del rojo. Libertario. ALA")
+king_kong = Monster.create(scare_level: 6, name: "King Kong", description: "Gorila gigante. #VamosAVolver. BocaJrs.")
+nahuelito = Monster.create(scare_level: 4, name: "Nahuelito", description: "Vivo en el Nahuel Huapi. Soltero. Fanático del plancton.")
+hombre_lobo = Monster.create(scare_level: 5, name: "Hombre lobo", description: "Mitad lobo - mitad humano.")
+sullivan = Monster.create(scare_level: 1, name: "James P. Sullivan", description: "#monstropolis #scareroftheyear")

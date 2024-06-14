@@ -1,0 +1,42 @@
+
+								página: 1 
+
+ Listado Fuente: EJ9.LST
+ Programa Fuente en: EJ9.ASM
+ Fecha: Wed Apr 06 19:00:17 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	;memoria datos
+			      2		ORG 	1000H
+ 1000 48 4F 4C 41 20 47	      3	CADENA	DB	"HOLA Gabi todo BiEn?!"
+ 1006 61 62 69 20 74 6F
+ 100C 64 6F 20 42 69 45
+ 1012 6E 3F 21
+ 1015 00		      4	FINAL	DB	0
+			      5	;memoria instrucciones
+			      6	;subrutinas
+			      7		ORG	3000H
+ 3000 80 3F 00		      8	CONCAR:	CMP 	BYTE PTR [BX], 0
+ 3003 74 07		      9		JZ	FIN
+ 3005 FF C2		     10		INC	DX
+ 3007 FF C3		     11		INC 	BX
+ 3009 E9 00 30		     12		JMP	CONCAR
+ 300C C3		     13	FIN:	RET
+			     14	;prog principal
+			     15		ORG 	2000H	
+ 2000 BB 00 10		     16		MOV	BX, OFFSET CADENA
+ 2003 BA 00 00		     17		MOV	DX, 0
+ 2006 E8 00 30		     18		CALL	CONCAR
+ 2009 F4		     19		HLT
+			     20		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ CADENA  	Mem. Byte	1000h
+ FINAL   	Mem. Byte	1015h	No usado
+ CONCAR  	Etiqueta	3000h
+ FIN     	Etiqueta	300Ch

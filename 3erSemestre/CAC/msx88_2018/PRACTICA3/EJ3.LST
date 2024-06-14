@@ -1,0 +1,88 @@
+
+								página: 1 
+
+ Listado Fuente: EJ3.LST
+ Programa Fuente en: EJ3.ASM
+ Fecha: Fri Apr 22 17:36:51 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	PIC 	EQU 	20H
+			      2	TIMER 	EQU 	10H
+			      3	PIO 	EQU 	30H
+			      4	N_CLK 	EQU 	10
+			      5		ORG 	40
+ 0028 10 30		      6	IP_CLK 	DW 	RUT_CLK
+			      7		ORG 	1000H
+ 1000 01		      8	INICIO 	DB	1
+			      9		ORG 	3000H
+ 3000 02 C0		     10	ROTARIZ: ADD 	AL, AL
+ 3002 80 D0 00		     11		 ADC	AL, 0
+ 3005 FE C9		     12		 DEC	CL
+ 3007 75 F7		     13		 JNZ	ROTARIZ
+ 3009 C3		     14		 RET
+ 300A B1 07		     15	ROTARDER:MOV 	CL, 7
+ 300C E8 00 30		     16		 CALL	ROTARIZ
+ 300F C3		     17		 RET
+ 3010 50		     18	RUT_CLK:PUSH	AX
+ 3011 51		     19		PUSH	CX
+ 3012 8A 06 00 10	     20		MOV 	AL, INICIO
+ 3016 80 FE 00		     21		CMP	DH, 00H
+ 3019 75 0C		     22		JNZ	BAJO
+ 301B 02 C0		     23		ADD 	AL, AL
+ 301D 80 F8 80		     24		CMP	AL, 80H
+ 3020 75 0F		     25		JNZ	FIN_C
+ 3022 B6 FF		     26		MOV	DH, 0FFH
+ 3024 E9 31 30		     27		JMP	FIN_C	
+ 3027 E8 0A 30		     28	BAJO:	CALL	ROTARDER
+ 302A 80 F8 01		     29		CMP	AL, 01H
+ 302D 75 02		     30		JNZ	FIN_C
+ 302F B6 00		     31		MOV	DH, 00H
+ 3031 88 06 00 10	     32	FIN_C:	MOV	INICIO, AL
+ 3035 E6 31		     33	 	OUT	PIO+1, AL
+ 3037 B0 00		     34		MOV 	AL, 0
+ 3039 E6 10		     35		OUT 	TIMER, AL
+ 303B B0 20		     36		MOV 	AL, 20H
+ 303D E6 20		     37		OUT 	PIC, AL
+ 303F 59		     38		POP	CX
+ 3040 58		     39		POP	AX
+ 3041 CF		     40		IRET
+			     41		ORG 	2000H
+ 2000 FA		     42		CLI
+ 2001 B0 FD		     43		MOV 	AL, 0FDH 
+ 2003 E6 21		     44		OUT 	PIC+1, AL 
+ 2005 B0 0A		     45		MOV 	AL, N_CLK 
+ 2007 E6 25		     46		OUT 	PIC+5, AL 
+ 2009 B0 01		     47		MOV 	AL, 1 
+ 200B E6 11		     48		OUT	TIMER+1, AL 
+ 200D B0 00		     49		MOV	AL, 0 
+ 200F E6 33		     50		OUT 	PIO+3, AL
+ 2011 E6 31		     51		OUT 	PIO+1, AL
+ 2013 E6 10		     52		OUT 	TIMER, AL
+ 2015 FB		     53		STI
+ 2016 E9 16 20		     54	LAZO: 	JMP 	LAZO
+ 2019 F4		     55		HLT
+
+
+
+								página: 2 
+
+			     56		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ PIC     	Constante	  20h
+ TIMER   	Constante	  10h
+ PIO     	Constante	  30h
+ N_CLK   	Constante	   Ah
+ IP_CLK  	Mem. Word	  28h	No usado
+ INICIO  	Mem. Byte	1000h
+ ROTARIZ 	Etiqueta	3000h
+ ROTARDER	Etiqueta	300Ah
+ RUT_CLK 	Etiqueta	3010h
+ BAJO    	Etiqueta	3027h
+ FIN_C   	Etiqueta	3031h
+ LAZO    	Etiqueta	2016h

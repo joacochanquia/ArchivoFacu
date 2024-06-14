@@ -1,0 +1,48 @@
+|DetMagRel3bit
+M <= inst.DB_MAX_OUTPUT_PORT_TYPE
+x0 => DetMagRel1bit:inst2.X
+y0 => DetMagRel1bit:inst2.Y
+x1 => DetMagRel1bit:inst3.X
+y1 => DetMagRel1bit:inst3.Y
+x2 => DetMagRel1bit:inst4.X
+y2 => DetMagRel1bit:inst4.Y
+N <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+P <= instNOR.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DetMagRel3bit|DetMagRel1bit:inst2
+M <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+X => inst2.IN0
+X => inst3.IN0
+X => inst.IN0
+Y => inst2.IN1
+Y => inst1.IN0
+Y => inst4.IN1
+N <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+P <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DetMagRel3bit|DetMagRel1bit:inst3
+M <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+X => inst2.IN0
+X => inst3.IN0
+X => inst.IN0
+Y => inst2.IN1
+Y => inst1.IN0
+Y => inst4.IN1
+N <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+P <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DetMagRel3bit|DetMagRel1bit:inst4
+M <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+X => inst2.IN0
+X => inst3.IN0
+X => inst.IN0
+Y => inst2.IN1
+Y => inst1.IN0
+Y => inst4.IN1
+N <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+P <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,279 @@
+#BABL_0_1_80-5-gaab3029 BABL_PATH_LENGTH=2 BABL_TOLERANCE=0,000005
+Y' u8
+Y u16
+	pixels=0 cost=69 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gimp-8bit.so 0: Y' u8 to Y float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/simple.so 0: Y float to Y u16
+----
+Y u16
+Y' u8
+	pixels=0 cost=105 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-table-lies.so 0: Y u16 to Y float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: Y float to Y' float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-int8.so 0: Y' float to Y' u8
+----
+R'G'B' double
+RGB double
+	pixels=0 cost=1532 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/double.so 0: R'G'B' double to RGB double
+----
+RGB double
+R'G'B' double
+	pixels=0 cost=1381 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/double.so 0: RGB double to R'G'B' double
+----
+R'G'B' double
+CIE Lab double
+	pixels=0 error=0,0000000000 [reference]
+----
+CIE Lab double
+R'G'B' double
+	pixels=0 cost=1732 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 0: CIE Lab double to RGBA double
+	/usr/lib/x86_64-linux-gnu/babl-0.1/double.so 1: RGBA double to RGB double
+	/usr/lib/x86_64-linux-gnu/babl-0.1/double.so 0: RGB double to R'G'B' double
+----
+RGBA float
+R'G'B'A float
+	pixels=0 cost=246 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to R'G'B'A float
+----
+RGBA float
+CIE Lab alpha float
+	pixels=0 cost=269 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 1: RGBA float to CIE Lab alpha float
+----
+R'G'B'A float
+RGBA float
+	pixels=0 cost=238 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: R'G'B'A float to RGBA float
+----
+R'G'B'A float
+CIE Lab alpha float
+	pixels=0 cost=477 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: R'G'B'A float to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 1: RGBA float to CIE Lab alpha float
+----
+CIE Lab alpha float
+RGBA float
+	pixels=0 cost=277 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 0: CIE Lab alpha float to RGBA float
+----
+CIE Lab alpha float
+R'G'B'A float
+	pixels=0 cost=483 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 0: CIE Lab alpha float to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to R'G'B'A float
+----
+R'G'B'A double
+CIE LCH(ab) double
+	pixels=0 cost=7456 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/double.so 0: R'G'B'A double to RGBA double
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 0: RGBA double to CIE LCH(ab) double
+----
+CIE LCH(ab) double
+R'G'B' double
+	pixels=0 cost=2734 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 0: CIE LCH(ab) double to RGBA double
+	BablBase 0: RGBA double to R'G'B'A double
+	/usr/lib/x86_64-linux-gnu/babl-0.1/double.so 1: R'G'B'A double to R'G'B' double
+----
+CIE LCH(ab) double
+R'G'B' u8
+	pixels=0 cost=2133 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/CIE.so 0: CIE LCH(ab) double to RGBA double
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-lies.so 0: RGBA double to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B' u8
+----
+Y' u8
+RaGaBaA float
+	pixels=0 cost=65 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gimp-8bit.so 0: Y' u8 to Y float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-lies.so 0: Y float to RaGaBaA float
+----
+Y u8
+RaGaBaA float
+	pixels=0 cost=54 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-table-lies.so 0: Y u8 to Y float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-lies.so 0: Y float to RaGaBaA float
+----
+R'G'B'A u8
+RaGaBaA float
+	pixels=0 cost=110 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: R'G'B'A u8 to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to RaGaBaA float
+----
+R'G'B'A float
+R'G'B'A u8
+	pixels=0 cost=30 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-int8.so 0: R'G'B'A float to R'G'B'A u8
+----
+R'G'B'A float
+R'G'B' u8
+	pixels=0 cost=61 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B' float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-int8.so 0: R'G'B' float to R'G'B' u8
+----
+R'G'B'A u8
+RGBA float
+	pixels=0 cost=63 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: R'G'B'A u8 to RGBA float
+----
+RGBA float
+R'G'B'A u8
+	pixels=0 cost=268 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-int8.so 0: R'G'B'A float to R'G'B'A u8
+----
+Y' u8
+R'G'B' u8
+	pixels=0 cost=26 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: Y' u8 to R'G'B' u8
+----
+Y u8
+Y float
+	pixels=0 cost=19 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gimp-8bit.so 0: Y u8 to Y float
+----
+R'G'B' u8
+cairo-RGB24
+	pixels=0 cost=61 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/cairo.so 0: R'G'B' u8 to cairo-RGB24
+----
+R'G'B' u8
+R'G'B'A float
+	pixels=0 cost=51 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-table.so 0: R'G'B' u8 to R'G'B'A float
+----
+R'G'B' u8
+R'G'B'A u8
+	pixels=0 cost=23 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B' u8 to R'G'B'A u8
+----
+R'G'B'A u8
+R'G'B'A float
+	pixels=0 cost=76 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-table.so 0: R'G'B'A u8 to R'G'B'A float
+----
+R'G'B'A u8
+cairo-ARGB32
+	pixels=0 cost=145 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/cairo.so 0: R'G'B'A u8 to cairo-ARGB32
+----
+R'G'B'A double
+RGBA float
+	pixels=0 cost=325 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A double to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: R'G'B'A float to RGBA float
+----
+R'G'B'A float
+RGBA double
+	pixels=0 cost=296 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: R'G'B'A float to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-lies.so 0: RGBA float to RGBA double
+----
+R'G'B' u8
+RGB float
+	pixels=0 cost=82 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gimp-8bit.so 0: R'G'B' u8 to RGB float
+----
+RGB float
+R'G'B'A float
+	pixels=0 cost=272 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGB float to R'G'B' float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B' float to R'G'B'A float
+----
+R'G'B' u8
+RGBA float
+	pixels=0 cost=68 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: R'G'B' u8 to RGBA float
+----
+RaGaBaA float
+R'G'B'A float
+	pixels=0 cost=386 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: RaGaBaA float to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to R'G'B'A float
+----
+RaGaBaA float
+RGBA float
+	pixels=0 cost=72 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: RaGaBaA float to RGBA float
+----
+RGBA float
+RaGaBaA float
+	pixels=0 cost=50 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to RaGaBaA float
+----
+R'G'B' u8
+RaGaBaA float
+	pixels=0 cost=53 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: R'G'B' u8 to RaGaBaA float
+----
+cairo-ARGB32
+R'G'B'A u8
+	pixels=0 cost=3424 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/cairo.so 0: cairo-ARGB32 to R'aG'aB'aA float
+	BablBase 0: R'aG'aB'aA float to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/float.so 0: RGBA float to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B'A u8
+----
+Y float
+Y u8
+	pixels=0 cost=8 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-int8.so 0: Y float to Y u8
+----
+R'G'B'A double
+R'G'B' u8
+	pixels=0 cost=1451 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A double to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B' u8
+----
+R'G'B' u8
+R'G'B' float
+	pixels=0 cost=234 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-table.so 0: R'G'B' u8 to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B' float
+----
+RGBA float
+R'G'B' u8
+	pixels=0 cost=699 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: RGBA float to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B' u8
+----
+Y u8
+Y double
+	pixels=0 cost=525 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/simple.so 0: Y u8 to Y float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-lies.so 0: Y float to RGBA float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-lies.so 0: RGBA float to RGBA double
+	BablBase 0: RGBA double to Y double
+----
+R'G'B'A double
+R'G'B'A float
+	pixels=0 cost=117 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A double to R'G'B'A float
+----
+R'G'B' u8
+R'G'B'A double
+	pixels=0 cost=453 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl-table.so 0: R'G'B' u8 to R'G'B'A float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gggl.so 0: R'G'B'A float to R'G'B'A double
+----
+R'G'B'A u8
+Y' u8
+	pixels=0 cost=182 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gegl-fixups.so 0: R'G'B'A u8 to RGBA float
+	BablBase 0: RGBA float to Y float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-float.so 0: Y float to Y' float
+	/usr/lib/x86_64-linux-gnu/babl-0.1/sse2-int8.so 0: Y' float to Y' u8
+----
+Y' u8
+Y float
+	pixels=0 cost=23 error=0,0000000000
+	/usr/lib/x86_64-linux-gnu/babl-0.1/gimp-8bit.so 0: Y' u8 to Y float
+----
+R'G'B'A u8
+A double
+	pixels=0 error=0,0000000000 [reference]
+----

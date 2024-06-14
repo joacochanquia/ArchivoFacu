@@ -1,0 +1,93 @@
+package prog3.grafos.utiles;
+
+import prog3.grafos.Arista;
+import prog3.grafos.Grafo;
+import prog3.grafos.Vertice;
+import prog3.grafos.ejercicios.Peso;
+import prog3.listagenerica.ListaGenerica;
+import prog3.listagenerica.ListaGenericaEnlazada;
+import prog3.util.Cola;
+
+public class Delta {
+
+	/* maxIslasDistintas(Grafo<String> grafo) : int // Retorna el número máximo de
+	 * islas distintas que se pueden recorrer en el grafo comprando un único boleto.
+	 */
+	
+	public int maxIslasDistintas(Grafo<String> grafo) {
+		ListaGenericaEnlazada<String> res = new ListaGenericaEnlazada<String>();
+		ListaGenericaEnlazada<String> lis = new ListaGenericaEnlazada<String>();
+		boolean[] marca = new boolean[grafo.listaDeVertices().tamanio()];
+		Peso max = new Peso();
+		max.maximo();
+		int peso = 0;
+		boolean llegue = false;
+		int i = -1;
+		ListaGenerica<Vertice<String>> vert = grafo.listaDeVertices();
+		vert.comenzar();
+		while (!vert.fin() && !llegue) {
+			Vertice<String> dest = vert.proximo();
+			if (dest.dato().equals(ciudad1)) {
+				i = dest.posicion();
+				llegue = true;
+			}
+		}
+		if (i >= 0) {
+			llegue = false;
+			this.caminoMasCorto(i, mapaCiudades, res, min, lis, peso, ciudad2, marca);
+		}
+		return res.tamanio();
+	}
+	private void caminoMinNoPesado(int i, Grafo<String> grafo, ListaGenericaEnlazada<String> lis, String ciudad2) {
+		ListaGenerica<Arista<String>> ady = null;
+		Integer[] D = new Integer[mapaCiudades.listaDeVertices().tamanio()];
+		Integer[] P = new Integer[mapaCiudades.listaDeVertices().tamanio()];
+		int j, k = i;
+		boolean llegue = false;
+		for (j = 0; j < grafo.listaDeVertices().tamanio(); j++) {
+			D[j] = null;
+			P[j] = 0;
+		}
+		Cola<Vertice<String>> q = new Cola<Vertice<String>>();
+		q.encolar(grafo.listaDeVertices().elemento(i));
+		D[i] = 0;
+		while (!q.esVacia() && !llegue) {
+			Vertice<String> v = q.desencolar();
+			ady = grafo.listaDeAdyacentes(v);
+			ady.comenzar();
+			while (!ady.fin()) {
+				Arista<String> arista = ady.proximo();
+				j = arista.verticeDestino().posicion();
+				if (D[j] == null) {
+					Vertice<String> w = arista.verticeDestino();
+					D[j] = D[v.posicion()] + 1;
+					P[j] = v.posicion();
+					if (arista.verticeDestino().dato().equals(ciudad2)) {
+						llegue = true;
+						k = j;
+						break;
+					}
+					q.encolar(w);
+				}
+			}
+		}
+		if (llegue) {
+			int pos = k;
+			while (D[pos] != 0) {
+				lis.agregarInicio(grafo.listaDeVertices().elemento(pos).dato());
+				pos = P[pos];
+			}
+			lis.agregarInicio(grafo.listaDeVertices().elemento(pos).dato());
+		}
+
+	}
+	
+	/* caminoMasCorto(Grafo<String> grafo, String islaO, String islaD) : RutaMinima
+	 * // Retorna un objeto de la clase RutaMinima, el cual contiene el camino más
+	 * corto entre islaO e islaD y si se puede realizar con un único boleto o es
+	 * necesario comprar un nuevo boleto para completar el recorrido.
+	 */
+	
+	
+
+}

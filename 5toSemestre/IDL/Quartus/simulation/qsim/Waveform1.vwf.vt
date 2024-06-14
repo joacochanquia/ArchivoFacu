@@ -1,0 +1,332 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/17/2023 11:19:47"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    DetMagRel3bit
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module DetMagRel3bit_vlg_sample_tst(
+	x0,
+	x1,
+	x2,
+	y0,
+	y1,
+	y2,
+	sampler_tx
+);
+input  x0;
+input  x1;
+input  x2;
+input  y0;
+input  y1;
+input  y2;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(x0 or x1 or x2 or y0 or y1 or y2)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module DetMagRel3bit_vlg_check_tst (
+	M,
+	N,
+	P,
+	sampler_rx
+);
+input  M;
+input  N;
+input  P;
+input sampler_rx;
+
+reg  M_expected;
+reg  N_expected;
+reg  P_expected;
+
+reg  M_prev;
+reg  N_prev;
+reg  P_prev;
+
+reg  M_expected_prev;
+reg  N_expected_prev;
+reg  P_expected_prev;
+
+reg  last_M_exp;
+reg  last_N_exp;
+reg  last_P_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:3] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 3'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	M_prev = M;
+	N_prev = N;
+	P_prev = P;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	M_expected_prev = M_expected;
+	N_expected_prev = N_expected;
+	P_expected_prev = P_expected;
+end
+
+
+
+// expected M
+initial
+begin
+	M_expected = 1'bX;
+end 
+
+// expected N
+initial
+begin
+	N_expected = 1'bX;
+end 
+
+// expected P
+initial
+begin
+	P_expected = 1'bX;
+end 
+// generate trigger
+always @(M_expected or M or N_expected or N or P_expected or P)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected M = %b | expected N = %b | expected P = %b | ",M_expected_prev,N_expected_prev,P_expected_prev);
+	$display("| real M = %b | real N = %b | real P = %b | ",M_prev,N_prev,P_prev);
+`endif
+	if (
+		( M_expected_prev !== 1'bx ) && ( M_prev !== M_expected_prev )
+		&& ((M_expected_prev !== last_M_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port M :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", M_expected_prev);
+		$display ("     Real value = %b", M_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_M_exp = M_expected_prev;
+	end
+	if (
+		( N_expected_prev !== 1'bx ) && ( N_prev !== N_expected_prev )
+		&& ((N_expected_prev !== last_N_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port N :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", N_expected_prev);
+		$display ("     Real value = %b", N_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_N_exp = N_expected_prev;
+	end
+	if (
+		( P_expected_prev !== 1'bx ) && ( P_prev !== P_expected_prev )
+		&& ((P_expected_prev !== last_P_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port P :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", P_expected_prev);
+		$display ("     Real value = %b", P_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_P_exp = P_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module DetMagRel3bit_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg x0;
+reg x1;
+reg x2;
+reg y0;
+reg y1;
+reg y2;
+// wires                                               
+wire M;
+wire N;
+wire P;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+DetMagRel3bit i1 (
+// port map - connection between master ports and signals/registers   
+	.M(M),
+	.N(N),
+	.P(P),
+	.x0(x0),
+	.x1(x1),
+	.x2(x2),
+	.y0(y0),
+	.y1(y1),
+	.y2(y2)
+);
+
+// x2
+initial
+begin
+	x2 = 1'b0;
+	x2 = #480000 1'b1;
+	x2 = #480000 1'b0;
+end 
+
+// x1
+initial
+begin
+	repeat(2)
+	begin
+		x1 = 1'b0;
+		x1 = #240000 1'b1;
+		# 240000;
+	end
+	x1 = 1'b0;
+end 
+
+// x0
+initial
+begin
+	repeat(4)
+	begin
+		x0 = 1'b0;
+		x0 = #120000 1'b1;
+		# 120000;
+	end
+	x0 = 1'b0;
+end 
+
+// y2
+initial
+begin
+	repeat(8)
+	begin
+		y2 = 1'b0;
+		y2 = #60000 1'b1;
+		# 60000;
+	end
+	y2 = 1'b0;
+end 
+
+// y1
+initial
+begin
+	repeat(16)
+	begin
+		y1 = 1'b0;
+		y1 = #30000 1'b1;
+		# 30000;
+	end
+	y1 = 1'b0;
+	y1 = #30000 1'b1;
+end 
+
+// y0
+initial
+begin
+	repeat(33)
+	begin
+		y0 = 1'b0;
+		y0 = #15000 1'b1;
+		# 15000;
+	end
+	y0 = 1'b0;
+end 
+
+DetMagRel3bit_vlg_sample_tst tb_sample (
+	.x0(x0),
+	.x1(x1),
+	.x2(x2),
+	.y0(y0),
+	.y1(y1),
+	.y2(y2),
+	.sampler_tx(sampler)
+);
+
+DetMagRel3bit_vlg_check_tst tb_out(
+	.M(M),
+	.N(N),
+	.P(P),
+	.sampler_rx(sampler)
+);
+endmodule
+

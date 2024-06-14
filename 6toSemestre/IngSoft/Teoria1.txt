@@ -1,0 +1,71 @@
+definir software o ing software
+Software: es el conjunto de programas de computo, procedimientos, reglas, documentacion y datos asociados a las opearaciones que forman parte de las operaciones de un sistema de computacion. 
+Ing en Software: Disciplina de la ingenieria que comprende todos los aspectos de la produccion de software, desde las etapas iniciales de la especificacion del sistema, incluyendo la evaluacion de este luego que se comienza a ejecutar.
+O tambien: El uso de metodos sistematicos, disciplinados y cuantificables para el desarrollo, operacion y mantenimiento de software.
+
+q es tener responsablidad profesional y etica
+Confidencialidad: Respetar la privacidad del cliente.
+Competencia: No mentir sobre las capacidades.
+Respeto a los derechos de la prop intelectual: conocer las leyes sobre las patentes y copyright.
+Uso inapropiado de las computadoras: No usar habilidades tecnicas para usar de forma inapropiada otras computadoras.
+
+q es un modelo d proceso y dar ejemplo o explicsr algun modelo d proceso
+Es una descripcion simplificada de un proceso de software que presenta una vision de ese proceso.
+Modelo cascada: cada etapa se debe completar antes de comenzar la siguiente. Util para explicar a los clientes. No se puede volver a una etapa ya terminada es poco realista y la eliminacion de fallas es extremadamente dificil.
+Modelo en V: Las etapas de prueba se utilizan para verificar a las de diseño y al analisis de requerimientos. Se puede volver a las etapas de diseño y analisis por lo que la correccion de errores es mucho mas simple.
+Modelo de prototipos: Se permite la creacion de prototipos, los cuales permiten a los clientes y desarrolladores examinar aspectos del sistema y ver si estos son adecuados.
+Desarrollo por fases: Existen dos sistemas funcionando en paralelo, uno habilitado para los usuarios y otro en desarrollo. 
+Modelo espiral (Boehm): Ciclos de desarrollo (empieza identificando objetivos de la porcion, alternativas y restricciones)(se completa con una revision que incluye todo el ciclo anterior y el plan para el siguiente)
+
+q son las metodologias agiles y que se valora
+Son metodos de ing en software donde los requerimientos y soluciones evolucionan mediante la colaboracion de grupos. 
+Se busca: La satisfaccion del cliente y la entrega temprana del software incremental. Se resalta la entrega sobre el analisis y diseño. Se tiene una comunicacion activa y continua entre desarrolladores y clientes.
+
+q es un requerimiento y funcionales/nofuncionales
+Requerimiento: es una caracteristica del sistema o una descripcion de algo que el sistema es capaz de hacer con el proposito de satisfacer el proposito del sistema
+O tambien: Condicion o capacidad que necesita el usuario para resolver un problema o cumplir un objetivo.
+O tambien: Condicion o capacidad que debe satisfacer o poseer un sistema o una componente de uno para satisfacer un contrato, un estandar, una especificacion u otro documento.
+Requerimiento funcional: Describen lo que el sistema debe o NO debe hacer. Son independientes de la implementacion de la solucion.
+Requerimiento no funcional: Decriben una restriccion sobre el sistema que limita nuestras elecciones en la construccion de una solucion al problema.
+
+problemas de la comunicación 
+Falta de procedimientos o guias formales, poca participacion del usuario, mala interpretacion de los requerimientos, falta de comunicacion. Tener diferentes puntos de vista sobre un mismo problema. 
+Dificultad para expresar las necesidades o no conocerlas. No conocer la tecnologia y como puede ayudar y tener miedo de esto ultimo. Cultura y vocabulario diferentes, intereses diferentes sobre el mismo sistema. Medios de comunicacion inadecuados.
+
+q es elicitacion d requerimientos y q técnicas hay
+Elicitacion de requerimientos: es el proceso de adquirir todo el conocimiento relevante necesario para producir un modelo de los requerimientos de un dominio del problema.
+
+
+ventajas/ desventajas de entrevistas o cuestionarios o algo asi
+Entrevistas: Es una conversacion con un proposito especific, basado en un formato de preguntas y respuestas en general. El entrevistado se siente incluido, se obtiene una retroalientacion de este, se pueden adaptar las preguntas sobre la marcha, se obtiene informacion no verbal PERO son costosas, dependen mucho de las habilidades del entrevistador.
+Cuestionario: Documento que permite al analista recabar informacion y opiniones de los encuestados. Tienen una respuesta rapida, son economicos, anonimos y suelen ser de facil analisis PERO no responde a todas las preguntas, no se pueden aclarar respuestas incompletas, son dificiles de preparar.
+
+
+q es la ingenieria d requerimienros
+Ingenieria de requerimientos: es la disciplina para desarrollar una especificacion completa, consistente y no ambigua, la cual servira como base y en donde se describen las funciones que realizara el sistema.
+O tambien: Es el proceso por el cual se transforman los requerimientos declarados por los clientes en especificaciones precisas, no ambiguas, consistentes y completas del comportamiento del sistema.
+
+tecnicnas de especificacion eso ni lo entendi
+Tecnicas de especificacion de requerimientos:
+Estaticas: Se describe el sistema a travez de las entidades u objetos, sus atributos y sus relaciones con otros
+Ej: ¿?
+Dinamicas: Se considera un sistema segun los cambios que ocurren a lo largo del tiempo.
+Tablas de decision: Permite presentar de forma concisa las REGLAS logicas que hay que utilizar para decidir ACCIONES a ejecutar en funcion de las CONDICIONES y la logica de un problema especifico.
+Maquinas de estado finito: Describe al sistema como un conjunto de estados, donde el sistema reacciona a ciertos eventos. f(S1,1)=S2
+
+para q sirve una red d petri
+Las redes de petri son utiles para especificar sistemas de tiempo real en los que so necesarios representar aspectos de concurrencia.
+Eventos se representan como transiciones (T)
+Los estados se representan como lugares (P)
+f(Estado, Evento1, ..., EventoN) -> Estado1, ..., EstadoN
+
+
+q son modelos d casos d uso
+Modelo de casos de uso: Se modelan las funcionalidades del sistema a partir de los eventos que interactuan los usuarios y el sistema.
+
+
+q son hsitorias d usuario
+Historia de usuario: Es una representacion de un requisito de software escrito en una o dos frases utilizando el lenguaje comun.
+Responde a tres preguntas: Quien se beneficia?, Qe se quiere?, Cual es el beneficio?. Como (ROL) quiero (ALGO) para poder (BENEFICIO).
+
+

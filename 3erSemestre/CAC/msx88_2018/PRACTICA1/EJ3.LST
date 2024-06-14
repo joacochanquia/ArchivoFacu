@@ -1,0 +1,19 @@
+
+								página: 1 
+
+ Listado Fuente: EJ3.LST
+ Programa Fuente en: EJ3.ASM
+ Fecha: Sat Apr 02 19:43:41 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 00		      2	INI 	DB 	0
+ 1001 0F		      3	FIN 	DB 	15
+			      4		ORG 	2000H
+ 2000 8A 06 00 10	      5		MOV 	AL, INI
+ 2004 8A 26 01 10	      6		MOV 	AH, FIN
+ 2008 FE C0		      7	SUMA: 	INC 	AL
+ 200A 3A C4		      8		CMP 	AL, AH
+ 200C 75 FA		      9		JNZ 	SUMA
+ 200E F4		     10		HLT

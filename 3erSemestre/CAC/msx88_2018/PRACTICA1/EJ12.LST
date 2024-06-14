@@ -1,0 +1,43 @@
+
+								página: 1 
+
+ Listado Fuente: EJ12.LST
+ Programa Fuente en: EJ12.ASM
+ Fecha: Fri Apr 08 17:38:22 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	;memoria datos
+			      2		 ORG 	1000H
+ 1000 06		      3	NUM0	 DB	6
+ 1001 01		      4	NUM1	 DB	1
+			      5	;memoria instrucciones
+			      6	;subrutinas
+			      7		 ORG	3000H
+ 3000 02 C0		      8	ROTARIZ: ADD 	AL, AL
+ 3002 80 D0 00		      9		 ADC	AL, 0
+ 3005 FE C9		     10		 DEC	CL
+ 3007 75 F7		     11		 JNZ	ROTARIZ
+ 3009 C3		     12		 RET
+ 300A B1 07		     13	ROTARDER:MOV 	CL, 7
+ 300C E8 00 30		     14		 CALL	ROTARIZ
+ 300F FE CD		     15		 DEC	CH
+ 3011 75 F7		     16		 JNZ	ROTARDER
+ 3013 C3		     17		 RET
+			     18	;prog principal
+			     19		 ORG 	2000H
+ 2000 8A 06 00 10	     20		 MOV	AL, NUM0
+ 2004 8A 2E 01 10	     21		 MOV	CH, NUM1
+ 2008 E8 0A 30		     22		 CALL	ROTARDER
+ 200B F4		     23		 HLT
+			     24		 END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM0    	Mem. Byte	1000h
+ NUM1    	Mem. Byte	1001h
+ ROTARIZ 	Etiqueta	3000h
+ ROTARDER	Etiqueta	300Ah

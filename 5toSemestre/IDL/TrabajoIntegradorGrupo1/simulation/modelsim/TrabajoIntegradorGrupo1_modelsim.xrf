@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TrabajoIntegradorGrupo1/Registro.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TrabajoIntegradorGrupo1/RegistroA.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TrabajoIntegradorGrupo1/ALU.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TrabajoIntegradorGrupo1/RegistroProbandoMultiplexores.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TrabajoIntegradorGrupo1/HA.bdf
+source_file = 1, C:/Users/Joaco/Desktop/IDL/TrabajoIntegradorGrupo1/db/TrabajoIntegradorGrupo1.cbx.xml
+design_name = HA
+instance = comp, \S~output\, S~output, HA, 1
+instance = comp, \Cout~output\, Cout~output, HA, 1
+instance = comp, \A~input\, A~input, HA, 1
+instance = comp, \B~input\, B~input, HA, 1

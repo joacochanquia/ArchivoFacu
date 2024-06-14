@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="TrabajoIntegradorGrupo1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst14|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst5|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst14|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst18|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst15|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst2busmux|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst2|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst11|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst15|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|SumaResta:inst|BUSMUX:inst1|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|BUSMUX:instbusmux|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst16|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst7|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst16|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst17|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|ABALU:inst1|BUSMUX:inst8|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst18|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|BUSMUX:inst1|lpm_mux:$00000" CBX_FILE_NAME="mux_4vc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|RegistroA:inst5|MUX:inst20|lpm_mux:$00001" CBX_FILE_NAME="mux_1vc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

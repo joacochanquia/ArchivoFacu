@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1449427374"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -l -vewnhibq -FiC:\Users\Joaco\Desktop\CBD\TP3\lib\x86_64-win64 -FuC:\Users\Joaco\Desktop\CBD\TP3\ -FUC:\Users\Joaco\Desktop\CBD\TP3\lib\x86_64-win64\ -FEC:\Users\Joaco\Desktop\CBD\TP3\ -oC:\Users\Joaco\Desktop\CBD\TP3\TP3EJ3.exe TP3EJ3.pas"/>
+  <Complete Value="False"/>
+</CONFIG>

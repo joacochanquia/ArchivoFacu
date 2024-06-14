@@ -1,0 +1,40 @@
+;memoria datos
+	 ORG 	1000H
+CADENA	 DB	"HOOLA Gabii toOdo BiEn?!"
+FINAL	 DB	0
+C_VOCAL	 DB	"AEIOUaeiou"
+;memoria instrucciones
+;subrutinas
+	 ORG	3000H
+ES_VOCAL:PUSH	BX
+	 PUSH	CX
+	 MOV	BX, OFFSET C_VOCAL
+	 MOV	CL, 10
+	 MOV	DL, 00H
+COMP:	 CMP	[BX], DH
+	 JNZ	NO_ES
+	 MOV	DL, 0FFH
+	 JMP	FINES_
+NO_ES:	 INC 	BX
+	 DEC	CL
+	 JNZ	COMP
+FINES_:	 POP	CX
+	 POP    BX
+	 RET
+VOCALES: CMP 	BYTE PTR [BX], 00H
+	 JZ	FIN
+	 MOV	DH, [BX]
+	 CALL	ES_VOCAL
+	 CMP	DL, 0FFH
+	 JNZ	NO
+	 INC	CL
+NO:	 INC 	BX
+	 JMP	VOCALES
+FIN:	 RET
+;prog principal
+	 ORG 	2000H	
+	 MOV	BX, OFFSET CADENA
+	 MOV	DX, 0
+	 CALL	VOCALES
+	 HLT
+	 END

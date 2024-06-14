@@ -1,0 +1,189 @@
+
+								página: 1 
+
+ Listado Fuente: EJ6.LST
+ Programa Fuente en: EJ6.ASM
+ Fecha: Mon Apr 18 13:34:27 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1		ORG 	1000H
+ 1000 49 4E 47 52 45 53	      2	MSJ 	DB 	"INGRESE UN NUMERO:"
+ 1006 45 20 55 4E 20 4E
+ 100C 55 4D 45 52 4F 3A
+ 1012 49		      3	FIN_M 	DB 	?
+ 1013 43 45 52 4F	      4	MSJ0 	DB 	"CERO"
+ 1017 43		      5	FIN_M0 	DB 	?
+ 1018 55 4E 4F		      6	MSJ1 	DB 	"UNO"
+ 101B 55		      7	FIN_M1 	DB 	?
+ 101C 44 4F 53		      8	MSJ2 	DB 	"DOS"
+ 101F 44		      9	FIN_M2 	DB 	?
+ 1020 54 52 45 53	     10	MSJ3 	DB 	"TRES"
+ 1024 54		     11	FIN_M3 	DB 	?
+ 1025 43 55 41 54 52 4F	     12	MSJ4 	DB 	"CUATRO"
+ 102B 43		     13	FIN_M4 	DB 	?
+ 102C 43 49 4E 43 4F	     14	MSJ5 	DB 	"CINCO"
+ 1031 43		     15	FIN_M5 	DB 	?
+ 1032 53 45 49 53	     16	MSJ6 	DB 	"SEIS"
+ 1036 53		     17	FIN_M6 	DB 	?
+ 1037 53 49 45 54 45	     18	MSJ7 	DB 	"SIETE"
+ 103C 53		     19	FIN_M7 	DB 	?
+ 103D 4F 43 48 4F	     20	MSJ8 	DB 	"OCHO"
+ 1041 4F		     21	FIN_M8 	DB 	?
+ 1042 4E 55 45 56 45	     22	MSJ9 	DB 	"NUEVE"
+ 1047 4E		     23	FIN_M9 	DB 	?
+ 1048 43 41 52 41 43 54	     24	MSJNO 	DB 	"CARACTER NO VALIDO"
+ 104E 45 52 20 4E 4F 20
+ 1054 56 41 4C 49 44 4F
+ 105A 43		     25	FIN_MNO DB 	?
+			     26		ORG 	1500H
+ 1500 43		     27	NUM 	DB 	?
+			     28	
+			     29		ORG	3000H
+ 3000 80 F9 30		     30	IMP_NUM:CMP	CL, 30H
+ 3003 74 37		     31		JZ	IMP_0
+ 3005 80 F9 31		     32		CMP	CL, 31H
+ 3008 74 3C		     33		JZ	IMP_1
+ 300A 80 F9 32		     34		CMP	CL, 32H
+ 300D 74 41		     35		JZ	IMP_2
+ 300F 80 F9 33		     36		CMP	CL, 33H
+ 3012 74 46		     37		JZ	IMP_3
+ 3014 80 F9 34		     38		CMP	CL, 34H
+ 3017 74 4B		     39		JZ	IMP_4
+ 3019 80 F9 35		     40		CMP	CL, 35H
+ 301C 74 50		     41		JZ	IMP_5
+ 301E 80 F9 36		     42		CMP	CL, 36H
+ 3021 74 55		     43		JZ	IMP_6
+ 3023 80 F9 37		     44		CMP	CL, 37H
+ 3026 74 5A		     45		JZ	IMP_7
+ 3028 80 F9 38		     46		CMP	CL, 38H
+ 302B 74 5F		     47		JZ	IMP_8
+ 302D 80 F9 39		     48		CMP	CL, 39H
+ 3030 74 64		     49		JZ	IMP_9
+ 3032 BB 48 10		     50		MOV 	BX, OFFSET MSJNO
+ 3035 B0 12		     51		MOV 	AL, OFFSET FIN_MNO-OFFSET MSJNO
+
+
+
+								página: 2 
+
+ 3037 CD 07		     52		INT 	7
+ 3039 E9 A0 30		     53		JMP	FIN_SUB
+ 303C BB 13 10		     54	IMP_0:	MOV 	BX, OFFSET MSJ0
+ 303F B0 04		     55		MOV 	AL, OFFSET FIN_M0-OFFSET MSJ0
+ 3041 CD 07		     56		INT 	7
+ 3043 E9 A0 30		     57		JMP	FIN_SUB
+ 3046 BB 18 10		     58	IMP_1:	MOV 	BX, OFFSET MSJ1
+ 3049 B0 03		     59		MOV 	AL, OFFSET FIN_M1-OFFSET MSJ1
+ 304B CD 07		     60		INT 	7
+ 304D E9 A0 30		     61		JMP	FIN_SUB
+ 3050 BB 1C 10		     62	IMP_2:	MOV 	BX, OFFSET MSJ2
+ 3053 B0 03		     63		MOV 	AL, OFFSET FIN_M2-OFFSET MSJ2
+ 3055 CD 07		     64		INT 	7
+ 3057 E9 A0 30		     65		JMP	FIN_SUB
+ 305A BB 20 10		     66	IMP_3:	MOV 	BX, OFFSET MSJ3
+ 305D B0 04		     67		MOV 	AL, OFFSET FIN_M3-OFFSET MSJ3
+ 305F CD 07		     68		INT 	7
+ 3061 E9 A0 30		     69		JMP	FIN_SUB
+ 3064 BB 25 10		     70	IMP_4:	MOV 	BX, OFFSET MSJ4
+ 3067 B0 06		     71		MOV 	AL, OFFSET FIN_M4-OFFSET MSJ4
+ 3069 CD 07		     72		INT 	7
+ 306B E9 A0 30		     73		JMP	FIN_SUB
+ 306E BB 2C 10		     74	IMP_5:	MOV 	BX, OFFSET MSJ5
+ 3071 B0 05		     75		MOV 	AL, OFFSET FIN_M5-OFFSET MSJ5
+ 3073 CD 07		     76		INT 	7
+ 3075 E9 A0 30		     77		JMP	FIN_SUB
+ 3078 BB 32 10		     78	IMP_6:	MOV 	BX, OFFSET MSJ6
+ 307B B0 04		     79		MOV 	AL, OFFSET FIN_M6-OFFSET MSJ6
+ 307D CD 07		     80		INT 	7
+ 307F E9 A0 30		     81		JMP	FIN_SUB
+ 3082 BB 37 10		     82	IMP_7:	MOV 	BX, OFFSET MSJ7
+ 3085 B0 05		     83		MOV 	AL, OFFSET FIN_M7-OFFSET MSJ7
+ 3087 CD 07		     84		INT 	7
+ 3089 E9 A0 30		     85		JMP	FIN_SUB
+ 308C BB 3D 10		     86	IMP_8:	MOV 	BX, OFFSET MSJ8
+ 308F B0 04		     87		MOV 	AL, OFFSET FIN_M8-OFFSET MSJ8
+ 3091 CD 07		     88		INT 	7
+ 3093 E9 A0 30		     89		JMP	FIN_SUB
+ 3096 BB 42 10		     90	IMP_9:	MOV 	BX, OFFSET MSJ9
+ 3099 B0 05		     91		MOV 	AL, OFFSET FIN_M9-OFFSET MSJ9
+ 309B CD 07		     92		INT 	7
+ 309D E9 A0 30		     93		JMP	FIN_SUB
+ 30A0 C3		     94	FIN_SUB:	RET
+			     95	
+			     96		ORG 	2000H
+ 2000 BB 00 10		     97	LAZO:	MOV 	BX, OFFSET MSJ
+ 2003 B0 12		     98		MOV 	AL, OFFSET FIN_M-OFFSET MSJ
+ 2005 CD 07		     99		INT 	7
+ 2007 BB 00 15		    100		MOV 	BX, OFFSET NUM
+ 200A CD 06		    101		INT 	6
+ 200C B0 01		    102		MOV 	AL, 1
+ 200E CD 07		    103		INT 	7
+ 2010 8A 0E 00 15	    104		MOV 	CL, NUM
+			    105	; SI CL ES != 0
+ 2014 80 F9 30		    106		CMP	CL, 30H
+ 2017 75 0A		    107		JNZ	NO_0
+			    108	; SI YA HABIA PASADO POR UN 0 ANTES
+ 2019 80 FC 01		    109		CMP 	AH, 01H
+ 201C 74 0D		    110		JZ 	FIN
+			    111	; SI ES 0 TENGO QUR AVISAR QUE PASE POR UN 0
+ 201E B4 01		    112		MOV	AH, 01H
+
+
+
+								página: 3 
+
+ 2020 E9 25 20		    113		JMP	SUBR
+			    114	; SI NO ES 0 RESETEO EL AVISO
+ 2023 B4 00		    115	NO_0:	MOV	AH, 00H
+ 2025 E8 00 30		    116	SUBR:	CALL	IMP_NUM
+ 2028 E9 00 20		    117		JMP	LAZO
+ 202B CD 00		    118	FIN:	INT 	0
+			    119		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ MSJ     	Mem. Byte	1000h
+ FIN_M   	Mem. Byte	1012h
+ MSJ0    	Mem. Byte	1013h
+ FIN_M0  	Mem. Byte	1017h
+ MSJ1    	Mem. Byte	1018h
+ FIN_M1  	Mem. Byte	101Bh
+ MSJ2    	Mem. Byte	101Ch
+ FIN_M2  	Mem. Byte	101Fh
+ MSJ3    	Mem. Byte	1020h
+ FIN_M3  	Mem. Byte	1024h
+ MSJ4    	Mem. Byte	1025h
+ FIN_M4  	Mem. Byte	102Bh
+ MSJ5    	Mem. Byte	102Ch
+ FIN_M5  	Mem. Byte	1031h
+ MSJ6    	Mem. Byte	1032h
+ FIN_M6  	Mem. Byte	1036h
+ MSJ7    	Mem. Byte	1037h
+ FIN_M7  	Mem. Byte	103Ch
+ MSJ8    	Mem. Byte	103Dh
+ FIN_M8  	Mem. Byte	1041h
+ MSJ9    	Mem. Byte	1042h
+ FIN_M9  	Mem. Byte	1047h
+ MSJNO   	Mem. Byte	1048h
+ FIN_MNO 	Mem. Byte	105Ah
+ NUM     	Mem. Byte	1500h
+ IMP_NUM 	Etiqueta	3000h
+ IMP_0   	Etiqueta	303Ch
+ IMP_1   	Etiqueta	3046h
+ IMP_2   	Etiqueta	3050h
+ IMP_3   	Etiqueta	305Ah
+ IMP_4   	Etiqueta	3064h
+ IMP_5   	Etiqueta	306Eh
+ IMP_6   	Etiqueta	3078h
+ IMP_7   	Etiqueta	3082h
+ IMP_8   	Etiqueta	308Ch
+ IMP_9   	Etiqueta	3096h
+ FIN_SUB 	Etiqueta	30A0h
+ LAZO    	Etiqueta	2000h
+ NO_0    	Etiqueta	2023h
+ SUBR    	Etiqueta	2025h
+ FIN     	Etiqueta	202Bh

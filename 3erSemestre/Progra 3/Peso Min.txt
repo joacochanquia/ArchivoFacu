@@ -1,0 +1,53 @@
+public class PesoMin(){
+        
+        private int peso;
+
+        public PesoMin(int peso){        this.peso=peso;        }
+        public int getPeso(){        return this.peso;        }
+        public void setPeso(int peso){        this.peso=peso;        }
+}
+
+
+public ListaGenerica<String> caminoMasCorto(String ciudad1, String ciudad2){
+        ListaGenerica<String> caminoActual = new ListaGenericaEnlazada<String>();
+        ListaGenerica<String> caminoMasCorto = new ListaGenericaEnlazada<String>();
+        ListaGenerica<Vertice<String>> vertices = mapaCiudades.listaDeVertices();
+        boolean[] visitados = new boolean[vertices.tamanio()];
+        vertices.comenzar();
+        boolean fin = false;
+        while(!vertices.fin() && !fin){
+                Vertice<String> v = vertices.proximo();
+                if(v.dato().equals(ciudad1)){
+                        PesoMin pesoMin = new PesoMin(Integer.MAX_VALUE);
+                        caminoMasCorto(v, ciudad2, caminoActual, caminoMasCorto, visitados, 0, pesoMin);
+                        fin = true;
+                }
+        }
+        return caminoMasCorto;
+}
+
+private void caminoMasCorto(Vertice<String> vAct, String ciudad2, ListaGenerica<String> caminoActual, ListaGenerica<String> caminoMasCorto,
+                                                boolean[] visitados, int pesoAct, PesoMin pesoMin){
+        caminoActual.agregarFinal(vAct.dato());
+        visitados[vAct.posicion()] = true;
+        if(vAct.dato().equals(ciudad2)){
+                if(pesoAct<pesoMin.getPeso()){
+                        pesoMin.setPeso(pesoAct);
+                        while(!caminoMasCorto.esVacia())        caminoMasCorto.eliminarEn(0);
+                        caminoActual.comenzar();
+                        while(!caminoActual.fin())        caminoMasCorto.agregarFinal(caminoActual.proximo());
+                }
+        }else{
+                ListaGenerica<Arista<String>> adyacentes = mapaCiudades.listaDeAdyacentes(vAct);
+                adyacentes.comenzar();
+                while(!adyacentes.fin()){
+                        Arista<String> arAct = adyacentes.proximo();
+                        Vertice<String> vDestino = arAct.verticeDestino();
+                        if(!visitados[vDestino.posicion()]){
+                                caminoMasCorto(vDestino, ciudad2, caminoActual, caminoMasCorto, visitados, pesoAct + arAct.peso(), pesoMin);
+                        }
+                }
+        }
+        visitados[vAct.posicion()] = false;
+        caminoActual.eliminarEn(caminoActual.tamanio()-1);
+}

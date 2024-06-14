@@ -1,0 +1,23 @@
+[directory]
+caja-icon-view-keep-aligned=true
+caja-icon-view-layout-timestamp=1669677289
+
+[home]
+caja-icon-position=64,22
+icon-scale=1
+caja-icon-position-timestamp=1669677289
+
+[Debian 11.4.0 amd64 n.volume]
+caja-icon-position=64,142
+icon-scale=1
+caja-icon-position-timestamp=1663027795
+
+[VBox_GAs_6.1.38.volume]
+caja-icon-position=64,142
+icon-scale=1
+caja-icon-position-timestamp=1669676504
+
+[compartida.volume]
+caja-icon-position=64,242
+icon-scale=1
+caja-icon-position-timestamp=1669677318

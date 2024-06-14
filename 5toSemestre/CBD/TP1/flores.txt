@@ -1,0 +1,36 @@
+Nombre Cientifico: Heliantus annus
+Nombre Vulgar: Girasol
+Numero de Especie: 1
+Altura Maxima: 200
+Color: Amarillo
+
+Nombre Cientifico: Gerbera jamesonli
+Nombre Vulgar: Gerbera
+Numero de Especie: 2
+Altura Maxima: 80
+Color: Naranja
+
+Nombre Cientifico: Hydrangea macrophylia
+Nombre Vulgar: Hortensia
+Numero de Especie: 3
+Altura Maxima: 60
+Color: Azul
+
+Nombre Cientifico: Victoria amazonia
+Nombre Vulgar: Flor del enunciado
+Numero de Especie: 4
+Altura Maxima: 100
+Color: Arcoiris
+
+Nombre Cientifico: Rosa
+Nombre Vulgar: Rosa
+Numero de Especie: 5
+Altura Maxima: 80
+Color: Roja
+
+Nombre Cientifico: Chrysanthemun Leaucanthemun
+Nombre Vulgar: Margarita
+Numero de Especie: 6
+Altura Maxima: 40
+Color: Blanca
+

@@ -1,0 +1,18 @@
+INICIO:
+Para la parte practica de la materia me parece que faltaban mas ejemplos sobre como escribir HU de forma correcta para otros tipos de estas, aparte de las de rellenar formularios. 
+Y en los laboratorios de explicación del lenguaje rails, hubiera estado bueno tener explicaciones sobre la funcionalidad de enviar emails y tener un poco mas de ayuda sobre el lenguaje al momento del desarrollo, que es cuando realmente empezamos a tener problemas en la implementación.
+
+LABORATORIOS:
+Los laboratorios estaban claros y eran útiles para comprender el funcionamiento básico de rails pero se daban temas muy rápido y se tomaban conceptos o cuestiones por sabidas que quizá no eran tan obvias. Y hubiera estado buena una continuación durante el desarrollo de la aplicación para resolver cuestiones mas especificas sobre la misma o para tener consejos para resolver una cuestión de una mejor manera.
+
+RUSO:
+Fue muy buen ayudante, se mantuvo en contacto con nosotros constantemente y nos enviaba correcciones para mejorar el trabajo. Pero fue bastante exigente con las funcionalidades en la aplicación, quería que desarrollemos todo el programa y no le dio mucha importancia a las HU. Eso llevo a que estemos desarrollando mucho mas tiempo del requerido, dejando de lado a la documentación para poder terminar todas las funcionalidades.
+
+ROCIO:
+Me toco rocío como cliente. En la ultima entrega nos rechazo varias HU diciendo que faltaban escenarios fallidos para las reglas, en nuestro caso la implementación del sistema no permitía llegar al fallo de esa regla por no presentar las opciones que estas limitaban o cuestiones parecidas, siendo que en la ultima diapositiva de la explicacion de la practica de HUs dice textualmente: 
+"Si la interfaz del sistema no me permite realizar las
+acciones de los escenarios 2 y/o 3, los escenarios
+deberían quitarse de la HU por no poder ser
+probados."
+Esto nos confundió porque al momento de escribir las mismas seguimos esta regla pero capaz la entendimos de una forma incorrecta por lo que nos parece que hubiera estado bueno tener algún otro ejemplo de esta en funcionamiento y ejemplos donde esta regla no se cumpla.
+Igualmente fue una buena docente, nos motivo a seguir y nos dio consejos para el resto de los sprints.

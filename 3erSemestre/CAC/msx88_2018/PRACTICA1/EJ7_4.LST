@@ -1,0 +1,63 @@
+
+								página: 1 
+
+ Listado Fuente: EJ7_4.LST
+ Programa Fuente en: EJ7_4.ASM
+ Fecha: Thu Apr 07 19:47:48 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	; Memoria de datos
+			      2		ORG 	1000H
+ 1000 05 00		      3	NUM1 	DW 	5H
+ 1002 03 00		      4	NUM2 	DW 	3H
+ 1004 03 00		      5	RES 	DW 	?
+			      6	; Subrutina MUL
+			      7		ORG 	3000H
+ 3000 53		      8	MUL: 	PUSH 	BX
+ 3001 8B DC		      9		MOV 	BX, SP
+ 3003 51		     10		PUSH 	CX
+ 3004 50		     11		PUSH 	AX
+ 3005 52		     12		PUSH 	DX
+ 3006 81 C3 06 00	     13		ADD 	BX, 6
+ 300A 8B 0F		     14		MOV 	CX, [BX]
+ 300C 81 C3 02 00	     15		ADD 	BX, 2
+ 3010 8B 07		     16		MOV 	AX, [BX]
+ 3012 03 D0		     17	SUMA: 	ADD 	DX, AX
+ 3014 FF C9		     18		DEC 	CX
+ 3016 75 FA		     19		JNZ 	SUMA
+ 3018 81 EB 04 00	     20		SUB 	BX, 4
+ 301C 8B 07		     21		MOV 	AX, [BX]
+ 301E 8B D8		     22		MOV 	BX, AX
+ 3020 89 17		     23		MOV 	[BX], DX
+ 3022 5A		     24		POP 	DX
+ 3023 58		     25		POP 	AX
+ 3024 59		     26		POP 	CX
+ 3025 5B		     27		POP 	BX
+ 3026 C3		     28		RET
+			     29	; Programa principal
+			     30		ORG 	2000H
+ 2000 8B 06 00 10	     31		MOV 	AX, NUM1
+ 2004 50		     32		PUSH 	AX
+ 2005 8B 06 02 10	     33		MOV 	AX, NUM2
+ 2009 50		     34		PUSH 	AX
+ 200A B8 04 10		     35		MOV 	AX, OFFSET RES
+ 200D 50		     36		PUSH 	AX
+ 200E BA 00 00		     37		MOV 	DX, 0
+ 2011 E8 00 30		     38		CALL 	MUL
+ 2014 58		     39		POP 	AX
+ 2015 58		     40		POP 	AX
+ 2016 58		     41		POP 	AX
+ 2017 F4		     42		HLT
+			     43		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM1    	Mem. Word	1000h
+ NUM2    	Mem. Word	1002h
+ RES     	Mem. Word	1004h
+ MUL     	Etiqueta	3000h
+ SUMA    	Etiqueta	3012h

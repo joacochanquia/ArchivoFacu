@@ -1,0 +1,269 @@
+$comment
+	File created using the following command:
+		vcd file Proyecto3.msim.vcd -direction
+$end
+$date
+	Wed May 24 17:44:06 2023
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module DiagCont5_vlg_vec_tst $end
+$var reg 1 ! CLK $end
+$var wire 1 " C $end
+$var wire 1 # Q0 $end
+$var wire 1 $ Q1 $end
+$var wire 1 % Q2 $end
+$var wire 1 & sampler $end
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var tri1 1 * devclrn $end
+$var tri1 1 + devpor $end
+$var tri1 1 , devoe $end
+$var wire 1 - Q1~output_o $end
+$var wire 1 . Q2~output_o $end
+$var wire 1 / C~output_o $end
+$var wire 1 0 Q0~output_o $end
+$var wire 1 1 CLK~input_o $end
+$var wire 1 2 CLK~inputclkctrl_outclk $end
+$var wire 1 3 insprit~0_combout $end
+$var wire 1 4 inst4~0_combout $end
+$var wire 1 5 inst4~q $end
+$var wire 1 6 inst5~combout $end
+$var wire 1 7 insprit~q $end
+$var wire 1 8 inst1seg~0_combout $end
+$var wire 1 9 inst1seg~q $end
+$var wire 1 : inst~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+0#
+0$
+0%
+x&
+0'
+1(
+x)
+1*
+1+
+1,
+0-
+0.
+1/
+00
+01
+02
+13
+04
+05
+06
+07
+08
+09
+0:
+$end
+#50000
+1!
+11
+12
+0&
+17
+1:
+18
+03
+10
+1#
+0/
+0"
+#100000
+0!
+01
+02
+1&
+#150000
+1!
+11
+12
+0&
+19
+07
+13
+1-
+00
+1$
+0#
+#200000
+0!
+01
+02
+1&
+#250000
+1!
+11
+12
+0&
+17
+08
+14
+03
+10
+1#
+#300000
+0!
+01
+02
+1&
+#350000
+1!
+11
+12
+0&
+09
+07
+15
+13
+0-
+00
+1.
+0$
+0#
+1%
+#400000
+0!
+01
+02
+1&
+#450000
+1!
+11
+12
+0&
+17
+18
+16
+03
+10
+1#
+05
+07
+0:
+06
+04
+08
+13
+0.
+00
+0%
+0#
+1/
+1"
+#500000
+0!
+01
+02
+1&
+#550000
+1!
+11
+12
+0&
+17
+1:
+18
+03
+10
+1#
+0/
+0"
+#600000
+0!
+01
+02
+1&
+#650000
+1!
+11
+12
+0&
+19
+07
+13
+1-
+00
+1$
+0#
+#700000
+0!
+01
+02
+1&
+#750000
+1!
+11
+12
+0&
+17
+08
+14
+03
+10
+1#
+#800000
+0!
+01
+02
+1&
+#850000
+1!
+11
+12
+0&
+09
+07
+15
+13
+0-
+00
+1.
+0$
+0#
+1%
+#900000
+0!
+01
+02
+1&
+#950000
+1!
+11
+12
+0&
+17
+18
+16
+03
+10
+1#
+05
+07
+0:
+06
+04
+08
+13
+0.
+00
+0%
+0#
+1/
+1"
+#1000000

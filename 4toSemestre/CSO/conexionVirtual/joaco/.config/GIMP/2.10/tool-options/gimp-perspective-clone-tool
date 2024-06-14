@@ -1,0 +1,11 @@
+# GIMP gimp-perspective-clone-tool options
+
+(background (color-rgb 0.69803923368453979 0.68627452850341797 0.67843139171600342))
+(brush "Sparks")
+(dynamics "Dynamics Off")
+(pattern "Qbert")
+(palette "Histórico de color")
+(brush-size 60)
+(brush-spacing 0.14999999999999999)
+
+# end of gimp-perspective-clone-tool options

@@ -1,0 +1,74 @@
+
+								página: 1 
+
+ Listado Fuente: EJ12.LST
+ Programa Fuente en: EJ12.ASM
+ Fecha: Sat Apr 23 17:34:36 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	TIMER 	EQU 	10H
+			      2	PIC 	EQU 	20H
+			      3	EOI 	EQU 	20H
+			      4	N_CLK 	EQU 	10
+			      5		ORG 	40
+ 0028 00 30		      6	IP_CLK 	DW 	RUT_CLK
+			      7		ORG 	1000H
+ 1000 30		      8	SEG 	DB 	30H
+ 1001 30		      9		DB 	30H
+ 1002 30		     10	FIN 	DB 	?
+			     11		ORG 	3000H
+ 3000 50		     12	RUT_CLK:PUSH 	AX
+ 3001 FE 06 01 10	     13		INC 	SEG+1
+ 3005 80 3E 01 10 3A	     14		CMP 	SEG+1, 3AH
+ 300A 75 15		     15		JNZ 	RESET
+ 300C C6 06 01 10 30	     16		MOV 	SEG+1, 30H
+ 3011 FE 06 00 10	     17		INC 	SEG
+ 3015 80 3E 00 10 36	     18		CMP 	SEG, 36H
+ 301A 75 05		     19		JNZ 	RESET
+ 301C C6 06 00 10 30	     20		MOV 	SEG, 30H
+ 3021 CD 07		     21	RESET: 	INT 	7
+ 3023 B0 00		     22		MOV 	AL, 0
+ 3025 E6 10		     23		OUT 	TIMER, AL
+ 3027 B0 20		     24		MOV 	AL, EOI
+ 3029 E6 20		     25		OUT	 PIC, AL
+ 302B 58		     26		POP 	AX
+ 302C CF		     27		IRET
+			     28		ORG 	2000H
+ 2000 FA		     29		CLI
+ 2001 B0 FD		     30		MOV 	AL, 0FDH
+ 2003 E6 21		     31		OUT 	PIC+1, AL ; PIC: registro IMR
+ 2005 B0 0A		     32		MOV 	AL, N_CLK 
+ 2007 E6 25		     33		OUT 	PIC+5, AL ; PIC: registro INT1
+ 2009 B0 01		     34		MOV 	AL, 1
+ 200B E6 11		     35		OUT 	TIMER+1, AL ; TIMER: registro C
+				OMP
+ 200D B0 00		     36		MOV 	AL, 0
+ 200F E6 10		     37		OUT 	TIMER, AL ; TIMER: registro CON
+				T
+ 2011 BB 00 10		     38		MOV 	BX, OFFSET SEG
+ 2014 B0 02		     39		MOV 	AL, OFFSET FIN-OFFSET SEG
+ 2016 FB		     40		STI
+ 2017 E9 17 20		     41	LAZO: 	JMP 	LAZO
+			     42		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ TIMER   	Constante	  10h
+ PIC     	Constante	  20h
+ EOI     	Constante	  20h
+ N_CLK   	Constante	   Ah
+ IP_CLK  	Mem. Word	  28h	No usado
+
+
+
+								página: 2 
+
+ SEG     	Mem. Byte	1000h
+ FIN     	Mem. Byte	1002h
+ RUT_CLK 	Etiqueta	3000h
+ RESET   	Etiqueta	3021h
+ LAZO    	Etiqueta	2017h

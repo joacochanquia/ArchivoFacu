@@ -1,0 +1,105 @@
+
+								página: 1 
+
+ Listado Fuente: EJ6.LST
+ Programa Fuente en: EJ6.ASM
+ Fecha: Sat Apr 23 13:32:05 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	PIC	EQU	20H
+			      2	EOI	EQU	20H
+			      3	N_F10	EQU	10
+			      4	PIO 	EQU 	30H
+			      5	; VECTOR DE INTERRUPCIONES
+			      6		ORG	40
+ 0028 00 50		      7	IP_F10	DW	RUT_F10
+			      8	; DATOS
+			      9		ORG 	1000H
+ 1000 05		     10	NUM_CAR DB 	5
+ 1001 05		     11	CAR 	DB 	?
+			     12	; SUBRUTINA DE INICIALIZACION 
+			     13	; PIO PARA IMPRESORA 
+			     14		ORG 	3000H 
+ 3000 B0 FD		     15	INI_IMP:MOV 	AL, 0FDH 
+ 3002 E6 32		     16		OUT 	PIO+2, AL 
+ 3004 B0 00		     17		MOV 	AL, 0 
+ 3006 E6 33		     18		OUT 	PIO+3, AL 
+ 3008 E4 30		     19		IN 	AL, PIO 
+ 300A 80 E0 FD		     20		AND 	AL, 0FDH 
+ 300D E6 30		     21		OUT 	PIO, AL 
+ 300F C3		     22		RET
+			     23	; SUBRUTINA DE GENERACIÃ“N
+			     24	; DE PULSO 'STROBE'
+			     25		ORG	4000H
+ 4000 50		     26	PULSO:	PUSH	AX
+ 4001 E4 30		     27		IN 	AL, PIO
+ 4003 80 C8 02		     28		OR 	AL, 02H
+ 4006 E6 30		     29		OUT 	PIO, AL
+ 4008 E4 30		     30		IN 	AL, PIO
+ 400A 80 E0 FD		     31		AND 	AL, 0FDH
+ 400D E6 30		     32		OUT 	PIO, AL
+ 400F 58		     33		POP	AX
+ 4010 C3		     34		RET
+			     35	; RUTINA INTERRUPCION F10
+			     36		ORG	5000H
+ 5000 50		     37	RUT_F10:PUSH	AX
+ 5001 E4 30		     38	POLL: 	IN 	AL, PIO
+ 5003 80 E0 01		     39		AND 	AL, 1
+ 5006 75 F9		     40		JNZ 	POLL
+ 5008 8A 07		     41		MOV 	AL, [BX]
+ 500A E6 31		     42		OUT 	PIO+1, AL
+ 500C E8 00 40		     43		CALL 	PULSO
+ 500F B0 20		     44		MOV	AL, EOI
+ 5011 E6 20		     45		OUT	PIC, AL
+ 5013 B6 FF		     46		MOV	DH, 0FFH
+ 5015 58		     47		POP	AX
+ 5016 CF		     48		IRET
+			     49	; PROGRAMA PRINCIPAL
+			     50		ORG 	2000H
+ 2000 FA		     51		CLI
+ 2001 B0 FE		     52		MOV	AL, 0FEH
+ 2003 E6 21		     53		OUT	PIC+1, AL
+ 2005 B0 0A		     54		MOV	AL, N_F10
+ 2007 E6 24		     55		OUT	PIC+4, AL
+
+
+
+								página: 2 
+
+ 2009 50		     56		PUSH 	AX
+ 200A E8 00 30		     57		CALL 	INI_IMP
+ 200D 58		     58		POP 	AX
+ 200E BB 01 10		     59		MOV 	BX, OFFSET CAR
+ 2011 8A 0E 00 10	     60		MOV 	CL, NUM_CAR
+ 2015 B6 00		     61		MOV	DH, 00H
+ 2017 FB		     62	OTRO: 	STI
+ 2018 CD 06		     63		INT 	6
+ 201A 80 FE 00		     64	LAZO:	CMP	DH, 00H
+ 201D 74 FB		     65		JZ	LAZO
+ 201F FA		     66		CLI
+ 2020 B6 00		     67		MOV	DH, 00H
+ 2022 FE C9		     68		DEC 	CL
+ 2024 75 F1		     69		JNZ 	OTRO
+ 2026 FB		     70		STI
+ 2027 CD 00		     71		INT 	0
+			     72		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ PIC     	Constante	  20h
+ EOI     	Constante	  20h
+ N_F10   	Constante	   Ah
+ PIO     	Constante	  30h
+ IP_F10  	Mem. Word	  28h	No usado
+ NUM_CAR 	Mem. Byte	1000h
+ CAR     	Mem. Byte	1001h
+ INI_IMP 	Etiqueta	3000h
+ PULSO   	Etiqueta	4000h
+ RUT_F10 	Etiqueta	5000h
+ POLL    	Etiqueta	5001h
+ OTRO    	Etiqueta	2017h
+ LAZO    	Etiqueta	201Ah

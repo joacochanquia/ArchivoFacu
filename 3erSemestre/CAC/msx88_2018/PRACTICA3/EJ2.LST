@@ -1,0 +1,60 @@
+
+								página: 1 
+
+ Listado Fuente: EJ2.LST
+ Programa Fuente en: EJ2.ASM
+ Fecha: Fri Apr 22 14:42:12 2022
+
+  Dir. Codigo maquina	 Linea 	 Codigo en lenguaje ensamble
+
+			      1	PIC 	EQU 20H
+			      2	TIMER 	EQU 10H
+			      3	PIO 	EQU 30H
+			      4	N_CLK 	EQU 10
+			      5		ORG 40
+ 0028 00 30		      6	IP_CLK 	DW RUT_CLK
+			      7		ORG 1000H
+ 1000 00		      8	INICIO 	DB 0
+			      9		ORG 3000H
+ 3000 FE 06 00 10	     10		RUT_CLK: INC INICIO
+ 3004 80 3E 00 10 FF	     11		CMP INICIO, 0FFH
+ 3009 75 05		     12		JNZ LUCES
+ 300B C6 06 00 10 00	     13		MOV INICIO, 0
+ 3010 8A 06 00 10	     14		LUCES: MOV AL, INICIO
+ 3014 E6 31		     15		OUT PIO+1, AL
+ 3016 B0 00		     16		MOV AL, 0
+ 3018 E6 10		     17		OUT TIMER, AL
+ 301A B0 20		     18		MOV AL, 20H
+ 301C E6 20		     19		OUT PIC, AL
+ 301E CF		     20		IRET
+			     21		ORG 2000H
+ 2000 FA		     22		CLI
+ 2001 B0 FD		     23		MOV AL, 0FDH 
+ 2003 E6 21		     24		OUT PIC+1, AL 
+ 2005 B0 0A		     25		MOV AL, N_CLK 
+ 2007 E6 25		     26		OUT PIC	+5, AL 
+ 2009 B0 01		     27		MOV AL,	 1 
+ 200B E6 11		     28		OUT TIMER+1, AL 
+ 200D B0 00		     29		MOV AL, 0 
+ 200F E6 33		     30		OUT PIO+3, AL
+ 2011 E6 31		     31		OUT PIO+1, AL
+ 2013 E6 10		     32		OUT TIMER, AL
+ 2015 FB		     33		STI
+ 2016 E9 16 20		     34	LAZO: 	JMP LAZO
+ 2019 F4		     35		HLT
+			     36		END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ PIC     	Constante	  20h
+ TIMER   	Constante	  10h
+ PIO     	Constante	  30h
+ N_CLK   	Constante	   Ah
+ IP_CLK  	Mem. Word	  28h	No usado
+ INICIO  	Mem. Byte	1000h
+ RUT_CLK 	Etiqueta	3000h
+ LUCES   	Etiqueta	3010h
+ LAZO    	Etiqueta	2016h
