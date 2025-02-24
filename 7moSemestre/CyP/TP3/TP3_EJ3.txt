@@ -1,0 +1,40 @@
+3)  un corralón de materiales hay un empleado que debe atender a N clientes de acuerdo al
+orden de llegada. Cuando un cliente es llamado por el empleado para ser atendido, le da una
+lista con los productos que comprará, y espera a que el empleado le entregue el
+comprobante de la compra realizada.
+
+Monitor Corralon{
+	cond espera, pedido, comprobante;
+	int pedidos = 0;
+	lista productos;
+	procedure comprar(compras: in lista){
+		pedidos++;
+		signal(descanso);
+		wait (espera);
+		productos = compras;
+		signal(pedido);
+		wait(comprobante);
+		signal(retirada);
+	}
+	procedure vender(
+		while(1){
+			if(pedidos > 0){
+				signal(espera);
+				wait(pedido);
+				-- va a buscar los productos
+				signal(comprobante);
+				wait(retirada);
+			}else{
+				wait(descanso)
+			}
+		}
+	}
+}
+
+process Persona[id=0;N-1]{
+	Corralon.comprar(lista);
+}
+
+process Empleado{
+	Corralon.vender();
+}

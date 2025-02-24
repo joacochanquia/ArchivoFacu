@@ -1,0 +1,85 @@
+procedure Sistema is
+	Task Central is 
+		Entry Señal1(dato: texto);
+		Entry Señal2(dato: texto);
+	end Central
+	Task Proceso1;
+	Task Proceso2;
+	Task Reloj;
+	
+	Task body Central is
+		info : texto;
+		timeOut : bool; 
+	Begin
+		accept Señal1(dato) do
+			info := dato;
+		end Señal1;
+		loop
+			select 
+				accept Señal1(dato: in texto) do
+					info := dato;
+				end Señal1;
+			or 
+				accept Señal2(dato: in texto) do
+					info := dato;
+				end Señal2;
+				
+				Reloj.empezar();
+				timeOut := false
+				
+				while (not timeOut) loop
+					select
+						when(Temporizador'count = 0) =>
+							accept Señal2(dato: in texto) do
+								info := dato;
+							end Señal2;
+					or
+						accept finTempo() do
+							timeOut := true;
+						end finTempo;
+					end select
+				end loop;
+			end select;
+		end loop
+	End Central
+	
+	Task body Proceso1 is
+		dato: texto;
+	Begin
+		dato := //señal inicial
+		loop
+			select
+				Central.Señal1(ped,res);
+				dato := nuevo dato
+			or delay 120
+				dato := //se sobreescribe el dato para desecharlo
+			end select;
+		end loop;
+	End Proceso1;
+	
+	Task body Proceso2 is
+		dato: texto;
+	Begin
+		dato := //señal inicial
+		loop
+			select
+				Central.Señal1(ped,res);
+				dato := //nuevo dato
+			else
+				delay(60);
+			end select;
+		end loop;
+	End Proceso2;
+	
+	Task body Reloj is
+	begin
+		loop
+			accept empezar();
+			delay(180);
+			Central.finTempo();
+		end loop;
+	end Reloj;
+	
+Begin
+	
+End Sistema;

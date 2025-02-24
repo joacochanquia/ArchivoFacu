@@ -1,0 +1,89 @@
+Parcial 2023
+1)
+cola C; int cantEnt = E, entrada[P] = [P]null;
+process Persona[id=0..N-1]{
+	int numEntrada;
+	<push(C,id);>
+	<await entrada[id] != null; numEntrada = entrada[id]>
+	if (numEntrada == 0){
+		--no consegui entrada
+	}else{
+		--tengo la entrada numero numEntrada
+	}
+}
+
+process Boleteria[id=0..4]{
+	int idPer; numEnt;
+	while (1){
+		<await !empty(C); pop(C,ipPer);>
+		<numEnt = cantEnt; if (cantEnt > 0){cantEnt--}>
+		entrada[idPer] = numEnt;
+	}
+}
+
+2)
+sem mutex = 1, espera[N]=[N]0; cola C; int prox = -1;
+process auto[id=0..N]{
+	P(mutex);
+	if(prox == -1){
+		prox = id;
+	}else{
+		push(C,id);
+	}
+	V(mutex);
+	if (prox != id){
+		P(espera[id]);
+	}
+	Pasar();
+	P(mutex);
+	if(empty(C)){
+		prox = -1;
+	}else{
+		pop(C,prox);
+		V(espera[prox];
+	}
+	V(mutex);
+}
+
+3)
+process Controlador[id=0..14]{
+	int T, accion;
+	while(1){
+		T = medir();
+		Gestion.darT(id,T,accion)
+		actuar(accion);
+		delay();
+	}
+}
+process Central{
+	int idC, T, accion;
+	while(1){
+		Gestion.recibirT(idC,T);
+		accion = determinar(T);
+		Gestion.darAccion(idC,accion);
+	}
+}
+Monitor Gestion{
+	bool libre; int pedidos, acciones[15];
+	cond espera[15], esperaControl;
+	procedure darT(id, T: in int; accion: out int){
+		pedidos++;
+		push(C,(id,T));
+		signal(esperaControl);
+		wait(espera[id]);
+		accion = acciones[id];
+	}
+	procedure recibirT(id, T: out int){
+		if (pedidos == 0){
+			wait(esperaControl);
+		}
+		pedidos--;
+		pop(C,(id,T));
+	}
+	procedure darAccion(idC, accion: in int){
+		acciones[idC] = accion;
+		signal(espera[idC]);
+	}
+}
+
+

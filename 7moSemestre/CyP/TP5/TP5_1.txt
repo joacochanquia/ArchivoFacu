@@ -1,0 +1,81 @@
+procedure PuenteSinPrioridad is
+	Task Admin is 
+		entry entradaA(idA: in integer);
+		entry entradaB(idB: in integer);
+		entry entradaC(idC: in integer);
+		entry salida(peso: in integer);
+	end Admin
+	Task type Auto;
+	ArrA: array (1..A) of Auto;
+	Task type Camioneta;
+	ArrB: array (1..B) of Camioneta;
+	Task type Camion;
+	ArrC: array (1..C) of Camion;
+	
+	Task body Admin is
+		peso, idA, idB, idC, pesoAct: integer;
+	Begin
+		for i in 1..2*(A+B+C) loop
+			select
+				when(Salida'Count = 0)AND(pesoAct <= 4) =>
+					accept entradaA(idA);
+					pesoAct := pesoAct +1;
+			or
+				when(Salida'Count = 0)AND(pesoAct <= 3) =>
+					accept entradaA(idA);
+					pesoAct := pesoAct +1;
+			or 
+				when(Salida'Count = 0)AND(pesoAct <= 2) =>
+					accept entradaA(idA);
+					pesoAct := pesoAct +1;
+			or	
+				accept salida(peso);
+				pesoAct := pesoAct - peso;
+			end select;
+		end loop;
+	End Admin
+	
+	Task body Auto is
+		id: integer;
+	Begin
+		Accept IdentA(pos: in integer) do
+			id := pos;
+		end IdentA;
+		Admin.entradaA(id);
+		//Pasa el puente
+		Admin.salida(1);
+	End Auto;
+	
+	Task body Camioneta is
+		id: integer;
+	Begin
+		Accept IdentB(pos: in integer) do
+			id := pos;
+		end IdentB;
+		Admin.entradaB(id);
+		//Pasa el puente
+		Admin.salida(2);
+	End Camioneta;
+	
+	Task body Camion is
+		id: integer;
+	Begin
+		Accept IdentC(pos: in integer) do
+			id := pos;
+		end IdentC;
+		Admin.entradaC(id);
+		//Pasa el puente
+		Admin.salida(3);
+	End Camion;
+
+Begin
+	for i in 1..A loop
+		ArrA(i).Ident(i);
+	end loop;
+	for i in 1..B loop
+		ArrB(i).Ident(i);
+	end loop;
+	for i in 1..C loop
+		ArrB(i).Ident(i);
+	end loop;
+End PuenteSinPrioridad;

@@ -1,0 +1,92 @@
+4) En una mesa de exámenes hay 3 profesores que les deben tomar un examen oral a 30 alumnos
+de acuerdo al orden de llegada. Cada examen es tomado por un único profesor. Cuando un
+alumno llega, espera a que alguno de los profesores (cualquiera) lo llame y se dirige al
+escritorio correspondiente a ese profesor, donde le tomará el examen; al terminar el
+profesor le da la nota y el alumno se retira. Cuando un profesor está libre llama al siguiente
+alumno. Nota: todos los procesos deben terminar su ejecución.
+
+Monitor Gestion{
+	cond espera, descanso, corregido[30];
+	int esperando, rindieron=0, meToma[30], notas[30]=[30]-1;
+	bool final = false;
+	cola C;
+	procedure filaAlumnos(profe: out int, alumno: in int){
+		espera++;
+		push(C, alumno);
+		signal(descanso);
+		wait(espera[alumno]);
+		profe = meToma[alumno];
+	}
+	procedure sentado(profe: in int; alumno: out int; fin: out bool){
+		fin=false;
+		alumno=-1;
+		while (alumno=-1) or (!fin){
+			if(espera>0)
+				pop(C, alumno);
+				meToma[alumno] = profe;
+				signal(espera[alumno]);
+			}else{
+				if(rindieron == 30){
+					final = true;
+					signal_all(descanso);
+				}else{
+					wait(descanso);
+				}
+				fin = final;
+			}
+		}
+	}
+	procedure ponerNota(alumno: in int; nota: in int){
+		notas[alumno] = nota;
+	}
+	procedure verNota(alumno: in int; nota: out int){
+		nota = notas[alumno];
+	}
+}
+
+Monitor Escritorio[id=0;2]{
+	cond esperaA, esperaP, finalizado;
+	bool presenteP=false, presenteA=false;
+	int respuestas=0;
+	procedure tomar(alumno: in int){
+		if (!presenteA) {//si el alumno no llego todavia
+			presenteP = true;
+			wait(esperaP);
+			presenteP = false;
+		}
+		signal(esperaA);
+	}
+	procedure rendir(alumno: in int){
+		if (!presenteP){//si el profesor no llego todavia
+			presenteA = true;
+			wait(esperaA);
+			presenteA = false;
+		}
+		signal(esperaP)
+	}
+}
+
+process Alumno[id=0;29]{
+	Gestion.filaAlumnos(profe,id);
+	--se dirige al profesor
+	Escritorio[profe].rendir(id);
+	--esperando correccion
+	Gestion.verNota(id,nota);
+	if (nota>=4){
+		--se va feliz
+	}else{
+		--se va triste
+	}
+}
+process Profesor[id=0;2]{
+	bool fin=false;
+	while(!fin){
+		--llego un alumno nuevo;
+		Gestión.sentado(id,alumno,fin);
+		if (!fin){
+			Escritorio.tomar(alumno);
+			--evaluar nota
+			Gestion.ponerNota(alumno,nota);
+		}
+	}
+}

@@ -1,0 +1,81 @@
+procedure Clinica is
+	Task Medico is 
+		Entry soliPac();
+		Entry soliEnf(dato: texto);
+	end Central
+	Task Paciente;
+	ArrP: array 1..P of Paciente
+	Task Enfermera;
+	ArrE: array 1..E of Enfermera
+	Task Escritorio is
+		Entry nota(dato: texto);
+	end Escritorio
+	
+	Task body Medico is
+		
+	Begin
+		loop
+			select 
+				accept soliPac();
+			or 
+				when (soliPac'count = 0) =>
+					accept soliEnf(dato) do
+						// resolver
+					end soliEnf;
+			else
+				select
+					Escritorio.tomarNota(dato);
+				else
+					null
+				end select
+			end select;
+		end loop
+	End Medico
+	
+	Task body Paciente is
+		vecesRech: integer;
+	Begin
+		vecesRech := 0;
+		while(vecesRech < 3)loop
+			select
+				Medico.soliPac();
+				vecesRech := 4;
+			or delay 300
+				delay(600);
+				vecesRech := vecesRech +1;
+			end select;
+		end loop;
+	End Paciente;
+	
+	Task body Enfermera is
+	
+	Begin
+		loop
+			select
+				Medico.soliEnf();
+			else
+				Escritorio.nota(dato);
+			end select;
+		end loop;
+	End Enfermera;
+	
+	Task body Escritorio is
+		C: queue, actual;
+	Begin
+		loop
+			select
+				accept nota(dato) do
+					push(C,dato);
+				end nota;
+			or
+				when (not empty(C)) => 
+					accept tomarNota(dato: out texto) do
+						dato := pop(C);
+					end tomarNota
+			end select
+		end loop;
+	End Escritorio;
+	
+Begin
+	null
+End Clinica;

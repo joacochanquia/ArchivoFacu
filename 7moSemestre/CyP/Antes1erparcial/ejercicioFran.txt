@@ -1,0 +1,41 @@
+process Vehiculo[id=0..N-1]{
+	int peso = MiPeso();
+	Puente.pasar(peso);
+	--paso
+	Puente.salir(peso);
+}
+
+Monitor Puente{
+	
+	cond espera, esperaPorPeso;
+	bool esperando = false;
+	int total = 0, pesoSig;
+	
+	procedure Pasar(peso: in int){
+		if !((empty(C))&&(total + peso < 50000)){
+			push(C,peso);
+			wait (espera);
+		}
+		total += peso;
+		if(!empty(C)){
+			pop(C,pesoSig);
+			if (total + pesoSig < 50000){
+				signal (espera);
+			}else{
+				INSERTAR_INICIO(C,peso);
+			}
+		}
+	}
+	procedure Salir(peso:
+		total -= peso;
+		if(!empty(C)){
+			pop(C,pesoSig);
+			if (total + pesoSig < 50000){
+				signal (espera);
+			}else{
+				INSERTAR_INICIO(C,peso);
+			}
+		}
+	}
+
+}

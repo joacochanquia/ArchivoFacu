@@ -1,0 +1,122 @@
+Resolver el siguiente problema con SEMÁFOROS.
+
+● Simular la atención en una Salita Médica para vacunar contra el coronavirus. Hay
+UNA enfermera encargada de vacunar a 30 pacientes, cada paciente tiene un turno
+asignado (valor entero entre 1..30 ya conocido por el paciente). La enfermera
+atiende a los pacientes en un consultorio (donde no puede haber más de un
+paciente a la vez) de acuerdo al turno que cada uno tiene asignado. Cada paciente
+al llegar espera a que sea su turno y luego se dirige al consultorio, le entrega la
+libreta de vacunación a la enfermera, espera que esta lo vacune y le devuelva la
+libreta firmada, y luego se retira. Nota: suponer que existe una función Vacunar() que
+simula la atención del paciente por parte de la enfermera. Todos los procesos deben
+terminar.
+
+sem mutex=1, esperaLibreta=0, esperaFirma[30]=[30]0, espera[30]=[30]0, esperaEnf=0;
+bool llego[30] = [30]false;
+
+process Paciente[id=0..29]{
+	P(espera[id]);
+	V(esperaLibreta);
+	--Es vacunado
+	P(esperaFirma[id]);
+}
+process Enfermera{
+	for(i=1;i<=30;i++){
+		V(espera[i]);
+		P(esperaLibreta);
+		Vacunar(i);
+		V(esperaFirma[i]);
+	}
+}
+
+● Simular la atención en un Centro de Vacunación con 8 puestos para vacunar contra
+el coronavirus. Al Centro acuden 200 pacientes para ser vacunados, cada uno de
+ellos ya conoce el puesto al que se debe dirigir. En cada puesto hay UN empleado
+para vacunar a los pacientes asignados a dicho puesto, y lo hace de acuerdo al
+orden de llegada al mismo. Cada paciente al llegar al puesto que tenía asignado
+espera a que lo llamen para vacunarlo, y al terminar se retira. Nota: suponer que
+existe una función Vacunar() que simula la atención del paciente por parte del
+empleado. Suponer que cada puesto tiene asignado 25 pacientes. Todos los
+procesos deben terminar.
+
+sem mutex[8]=[8]1, pedidos[8]=[8]0, espera[200]=[200]0;
+cola C[8];
+process Persona[id=0..199]{
+	puesto = MiPuesto();
+	
+	P(mutex[puesto])
+	push(C[puesto],id)
+	V(mutex[puesto]);
+	
+	V(pedidos[puesto]);
+	P(espera[id]);
+	-- Va a que lo vacunen
+	P(vacunado[id]);
+	-- Se va
+}
+process Puesto[id=0..7]{
+	int pers;
+	for(i=0;i<25;i++){
+		P(pedidos[id]);
+		
+		P(mutex[id]);
+		pop(C,pers);
+		V(mutex[id]);
+		
+		V(espera[pers]);
+		Vacunar(pers);
+		V(vacunado[pers]);
+	}
+}
+
+● Simular la atención en una Terminal de Micros que posee 3 puestos para hisopar a
+150 pasajeros. En cada puesto hay una Enfermera que atiende a los pasajeros de
+acuerdo al orden de llegada al mismo. Cuando llega un pasajero se dirige al puesto
+que tenga menos gente esperando. Espera a que la enfermera correspondiente lo
+llame para hisoparlo, y luego se retira. Nota: suponer que existe una función
+Hisopar() que simula la atención del pasajero por parte de la enfermera
+correspondiente
+
+
+cant[3] = 0;
+sem mutex=1, mutexC=1, espera[150]=0, pacientes[3]=0;
+cola C[3];
+process Pasajero[id=0;149]{
+	int min = 151, puesto;
+	
+	P(mutex);
+	for(i=0;i<3;i++){
+		if (cant[i] < min){
+			min = cant[i];
+			puesto = i;
+		}
+	}
+	cant[puesto]++;
+	V(mutex);
+	
+	V(pacientes[puesto]);
+	
+	P(mutexC);
+	push(C[puesto],id);
+	V(mutexC);
+	
+	P(espera[id]);
+}
+process Puesto[id=0;2]{
+	while (1){
+		P(pacientes[puesto]);
+		P(mutexC);
+		pop(C[puesto],idP);
+		V(mutexC);
+		
+		Hisopar(idP);
+		
+		P(mutex);
+		cant[id]--;
+		V(mutex);
+		
+		V(espera[idP]);
+	}
+}
+
+

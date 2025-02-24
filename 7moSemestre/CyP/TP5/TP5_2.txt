@@ -1,0 +1,30 @@
+procedure Banco is
+	Task Empleado is 
+		Entry pedido (ped: in texto; res: out texto);
+	end Empleado
+	Task type Cliente;
+	ArrC: array (1..C) of Cliente;
+	
+	Task body Empleado is
+		
+	Begin
+		loop
+			Accept pedido(ped: in texto; res: out texto){
+				res:= resolverPedido(ped);
+			}
+		end loop
+	End Empleado
+	
+	Task body Cliente is
+		
+	Begin
+		select
+			Empleado.pedido(ped,res);
+		or delay 600
+			null 
+		end select;
+	End Cliente;
+
+Begin
+	
+End Banco;

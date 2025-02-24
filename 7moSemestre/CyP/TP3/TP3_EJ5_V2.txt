@@ -1,0 +1,81 @@
+5) Suponga una comisión con 50 alumnos. Cuando los alumnos llegan forman una fila, una
+vez que están los 50 en la fila el jefe de trabajos prácticos les entrega el número de grupo
+(número aleatorio del 1 al 25) de tal manera que dos alumnos tendrán el mismo número de
+grupo (suponga que el jefe posee una función DarNumero() que devuelve en forma aleatoria
+un número del 1 al 25, el jefe de trabajos prácticos no guarda el número que le asigna a
+cada alumno). Cuando un alumno ha recibido su número de grupo comienza a realizar la
+práctica. Al terminar de trabajar, el alumno le avisa al jefe de trabajos prácticos y espera la
+nota. El jefe de trabajos prácticos, cuando han llegado los dos alumnos de un grupo les
+devuelve a ambos la nota del GRUPO (el primer grupo en terminar tendrá como nota 25, el
+segundo 24, y así sucesivamente hasta el último que tendrá nota 1).
+
+Process alumno[id=0;N-1]{
+	int grupo;
+	Gestion.llegar(grupo);
+	-- Hacer practica
+	Gestion.entregar(grupo,nota);
+}
+
+Process JTP{
+	Gestion.llegoProfe();
+	int cant = 0;
+	while(cant < 25){
+		Gestion.corregir(corrigio);
+		cant++;
+	}
+}
+
+Monitor Gestion{
+	int cant=0, grupos[25]=[25]0;
+	int notaActual=25, entrego[25]=[25]0;
+	int notasGrupos[25], num = -1;
+	cond espera, esperaGrupo[25];
+	cond esperaProfe, esperaJTP, leido;
+	
+	procedure llegar(grupo: out int){
+		cant++;
+		if (cant == 50){
+			signal(esperaProfe);
+		}
+		wait(espera);
+		grupo = num;
+		signal(leido);
+	}
+	procedure llegoProfe(){
+		int i;
+		if (cant<50){
+			wait(esperaProfe);
+		}
+		for (i=0;i<50;i++){
+			while(num == -1){
+				num = DarNumero()-1;
+				if (grupos[num] < 2){
+					grupos[num]++;
+				}else{
+					num = -1;
+				}
+			}
+			signal(espera);
+			wait(leido);
+			num = -1;
+		}
+	}
+	procedure entregar(grupo: in int; nota: out int){
+		push(C,grupo);
+		wait(esperaGrupo[grupo]);
+		nota = notasGrupo[grupo];
+	}
+	procedure corregir(corrigio: out bool){
+		int grupo;
+		if (empty(C)){
+			wait(esperaJTP);
+		};
+		}else{
+			pop(C,grupo);
+			notasGrupos[grupo] = notaActual;
+			notaActual--;
+			signal_all(esperaGrupo[grupo]);
+			corrigio = true;
+		}
+	}
+}
