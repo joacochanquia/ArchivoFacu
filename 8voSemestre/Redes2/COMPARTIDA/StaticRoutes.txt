@@ -1,0 +1,43 @@
+n1
+ip route add 140.222.20.96/28 via 140.222.20.66
+ip route add 140.222.20.0/26 via 140.222.20.66
+ip route add 140.222.16.0/23 via 140.222.20.66
+ip route add default via 140.222.20.74
+
+n2:
+ip route add 192.168.1.0/24 via 140.222.20.65
+ip route add 140.222.16.0/23 via 140.222.20.102
+ip route add 140.222.20.104/30 via 140.222.20.102
+ip route add 140.222.20.0/26 via 140.222.20.102
+ip route add 140.222.20.92/30 via 140.222.20.98
+ip route add default via 140.222.20.70
+
+n3: 
+ip route add 140.222.20.80/30 via 140.222.20.78
+ip route add 140.222.18.0/23 via 140.222.20.78
+ip route add 192.168.1.0/24 via 140.222.20.73
+ip route add 140.222.20.92/30 via 140.222.20.90
+ip route add default via 140.222.20.69	
+
+n4:
+ip route add 140.222.20.88/30 via 140.222.20.94
+ip route add default via 140.222.20.97
+
+n5:
+ip route add default via 140.222.20.77
+
+n6:
+ip route add 140.222.18.0/23 via 140.222.20.81
+ip route add default via 140.222.20.85
+
+n7:
+ip route add 140.222.20.0/26 via 140.222.20.106
+ip route add 140.222.16.0/23 via 140.222.20.106		
+ip route add default via 140.222.20.101	
+
+n8:
+ip route add default via 140.222.20.105
+
+n15:
+ip route add 140.222.20.96/30 via 140.222.20.93
+ip route add default via 140.222.20.89
