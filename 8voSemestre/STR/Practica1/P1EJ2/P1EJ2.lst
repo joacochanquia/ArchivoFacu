@@ -1,0 +1,62 @@
+     1: #include <stdlib.h>
+     2: #include <stdio.h>
+     3: #include <htc.h>
+     4: 
+     5: #define _XTAL_FREQ 1000000  // Definir la frecuencia del oscilador a 1 MHz
+     6: 
+     7: // Función para configurar el Timer0
+     8: void iniTimer0() {
+     9:     T0CS = 0;   // Seleccionar el reloj interno (Fosc/4) como fuente para el Timer0
+    10:     PSA = 0;    // Asignar el prescaler al Timer0
+    11:     PS2 = 1;    // Configurar el prescaler en 1:256 (PS2:PS1:PS0 = 111)
+    12:     PS1 = 1;
+    13:     PS0 = 1;
+    14:     TMR0 = 12;   // Inicializar el registro del Timer0 en 12
+    15:     T0IE = 1;   // Habilitar la interrupción del Timer0
+    16:     GIE = 1;    // Habilitar interrupciones globales (permite que las interrupciones ocurran)
+    17: }
+    18: // Toverflow = (4*prescaler*256)/(Fosc) = (4*256*256)/(1000000) = 262,14mS
+    19: // Tdelay = 250mS
+    20: // TMR0_ini = 256 - (Tdelay*Fosc)/(4*prescaler) = 256 - (0,25*1000000)/(4*256) = 12
+    21: 
+    22: 
+    23: // Función para configurar los puertos
+    24: void iniPorts() {
+    25:     TRISA = 0b00000011;  // Configurar RA0 y RA1 como entradas (bits 0 y 1 en 1)
+    26:     TRISB = 0;           // Configurar todos los pines de PORTB como salidas
+    27:     PORTB = 0b00110000;  // Inicializar PORTB: RB4 y RB5 en alto (LEDs encendidos)
+    28: }
+    29: 
+    30: // Variables globales para controlar el estado de los LEDs
+    31: volatile int start = 0;      // Indica si los LEDs deben parpadear
+    32: volatile int presionado = 0; // Indica si un botón fue presionado
+    33: 
+    34: void main() {
+    35:     iniPorts();    // Inicializar los puertos
+    36:     iniTimer0();   // Inicializar el Timer0
+    37: 
+    38:     // Bucle principal
+    39:     while (1) {
+    40:         // Si alguno de los botones (RA0 o RA1) es presionado y no se ha registrado un presionado previo...
+    41:         if ((!RA1 || !RA0) && !presionado) {
+    42:             start = 1;         // Habilitar el parpadeo de los LEDs
+    43:             presionado = 1;    // Marcar que un botón fue presionado
+    44:         }
+    45:         // Si ambos botones (RA0 y RA1) están sueltos y un botón fue presionado previamente...
+    46:         if (RA1 && RA0 && presionado) {
+    47:             start = 0;         // Detener el parpadeo de los LEDs
+    48:             presionado = 0;    // Marcar que los botones fueron soltados
+    49:         }
+    50:     }
+    51: }
+    52: 
+    53: // Rutina de Interrupción
+    54: void interrupt ISR() {
+    55:     if (T0IF) {       // Verificar si la interrupción fue causada por el Timer0
+    56:         T0IF = 0;     // Limpiar la bandera de interrupción del Timer0
+    57:         if (start == 1) {  // Si el parpadeo está habilitado...
+    58:             RB4 ^= 1;  // Alternar (toggle) el estado del pin RB4
+    59:             RB5 ^= 1;  // Alternar (toggle) el estado del pin RB5
+    60:         }
+    61:     }
+    62: }

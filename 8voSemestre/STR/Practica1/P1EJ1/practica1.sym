@@ -1,0 +1,123 @@
+_RA0 28 0 ABS
+_RA1 29 0 ABS
+_RB4 34 0 ABS
+_RB5 35 0 ABS
+__S0 400 0 ABS
+__S1 12 0 ABS
+__S2 0 0 ABS
+__Hintentry 0 0 CODE
+__Lintentry 0 0 CODE
+__end_of_iniPorts 3B6 0 CODE
+_main 3B6 0 CODE
+btemp 4E 0 ABS
+_exit 0 0 CODE
+start 0 0 CODE
+_TRISA 85 0 ABS
+_TRISB 86 0 ABS
+reset_vec 0 0 CODE
+_PORTB 6 0 ABS
+wtemp0 4E 0 ABS
+__Hconfig 0 0 CONFIG
+__Lconfig 0 0 CONFIG
+__Hram 0 0 ABS
+__Lram 0 0 ABS
+?_main C 0 BANK0
+main@presionado 10 0 BANK0
+__Hfunctab 0 0 CODE
+__Lfunctab 0 0 CODE
+__Hcommon 0 0 ABS
+__Lcommon 0 0 ABS
+__Heeprom_data 0 0 EEDATA
+__Leeprom_data 0 0 EEDATA
+__Habs1 0 0 ABS
+__Labs1 0 0 ABS
+__Hsfr0 0 0 ABS
+__Lsfr0 0 0 ABS
+__Hsfr1 0 0 ABS
+__Lsfr1 0 0 ABS
+_iniPorts 3AE 0 CODE
+__ptext113 0 0 CODE
+__ptext114 3AE 0 CODE
+__Hcode 0 0 ABS
+__Lcode 0 0 ABS
+__ptext115 0 0 CODE
+??_main C 0 BANK0
+__HcstackBANK0 0 0 ABS
+__LcstackBANK0 0 0 ABS
+__pcstackBANK0 C 0 BANK0
+__Hinit 0 0 CODE
+__Linit 0 0 CODE
+__end_of_main 400 0 CODE
+__Htext 0 0 ABS
+__Ltext 0 0 ABS
+end_of_initialization 3AC 0 CODE
+__Hstrings 0 0 ABS
+__Lstrings 0 0 ABS
+__Hbank0 0 0 ABS
+__Lbank0 0 0 ABS
+main@start E 0 BANK0
+__Hbank1 0 0 BANK1
+__Lbank1 0 0 BANK1
+__Hpowerup 0 0 CODE
+__Lpowerup 0 0 CODE
+?_iniPorts C 0 BANK0
+__Hclrtext 0 0 ABS
+__Lclrtext 0 0 ABS
+__size_of_iniPorts 0 0 ABS
+__Hidloc 0 0 IDLOC
+__Lidloc 0 0 IDLOC
+__Hcinit 0 0 ABS
+__Lcinit 0 0 ABS
+__size_of_main 0 0 ABS
+__Hend_init 1 0 CODE
+__Lend_init 0 0 CODE
+__Hreset_vec 0 0 CODE
+__Lreset_vec 0 0 CODE
+intlevel0 0 0 CODE
+intlevel1 0 0 CODE
+intlevel2 0 0 CODE
+intlevel3 0 0 CODE
+intlevel4 0 0 CODE
+intlevel5 0 0 CODE
+??_iniPorts 0 0 COMMON
+__HcstackCOMMON 0 0 ABS
+__LcstackCOMMON 0 0 ABS
+__pcstackCOMMON 0 0 COMMON
+start_initialization 3AC 0 CODE
+__Hmaintext 0 0 ABS
+__Lmaintext 0 0 ABS
+__pmaintext 3B6 0 CODE
+%segments
+reset_vec 0 1 CODE 0
+cstackBANK0 C 11 BANK0 C
+maintext 76C 7FF CODE 76C
+text114 75C 76B CODE 75C
+cinit 758 75B CODE 758
+%locals
+C:\Users\Joaco\Desktop\STR\Practica1\P1EJ1\startup.obj
+C:\Users\Joaco\Desktop\STR\Practica1\P1EJ1\startup.as
+63 0 0 CODE
+C:\Users\Joaco\Desktop\STR\Practica1\P1EJ1\practica1.obj
+C:\Users\Joaco\Desktop\STR\Practica1\P1EJ1\practica1.as
+73 3AC 0 CODE
+74 3AD 0 CODE
+C:\Users\Joaco\Desktop\STR\Practica1\P1EJ1\practica1.c
+14 3B6 0 CODE
+15 3B7 0 CODE
+16 3BA 0 CODE
+18 3BD 0 CODE
+19 3CD 0 CODE
+20 3D1 0 CODE
+22 3D6 0 CODE
+23 3E4 0 CODE
+24 3E6 0 CODE
+26 3E9 0 CODE
+27 3F0 0 CODE
+28 3F2 0 CODE
+30 3F4 0 CODE
+17 3FE 0 CODE
+33 3FF 0 CODE
+9 3AE 0 CODE
+10 3B1 0 CODE
+11 3B2 0 CODE
+12 3B5 0 CODE

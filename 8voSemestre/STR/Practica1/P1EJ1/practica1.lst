@@ -1,0 +1,33 @@
+     1: #include <stdlib.h>
+     2: #include <stdio.h>
+     3: #include <htc.h>
+     4: 
+     5: #define _XTAL_FREQ 1000000
+     6: 
+     7: 
+     8: void iniPorts(){
+     9:         TRISA = 0b00000011;
+    10:         TRISB = 0;
+    11:         PORTB = 0b00110000;
+    12: }
+    13: void main(){
+    14:         iniPorts();
+    15:         int start=0;
+    16:         int presionado = 0;
+    17:         while(1){
+    18:                 if ((!RA1) || (!RA0) && (!presionado)) {
+    19:                         start = 1;
+    20:                         presionado = 1;
+    21:                 }
+    22:                 if ((RA1) && (RA0) && (presionado)) {
+    23:                         start=0;
+    24:                         presionado = 0;
+    25:                 }
+    26:                 if (start == 1){
+    27:                         RB4^=1;
+    28:                         RB5^=1;
+    29:                 }
+    30:                 __delay_ms(250);
+    31:         }
+    32:         
+    33: }

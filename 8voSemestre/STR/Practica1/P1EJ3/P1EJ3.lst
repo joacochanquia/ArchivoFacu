@@ -1,0 +1,60 @@
+     1: #include <htc.h>
+     2: 
+     3: #define _XTAL_FREQ 4000000  // Frecuencia del oscilador (4 MHz)
+     4: #define LATCH1 RD6          // Controla el primer latch (RD6)
+     5: #define LATCH2 RD7          // Controla el segundo latch (RD7)
+     6: 
+     7: // Función para inicializar el ADC
+     8: void initADC() {
+     9:     ADCON0 = 0x01;  // Seleccionar canal AN0 y encender el ADC
+    10:     ADCON1 = 0x0E;  // Configurar AN0 como analógico, VREF = VCC
+    11:     ADFM = 1;
+    12: }
+    13: 
+    14: // Función para leer el valor analógico desde AN0
+    15: unsigned int readADC() {
+    16:     __delay_us(20);  // Pequeña espera para la adquisición
+    17:     GO_nDONE = 1;    // Iniciar la conversión ADC
+    18:     while(GO_nDONE); // Esperar a que termine
+    19:     return (ADRESH << 8) | ADRESL;  // Devolver el valor de 10 bits
+    20: }
+    21: 
+    22: // Función para inicializar los puertos
+    23: void initPorts() {
+    24:     TRISA = 0x01;  // AN0 como entrada
+    25:     TRISB = 0x00;  // Puerto B como salida (para enviar los datos a los latchs)
+    26:     TRISD = 0x00;  // Puerto D como salida (para controlar los latchs)
+    27:     PORTB = 0x00;  // Limpiar puerto B
+    28:     PORTD = 0x00;  // Limpiar puerto D
+    29: }
+    30: 
+    31: // Función para actualizar los displays con un valor de 16 bits
+    32: void updateDisplay(unsigned int value) {
+    33:     unsigned char digit;
+    34:     
+    35:     // Mostrar el dígito más significativo en el display 1
+    36:     digit = (value >> 8) & 0xFF;  // Más significativos 8 bits
+    37:     PORTB = digit;        // Enviar el dígito al puerto B
+    38:     LATCH2 = 1; LATCH2 = 0;  // Activar el primer latch (display 1)
+    39:     __delay_ms(1);  // Esperar para estabilidad
+    40: 
+    41:     // Mostrar el segundo dígito en el display 2
+    42:     digit = (value) & 0xFF;   // Siguiente dígito
+    43:     PORTB = digit; 
+    44:     LATCH1 = 1; LATCH1 = 0;  // Activar el segundo latch (display 2)
+    45:     __delay_ms(1);  // Esperar para estabilidad
+    46: }
+    47: 
+    48: // Programa principal
+    49: void main() {
+    50:     unsigned int adcValue;
+    51:     
+    52:     initPorts();    // Inicializar puertos
+    53:     initADC();      // Inicializar ADC
+    54:     
+    55:     while(1) {
+    56:         adcValue = readADC();        // Leer valor del ADC
+    57:         updateDisplay(adcValue);     // Mostrar valor en los displays
+    58:         __delay_ms(500);             // Esperar antes de la siguiente lectura
+    59:     }
+    60: }
