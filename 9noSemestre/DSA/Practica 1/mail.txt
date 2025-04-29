@@ -1,0 +1,23 @@
+Buenos días,
+
+A continuación, enviamos los datos de nuestro grupo para el CTF:
+
+** Apellido y Nombre: Chanquía Joaquín
+** Nº de Alumno: 02887/7
+** Usuario de GitHub: joacochanquia
+** Usuario del CTF: joacochanquia
+** Grupo del CTF: LUCK(Let Us CooK)
+
+** Apellido y Nombre: Franco Niderhaus
+** Nº de Alumno: 02976/6
+** Usuario de GitHub: franNider
+** Usuario del CTF: Franco Niderhaus
+** Grupo del CTF: LUCK(Let Us CooK)
+
+** Apellido y Nombre: Bruno Zanetti
+** Nº de Alumno: 02975/5
+** Usuario de GitHub: BrunoZanetti09
+** Usuario del CTF: Bruno Zanetti
+** Grupo del CTF: LUCK(Let Us CooK)
+
+Saludos cordiales.

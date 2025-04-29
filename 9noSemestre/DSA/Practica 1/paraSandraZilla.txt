@@ -1,0 +1,23 @@
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.15
+Comment: https://keybase.io/crypto
+
+wcBMA0kVxOLqWQfvAQgAq4U4zWjKyYV/km3qv9y3F9BQRIJ+JUn4WE4sQNaPLyXy
++0QKpf37taRPyhHa40bVsiCLukt21fvvFDFGNTCp5/TiCU/j9LAS/Rb/coe+4vBC
+sL5iskh435Gx8Z8DJQudJUrYc1AeyxpWf1OCLhS2/cCIMRcThVpOW7IhqLfijgOZ
+hwNnr83lN7hYfLJbvf/2SxxMIWHZEkKMreRjnlZ/sFPWAwTpR32Als6Uh5E9VOE+
+7ZYVu/yUIibk+kEl5gJ0oJdrS/GAepX1SPE5l6Aw2MurJBqDerk+/5bGcHo0XK3e
+qgnSekFRDkE/erKiL03jnFiGklVnyqdM9pRYJw5/htLBTQGAOyJq4KNiH8mMrsva
+ABJo+q33IQ5pbeax2cSzQ8CTdoBfIjhlxzSlyhCe29P9mSXa6zogYdiweydgaufj
+cc2zDwvRLGo01xVyh9Gi07F70vyf+LwxLY61evYOoEoVd9lYeqA4rYYwKUXFBafU
+c5XIHHfXgf4GCdofXqQ5yNDJ557e02Q4JO2RhoNbGkTzQDLnfOV/YqThXhnWZBe+
+CdecA+lSF07+4VgQryki1MwEV/+u/HAT7Z11cs1/M5mDYqWTHCWNyIZerg9EVmI4
+rB3EArr8h2TUI4gaQlABRZBBJnxLzDy6yKd90bUoynQpbS1gi6lrX9KCC6OyDiWq
+F8hBX8XIuaB8RbbPyAvaG3gW+45VRRJYLJFYM/nX/vAsmONtFrGtsUjm4ugxxLiq
+Imb5epkZ3CbxzXtOS93nAryXeaiZrovXw9/pbBY9mDFHD+ittc20qypUjASwSmLn
+CGp0DrL8ciaqM1MyjvUEWTri5Q6lHxsF8N2mpx1WtXVrU5SReNvb7iqxZUejgA20
+X2Lol3YlKFLsg/34b9auJN64y+HfeeEM+lmF2mmKf5Q2nkG1pMMd3REiSMhfnsxk
+aEp/4YoLQkrkXORJ5Ovm/e6cu/WJR1r/aqv14BqwviyoM8nxfVXa/IaGxaLrg8bg
+vtEjcs+r8/u3wy2eHJLHU7P+71nC8y51XYZ1ap4UDQ==
+=zWXu
+-----END PGP MESSAGE-----
