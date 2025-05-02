@@ -1,0 +1,214 @@
+Gente,
+
+sigo sin poder ver el contendio del archivo cifrado, 
+
+por favor respondan este mail con los siguiente datos:
+
+Nombre del equipo
+nombre de usuario de GitHub
+nombre de usuario del CTF
+
+adjuntando las claves publicas generadas de PGP de cada uno 
+
+--
+Sandra Zilla
+
+On 2025-04-15 at 22:28, joaquin.chanquia@alu.ing.unlp.edu.ar wrote:
+
+> ¡Hola profesora! Al parecer habíamos entendido mal la consigna y habíamos cifrado usando una de las herramientas que nos habían dado para la resolución del primer punto de la práctica. Ahí generamos claves nuevas desde la terminal de linux y ciframos el mensaje para las mismas claves que el mensaje original.
+> El mail cifrado es el archivo mail.txt.asc y fue firmado con la clave pub_chanquia.asc
+>
+> El mar, 15 abr 2025 a la(s) 4:46 p.m., Sandra Zilla (sandrazilla@gmail.com) escribió:
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA512
+>
+> Joaquin,
+>
+> que cliente de mail estas usando?
+>
+> sigo sin poder acceder a ver el mail que cifraste...
+>
+> podrias volver a enviarme mail firmado y cifrado solo con tu clave PGP
+>
+> - --
+> Sandra Zilla
+>
+> On 2025-04-11 at 21:45, joaquin.chanquia@alu.ing.unlp.edu.ar wrote:
+>
+> > Dale, ahi le reenvio el archivo del primer mail. Tiene todo el resto de
+> la información?
+> >
+> > Recuerde que la clave con la que fue firmada la información fue la que
+> aparece a mi nombre (Joaquin Chanquia) en el primer mail y fue cifrado para
+> esta clave:
+> > La que aparece con un pub adelante en la página para la profesora Sandra
+> Zilla
+> >
+> https://keyserver.ubuntu.com/pks/lookup?search=bb17+e159+5aad+556d+74e4+2086+9983+2da7+4b41+d3e3&fingerprint=on&op=index
+>
+> >
+> > El vie, 11 abr 2025 a la(s) 3:04 p.m., Sandra Zilla
+> (sandrazilla@gmail.com) escribió:
+> > Hola Joaquin!
+> >
+> > podrias re-enviarme los datos de los nombres de usuarios del CTF y
+> GithHub, y el nombre del equipo que representan, por favor
+> >
+> > cifrado y firmado
+> >
+> > El jue, 10 abr 2025 a las 21:37, Joaquin Chanquia
+> (<joaquin.chanquia@alu.ing.unlp.edu.ar>) escribió:
+> > Respondo al mensaje anterior por un error al copiar el mail de la
+> profesora Sandra Zilla, disculpen las molestias.
+> >
+> > El jue., 10 de abril de 2025 19:26, Joaquin Chanquia
+> <joaquin.chanquia@alu.ing.unlp.edu.ar> escribió:
+> > En los archivos adjuntos se encuentran los mensajes firmados por Joaquin
+> Chanquia y cifrados para la clave PGP pública del profesor que se indica en
+> el nombre del archivo.
+> > Las claves de los profesores usadas son:
+> >
+> > La de Miguel Carbone fue la encontrada en la página
+> > https://keys.openpgp.org/search?q=mcarbone%40linti.unlp.edu.ar
+> >
+> > La de Sandra Zilla fue la que aparece con un pub adelante en la página
+> >
+> https://keyserver.ubuntu.com/pks/lookup?search=bb17+e159+5aad+556d+74e4+2086+9983+2da7+4b41+d3e3&fingerprint=on&op=index
+>
+> >
+> > La de Einar Felipe fue la que aparece con un pub adelante en la página
+> >
+> https://keyserver.ubuntu.com/pks/lookup?search=699B+5CD9+4C66+19BC+DCE6+893D+E4ED+C070+3DB4+692E&fingerprint=on&op=index
+>
+> >
+> > No se encontró una clave para Nicolas Macia
+> >
+> > Claves PGP:
+> >
+> > Joaquin Chanquia:
+> >
+> > -----BEGIN PGP PUBLIC KEY BLOCK-----
+> > Version: Keybase OpenPGP v2.1.15
+> > Comment: https://keybase.io/crypto
+> >
+> > xo0EZ/goeQEEANyLCWBS08ZH0Hs/dWtvjhUyIFAITAhLWYAsjhFiaJoTS9shi4vo
+> > 9peyvDi43ytuWYvVbT5ZYNfLCipjxZq7ytElGsPHKhs9YCWwEXv2OGa0lJJTq3/i
+> > KeNGhZh2nNhparYvpesXFOLnxDEZCaFDtEQtBLWVYDXdOYTDSOZU3i0/ABEBAAHN
+> > N0pvYXF1aW4gQ2hhbnF1aWEgPGpvYXF1aW4uY2hhbnF1aWFAYWx1LmluZy51bmxw
+> > LmVkdS5hcj7CtAQTAQoAHgUCZ/goeQIbLwMLCQcDFQoIAh4BAheAAxYCAQIZAQAK
+> > CRCGC55MQ1wbVByqBACAxjN05t4qNAV7w12D2ApcqHp5k/UvBUPq9tY9ERqU2cmX
+> > 6XHhOMlU0AaAnTVUCK5c/ZIvt4wupqZIYgMF2lBkYrdiacfVGrIprCQiUFAuNyTe
+> > q/ysf6UKZDgnlXOLyhf1A03Oe8jQ+nJSMh6RF2k9LrMUq7koZOkJ/BFpr2YxBs6N
+> > BGf4KHkBBAC49bWsx3SjEhIdpSmjwtfXyFNoioAXwfupqkHdWd5zO5ayRnmtyNYT
+> > HGmY8f+ek67rRy7XrZWxw+Tdmh3UE+zTl/ffLDaousdePTIoQw39yvWtyFDQsUCS
+> > P/lRcv5Up4m+Y9ZHtarfiF0rCQQksP1PwlIEl1lLv20UWCQF6XYwrQARAQABwsCD
+> > BBgBCgAPBQJn+Ch5BQkPCZwAAhsuAKgJEIYLnkxDXBtUnSAEGQEKAAYFAmf4KHkA
+> > CgkQ+5g1luXvtAc5EgP/TsI0SXrZZrptEn4xqZCaicqiHln4FTwzg84KPQT1fr22
+> > oVt4bM4Ya5/wQVYIoWYUWES6ixoJkGbkJP0gbR2NLSXkmO/cD0LeEiQERTOglnbQ
+> > YLT775AG9iY5Ff5saO4q9W2HwJZESG971/AiNgAYqPjsIBbP5uJVUpopRknOxzoq
+> > zwQAxWauE8w7Ik1x9ZdVHZsetv8/s0OMz9skVz9iCyfm0l1XFxZqwGZGSrXhgy71
+> > uQIvBlvOGUKD36N+YcAeSSL0KJBSizTHjCigvafJNxQkFtvbTveFVbAP+BVG+o4n
+> > Z1XvLzxax1OjM+RtAd6izoVUjpa4mLDEYYxU9MxAsXtji2LOjQRn+Ch5AQQAvb9C
+> > 2HvfZYF5XZWBDgyVAla9Air/SMLAbZiNxgdtONq6db/me8MmcPisNZOMVsW6fG3T
+> > 9ycB5YFApceS6KPEYda7LX2jJZCYy3Jfo7rNdmvpuUttMT+m/lsq/+YIHzTapMae
+> > OGXzlgvzgrz/nqNKQJUUKe4pDxz2SOqRtYDD4YsAEQEAAcLAgwQYAQoADwUCZ/go
+> > eQUJA8JnAAIbLgCoCRCGC55MQ1wbVJ0gBBkBCgAGBQJn+Ch5AAoJEJ2WjbpoAWDT
+> > gtEEAKzRknNDtWC0dePPQz+EuevMt70tZJOBGyMmKU8PHyKAebGTFgxHzShJKfuc
+> > 6UMAnnmnHsGjGF00rvE6d6zBIEtb5PckaGkZb4DqiRvjquQNh988wNUSl8aWRevG
+> > 3C4PtbzWd7p1RNubLpqpEQJUh0wVJVN7ol9FfiW1A1CKKUuUpokEAK3xNg5z/SJk
+> > nIp8ntnVfreFmTFHsaz0XJ67FSKcaq5p3j21v7DwV1R/i2ZUDGoVKXZ61/CWLaVm
+> > MQ33ByP+KdMTN0UL23xoth7in8LB4W9BO5/BpmME0lhQSvG9Xxb20Wu1Z1z1n6sT
+> > 0Dgwl+nTY3cxPrT79VokpphKpnGoAT3y
+> > =ZzXm
+> > -----END PGP PUBLIC KEY BLOCK-----
+> >
+> > Franco Niderhaus:
+> >
+> > -----BEGIN PGP PUBLIC KEY BLOCK-----
+> > Version: Keybase OpenPGP v2.1.15
+> > Comment: https://keybase.io/crypto
+> >
+> > xo0EZ/g1CwEEANA/17ij4QkaPDdy6WW8T0BHWNOt1k+Busb0f8u14wSkIabT1UaK
+> > SdS5RJ7q1VtPDgjvLqaOIRxkjZ9QJb+hiCg+BWDmKGlHizEOJfS4ekcukxmdFmt0
+> > oECXqpgbZuX5deHDijV8b1G/KRWVbeMG7fXYPQdY7Ib+ZxFv0EuDUWjBABEBAAHN
+> > N0ZyYW5jbyBOaWRlcmhhdXMgPGZyYW5jby5uaWRlcmhhdXNAYWx1LmluZy51bmxw
+> > LmVkdS5hcj7CtAQTAQoAHgUCZ/g1CwIbLwMLCQcDFQoIAh4BAheAAxYCAQIZAQAK
+> > CRD8UOFqv7kCUR60BACNYFZjqtnU1ydh3pv2dqyaag3DgSDsADX/SsBhgMV5na2X
+> > TTuzFNaO1HUey7oRn41SzRPo3+hM+j+Wmodtgjn0+VP4xNuDzRf3wLNuoaaYAp9P
+> > zjcIiG+fPW7TTbtpXQkysSzFSFap5ub/f8JPqrVObojKZ07f1vFayu7TC/vb2s6N
+> > BGf4NQsBBADbVqME7QkuMriKkxdDEGn5WJNlVnBB8bv69KiPkIgZO3xe/AMaODRa
+> > pQ3dsDT0Slz6F2w/KT+pp7SNXNqFGI3YzUsmZNiyHSgjgqiOomI6yrvy3+J7ONHZ
+> > KspXDPlCwjLVhwPPxTrCoG/MzXj4LvoCXMyR8UF2U9DxyDk1Q7QF7wARAQABwsCD
+> > BBgBCgAPBQJn+DULBQkPCZwAAhsuAKgJEPxQ4Wq/uQJRnSAEGQEKAAYFAmf4NQsA
+> > CgkQjlGHCjEIDsbOvQQAgxb4qJKl3dzERd0aflroSU6UNdau58Srg/Q8XPiUsqvy
+> > Lcrwsosr51PApwWGtt8GqQFpftOYe6qmPlFbmwuxd/xtWEUA41S2+WQgnBG5QRhm
+> > 0ZLEF5l4AgAmh6Nwjm/cD+SQ7yPCBQbkClR4JhtthG/zEKoQTg4llNdAZjDO1/5/
+> > XAP/Whf5JBY4aGbs6ny1AfPI4TmFJbcoWv3t5vrThtkHaCYIZ5ir06SuqwgZ3r1x
+> > 14VaMh3ejMTbXHq6bIWCqCy6KjifFv2s8Muv4p6Y9SPj9B9P3Ru3H/THY9nO2nty
+> > PO2HTR2wLY7OPtdsJCQ7sNRuBhXuwwmptTIIF6uWkKhau73OjQRn+DULAQQA0ZPm
+> > ns4CDf2p0+NS3OxkNz7I2CFvsGzW7wJNAJu0gedaGD5y6N+n9geQLV+wwT/ZmyRW
+> > OzZlbyH4MPc5ls9XJbwlUrYFkbef58te2xsuKmbArFdVwxonlXEnz8/DjH1RtoVI
+> > 6+BOp/Ye8Owv+5gMr5VvQ8duXXbmgO4OgmwcLjcAEQEAAcLAgwQYAQoADwUCZ/g1
+> > CwUJA8JnAAIbLgCoCRD8UOFqv7kCUZ0gBBkBCgAGBQJn+DULAAoJELTBpdLdV7m7
+> > xncD/iSa+lFBot7mzOdAHqtQtcK9uhAQGD29rJ2K74lgAzTcUOo8J7VjWLAE6lOM
+> > sc5iFAo/LcushQFb/lJxEiPOUZhnpG76BQhvF1LIPOCpXHXVRtpdst3PVJGxbwwQ
+> > UuygLilJynMd5FRQ7Y5MbeJSBhyxjokGXxxwdVV1GxfhITBYCOED/jJuDj8uhhv7
+> > cK0CtvtwHMpCJ/jxOKgMotE8V042jsGJVj27KncKe5VenfEyUHC3GhOSS1YOzIOW
+> > l2ZoeMzp/2yDvNtG3MgNO32Q9+hmOtVTll3J0ROWpmqdJG8xIdz2R+t5ub7CJSh3
+> > xYKobHzhVOWbN6xKUzPmBmUqtHC/i3U1
+> > =edyr
+> > -----END PGP PUBLIC KEY BLOCK-----
+> >
+> > Bruno Zanetti
+> >
+> > -----BEGIN PGP PUBLIC KEY BLOCK-----
+> > Version: Keybase OpenPGP v2.1.15
+> > Comment: https://keybase.io/crypto
+> >
+> > xo0EZ/g1YQEEAMNkU9PoLDS364l+3ol+EzQAPg9SSF59tQV/IzOPqOMvcBxax/7t
+> > 0us0wKJ3tNiBpsam3880sGurQvtfxLodKyEonI/hpwmNQKeUQXLPGido8xTHI5It
+> > uidrnWFlUEICT5My7ioreAgOw7NTQu/7md+trSgUitAGQs1UZXDPF4n/ABEBAAHN
+> > MUJydW5vIFphbmV0dGkgPGJydW5vLnphbmV0dGlAYWx1LmluZy51bmxwLmVkdS5h
+> > cj7CtAQTAQoAHgUCZ/g1YQIbLwMLCQcDFQoIAh4BAheAAxYCAQIZAQAKCRDVLiJ/
+> > pxoVqbMiBACXZFGWP0Y/P1yYkkM1x+ZFkgHKUIcKUXr0J149zBnLLlH2cePjD+28
+> > 02BXO9dodfFpKcvlpIfXQdHCOhkQvYpgcVeWgOIRxP2FdOnGAst3v/CoQpD4uPZm
+> > Oc3x9TN9GujU/KbybWoMcf8tdvSRLqEhE/GJHWcvi95oj8iVXZcwb86NBGf4NWEB
+> > BADdEgH+1dnGHQIGOR2Rkapn2XZQs+5tNo8juOLAyFk9yG3S6xy3vMosDfaXtUmw
+> > J7wtxNNjy4BQEhiUjAzDBqrILoXs29RY+617ZCAg0AAD8Zid5+LI87EZyhQIxh/B
+> > OzRPoWOObTC7VuTWDya1bnmGjjGRpMf0J5BXdzRR7rv6+wARAQABwsCDBBgBCgAP
+> > BQJn+DVhBQkPCZwAAhsuAKgJENUuIn+nGhWpnSAEGQEKAAYFAmf4NWEACgkQ8YnI
+> > LMIfy4gH2QP/QOgxB3NpKwiR/Y/CJPMutXgYxHKAqN1J8Wa73JEEgfI4dPG3WOAj
+> > 12f+mkruHXJVH3nuHw4nUst07DUGDe26snvebM7v0AVkX2QfeRhrB5PqPiAAzRqo
+> > I1QqkjLYi8lDsLy30vOmFIi1JfP9dq1erZ9QLwqaMRYxu67qfbWJD0Bu+gP7BZAV
+> > ZE7GIY7/ryYDachTH+h4QhFRIVUhWXQhSQzL7X/+TnxPKN4k9cJbqPWbq7Ds49UF
+> > wXbawJ3u88WZxyCEsr0sfUv8qkwIGij0xwSQGPaeBZDivebPPocAsemIGrJX0cA2
+> > TxxIsX06tbuxJ8mHVYc2sag05fK0siXa9/pWCdrOjQRn+DVhAQQAwUOf5l6b3ENQ
+> > T+3mMWPb9JNDfrB1yBr1KXgLoP6onx2C0DI+/ypaBUujoHACttoHnJF9I+i9gA+i
+> > pfI+v+E8YYpYAP5f26F2bze/YmvOg07Hkdw1+BKhUwQED+3KIy6OjxGD6ZDE8ewI
+> > tUq4FDkOwZ8An4GTWOUXiPBFZxAOlzsAEQEAAcLAgwQYAQoADwUCZ/g1YQUJA8Jn
+> > AAIbLgCoCRDVLiJ/pxoVqZ0gBBkBCgAGBQJn+DVhAAoJEPCiG5e9+CFfgkMD/Rf/
+> > 8Qy/LXN+HJ/qufYHKVD1/uTZdVs78McG5PB7twul+6XmFB9O8Ag6SqbBMOU6Vpo7
+> > jcpDPNt+ZDYM8CFPwnMq/sn9ygV47BU49L6EE07whjym4A8B8rVBXzUyM93wb/ZB
+> > thhfphLcj+ODabWc2snIoGWQ1dTndRKHqlf0imSFo/ED/38I8wMoPB6UB042ZMWR
+> > aVbXRi7Jxtgu05S3Sc35vbgAOYA7Czu8Wa+ZX46Ng+kvvwbSDYb/Z+DgBmUEjgAf
+> > hunBg3+W/KGCNQzpWSOylnlNlmUPR21s89QGeUYytn66KhzgEOmlVoZSieJ9F+cR
+> > hlQdcx9RTA4mWDZ5ImhGy7Jz
+> > =Wdaj
+> > -----END PGP PUBLIC KEY BLOCK-----
+> >
+> > --
+> >
+> > Sandra Zilla
+> >
+> -----BEGIN PGP SIGNATURE-----
+> Version: FlowCrypt Email Encryption 8.5.10
+> Comment: Seamlessly send and receive encrypted email
+>
+> wrsEARYKAG0Fgmf+t6YJkI8duQtrj53URRQAAAAAABwAIHNhbHRAbm90YXRp
+> b25zLm9wZW5wZ3Bqcy5vcmeyLEXf9VTWiimuxmTwb1Kt6SJ/kk32s3Wpw+N/
+> LBwsVBYhBOIKTUC4iWufe0HIZ48duQtrj53UAABGRAD/TSVR2BTBCt/aBUkY
+> BifV1HlaZpxYWCkHtf8GJmU9DUsA/jPd7mAFrPbDRjzTQfe8maiR7fqtOTIU
+> j/++9j4chfEC
+> =Cgjd
+> -----END PGP SIGNATURE-----
+>
