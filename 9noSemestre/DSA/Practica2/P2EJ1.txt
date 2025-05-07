@@ -8,7 +8,7 @@ function probarIDs() {
             return;
         }
 
-        const url = `/perfil/${id}`; // <-- corregido el template string
+        const url = `/perfil/${id}`;
         fetch(url)
             .then(res => res.text())
             .then(html => {
