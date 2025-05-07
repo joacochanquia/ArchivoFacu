@@ -1,0 +1,42 @@
+00_Introduccion
+
+Introducción a la Electrónica de Potencia
+https://www.youtube.com/watch?v=Xa6wEg8ORH0
+
+Introducción a las fuentes conmutadas
+https://www.youtube.com/watch?v=fcNy03V5NDU
+
+
+
+01_Conversión_CA_CC
+
+Rectificación Monofásica
+https://www.youtube.com/watch?v=EMVg2MXGn9c
+
+Rectificación Controlada Monofásica
+https://www.youtube.com/watch?v=JPsbTQqPiag
+
+Rectificación Trifásica
+https://www.youtube.com/watch?v=yUP4jbYtEE0
+
+
+
+02_Conversión_CC_CC
+
+Conceptos preliminares
+https://www.youtube.com/watch?v=6wXNnSeYgbk
+
+Convertidor Reductor
+https://www.youtube.com/watch?v=E1QWSyuxBNE
+
+Convertidor Elevador
+https://www.youtube.com/watch?v=AQlLvpXqqIg
+
+Convertidor Reductor-Elevador
+https://www.youtube.com/watch?v=7qXIED7fR8k
+
+Convertidor Flyback
+https://www.youtube.com/watch?v=E6u17iaE1b0
+
+Convertidor Full-bridge / Half-bridge
+https://www.youtube.com/watch?v=--_0lqwJIWg
