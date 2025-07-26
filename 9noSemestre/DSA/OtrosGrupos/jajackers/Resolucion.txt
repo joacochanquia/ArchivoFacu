@@ -1,0 +1,12 @@
+adminSearch.txt ejecutado con una sesion iniciada en consola del navegador
+
+45 6e 63 6f 6e 74 72 61 73 74 65 20 65 6c 20 75 73 75 61 72 69 6f 21 20 70 65 72 6f 20 73 69 20 71 75 65 72 65 73 20 76 65 72 20 6c 61 20 66 6c 61 67 20 76 61 73 20 61 20 74 65 6e 65 72 20 71 75 65 20 69 6e 69 63 69 61 72 20 73 65 73 69 f3 6e
+"Encontraste el usuario! pero si queres ver la flag vas a tener que iniciar sesión"
+
+user: "messi"
+fuerzaBruta.py con rockyou.txt --> teamomiguel
+
+' OR'1
+Flag{S0S_UN_J4J4H4CK3R}
+
+

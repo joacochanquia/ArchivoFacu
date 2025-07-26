@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ctf-app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./config/.env:/app/config/.env:ro  # Montar el archivo .env como solo lectura
+    environment:
+      - FLASK_ENV=development
+    env_file:
+      - ./config/.env  # Cargar variables de entorno desde el archivo
+    restart: unless-stopped 

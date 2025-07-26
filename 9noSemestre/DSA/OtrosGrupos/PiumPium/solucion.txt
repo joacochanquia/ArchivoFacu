@@ -1,0 +1,21 @@
+fuerzaBruta.py (admin)--> ihateyou
+flag{RushB_con_MAC?
+
+
+usuario 
+EL0_F4CIL_GG}'--
+comenta el resto del query de inicio de sesion y entra
+
+usando burp modifico la cookie rol a admin
+
+TRIPL3_DET0_BANAN4/
+
+adminSearch.py en el perfil--> 7
+EL0_F4CIL_GG}
+
+
+[SQL: SELECT * FROM "user" WHERE username = 'admin' AND password = 'ihateyou']
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+flag{RushB_con_MAC?TRIPL3_DET0_BANAN4/EL0_F4CIL_GG}
+

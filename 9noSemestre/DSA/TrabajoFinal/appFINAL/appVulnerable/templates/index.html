@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title mb-0">
+                    <i class="fas fa-shield-alt me-2"></i>BIENVENIDO
+                </h2>
+            </div>
+            <div class="card-body text-center">
+                
+                {% if not session.user_id %}
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="text-center">
+                                <h4 class="mb-4">
+                                    <i class="fas fa-rocket me-2"></i>Accede a tu cuenta para ser un jajacker
+                                </h4>
+                                <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+                                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-user-plus me-2"></i>Crear Cuenta
+                                    </a>
+                                    <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg px-5">
+                                        <i class="fas fa-sign-in-alt me-2"></i>Acceder
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="alert alert-success">
+                        <h4>
+                            <i class="fas fa-user-check me-2"></i>Bienvenido, {{ session.username }}
+                        </h4>
+                        <p class="mb-1">ID de Usuario: <strong>{{ session.user_id }}</strong></p>
+                        <p class="mb-0">Rol: <strong>{{ session.role }}</strong></p>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <a href="{{ url_for('profile', user_id=session.user_id) }}" class="btn btn-primary btn-lg w-100 mb-3">
+                                <i class="fas fa-id-card me-2"></i>Ver Perfil
+                            </a>
+                        </div>
+                        {% if session.role == 'admin' %}
+                        <div class="col-md-6">
+                            <a href="{{ url_for('admin_players') }}" class="btn btn-danger btn-lg w-100 mb-3">
+                                <i class="fas fa-cogs me-2"></i>Panel Administrativo
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

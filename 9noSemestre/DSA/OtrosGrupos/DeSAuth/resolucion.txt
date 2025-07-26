@@ -1,0 +1,5 @@
+Entro como invitado
+SQLI en buscar para ver usuarios
+Modifico url desde el perfil para ir al admin
+
+FLAG{4p4_l4_3nc0ntr4st3_p1c4r0n}

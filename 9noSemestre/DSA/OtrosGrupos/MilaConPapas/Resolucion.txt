@@ -1,0 +1,11 @@
+BAC --> {Hola_
+	mundo_
+	
+https://mila-con-papas-fritas.dsa.linti.unlp.edu.ar/perfil/admin
+	_nuevo
+
+SQLI --> _bonito
+
+
+
+FLAG{Hola_mundo_nuevo_bonito}

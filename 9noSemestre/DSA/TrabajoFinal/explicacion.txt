@@ -1,0 +1,25 @@
+Necesito desarrollar una aplicación desarrollada en python, que deberá correr en Docker (Agregar Dockerfile y
+docker-compose.yml).
+Donde pida alguna imagen deja un espacio acorde y la imagen despues la subo a donde me indiques.
+Cada pagina deber estar compuesta por un fondo que tiene una imagen (modificable) y todo el resto de lo que se pide debe entrar en un rectangulo blanco centrado en la pagina.
+Donde haga alguna aclaracion rodeada por {} voy a pedir que se reemplace por lo que dice dentro y no la representación textual de lo que diga.
+
+La aplicación debe contener estas paginas:
+
+Una pagina principal:
+	index.html
+	Esta pagina tiene el titulo "The CTF proyect"
+	En la esquina superior izquierda tiene el logo de la facultad virtual de informática-ingeniería
+	Da una breve introducción al proyecto, en el que proclama que es una aplicación con el objetivo de enseñar a usuarios nuevos como realizar retos CTF, por ahora simples y que en un futuro se irán expandiendo.
+	Se muestra un apartado "Conocer vulnerabilidades", en el que aparece una lista que contiene botones que dirigen a las distintas paginas destinadas a cada vulnerabilidad aquí explicada, en el siguiente orden: 
+	XSS, Broken Access Control, SQLI, y un botón que diga "mas" el cual al ser apretado salte una alerta en la pagina que indique que se esta trabajando en agregar más vulnerabilidades. Cada pagina a la que se dirige es una dedicada a la información de la vulnerabilidad. Y sigue el esquema genérico que se indicara en el apartado correspondiente.
+      
+Una pagina para cada vulnerabilidad: 
+	cuyo acceso en la url se vea: "/{vulnerabilidad (o iniciales si es mas de una palabra)}/info
+	Cada pagina tiene el titulo del nombre de la vulnerabilidad sin abreviar
+	En la esquina superior izquierda tiene el logo de la facultad virtual de informática-ingeniería
+	Dentro de cada una de estas paginas aparecerá un botón para volver al menú principal en la esquina superior derecha
+	Una sección que permite leer información sobre la vulnerabilidad especifica de la que trata la misma pagina. Y algunas paginas tienen un ejemplo de uso de la vulnerabilidad, las que no, tienen un cartel avisando que en un futuro se agregara un ejemplo:
+		/xss/info: esta pagina tiene un acceso a una pagina secundaria "/xss/example" la cual tiene un botón para volver a "/xss/info". La pagina debe contener al inicio un formulario simple que diga "Ingrese su nombre", y que al enviar el formulario aparezca abajo del mismo una nueva seccion que diga "Hola {nombre ingresado}". Esta pagina debe ser vulnerable a xss y dentro de los cookies de la misma debe contener una frase que sea modificable por el programador. El fondo debe ser una imagen diferente al resto.
+		/bac/info: esta pagina tiene un acceso a una pagina secundaria "/bac/example" la cual tiene un botón para volver a "/bac/info". Al ingresar a esta pagina se indicará que se inicie sesion como administrador para poder continuar (solo valido para esta pagina) ingresando usuario y contraseña. El usuario es "admin" (se encuentra en un comentario visible al ver el codigo fuente de la pagina que dice "el usuario es admin, resolvé el anterior reto para la contraseña", y la contraseña es guardada hasheada por el servidor de forma segura. Al ingresar las credenciales de forma correcta se da acceso a una seccion de la pagina que contiene un texto modificable por el programador.
+		/sqli/info: esta pagina tiene un acceso a una pagina secundaria "/sqli/example" la cual tiene un botón para volver a "/sqli/info" y un buscador que permite acceder a una base de datos que contiene información de CTFs conocidos. Esta pagina debe ser vulnerable a sqli para poder acceder a toda la base de datos mediante el buscador. La base de datos tiene las columnas: id, name, secret, age. Pero al mostrar la tabla en la pagina no debe mostrarse directamente la columna "secret", solo las columnas id, name y age. Se debe agregar el archivo sql para la carga automática de la base de datos, después te envío las entradas que debería tener.

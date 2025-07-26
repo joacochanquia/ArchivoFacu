@@ -1,0 +1,38 @@
+document.getElementById("inyectable").innerHTML = "<img src=x onerror=alert(1)>";
+
+https://xss2.dsa.linti.unlp.edu.ar/mutation?payload=hackerman
+
+document.getElementById("inyectable").innerHTML = `<img src=x onerror="alert(document.body.innerHTML)">`; 
+
+
+Hola estoy intentando resolver un reto CTF, cuyo enunciado es:
+XSS Level 3 - Math/Dom
+mutation XSS https://xss2.dsa.linti.unlp.edu.ar
+
+Y tiene una pista que dice:
+https://xss2.dsa.linti.unlp.edu.ar/mutation?payload=%3Cmath%3E%3C/br%3E%3Cstyle%3E%3Ca%20id=%22%3C/style
+
+El codigo HTML de la pagina original es:
+
+<!DOCTYPE html><html><head><title>Capture the flag</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"><!--link(rel='stylesheet', href='/css/styles.css')--></head><body><script src="https://code.jquery.com/jquery-3.5.0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="/mutation?payload=hackerman">App</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item active"><a class="nav-link" href="#">Something</a></li><li class="nav-item"><a class="nav-link" href="#">Something else</a></li><li class="nav-item"><a class="nav-link" href="#">WTF is this?</a></li><li class="nav-item"><a class="nav-link" href="#">LoL</a></li></ul><ul class="navbar-nav float-right"><li class="nav-item"><a class="nav-link" href="#">Login</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Settings</a></div></li></ul></div></nav><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script><div class="container listing-reg"><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><h1>The Amazing App</h1></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><br><p></p><p id="inyectable"></p><br></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><div class="card text-center"><h5 class="card-header">Hello There !</h5><div class="card-body"><h5 class="card-title">Important Message</h5><p class="card-text">[]+[]+[]+ Capture the flag +[]+[]+[]</p></div></div></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div></div></body></html>
+
+
+Dentro de este HTML encontre este link:
+https://xss2.dsa.linti.unlp.edu.ar/mutation?payload=hackerman
+
+Que lleva a esta pagina:
+
+
+<!DOCTYPE html><html><head><title>alert 4 the flag</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"><!--link(rel='stylesheet', href='/css/styles.css')--></head><body><script src="https://code.jquery.com/jquery-3.5.0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script><nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="/mutation?payload=hackerman">App</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item active"><a class="nav-link" href="#">Something</a></li><li class="nav-item"><a class="nav-link" href="#">Something else</a></li><li class="nav-item"><a class="nav-link" href="#">WTF is this?</a></li><li class="nav-item"><a class="nav-link" href="#">LoL</a></li></ul><ul class="navbar-nav float-right"><li class="nav-item"><a class="nav-link" href="#">Login</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="#">Settings</a></div></li></ul></div></nav><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script><div class="container listing-reg"><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><h1>The Amazing App</h1></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><br><p></p><p id="inyectable"></p><br></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div><div class="row"><div class="col-sm-4"></div><div class="col-sm-4"><div class="card text-center"><h5 class="card-header">Hello There !</h5><div class="card-body"><h5 class="card-title">Important Message</h5><p class="card-text">I'm using dompurify, there's no way you can bypass that !!!<br><br>I don't like that attack vector !</p></div></div></div><div class="col-sm-4"></div></div><div class="row"><br></div><div class="row"><br></div></div></body></html>
+
+El cual tiene el siguiente mensaje:
+
+Hello There !
+Important Message
+I'm using dompurify, there's no way you can bypass that !!!
+
+Y solo si hay algun contenido en el parametro "payload":
+
+I don't like that attack vector !
+
+
