@@ -1,0 +1,48 @@
+FLAG codificada limpia: mk{=3b0\fc1Y\9>bf4`a>b92\Z_9=}1e4^:4ca\a]b78]Z
+Char m (enc1) -> Y
+Char k (enc2) -> 
+Char { (enc3) -> {
+Char = (enc1) -> )
+Char 3 (enc2) -> G
+Char b (enc3) -> b
+Char 0 (enc1) -> 
+Char \ (enc2) -> p
+Char f (enc3) -> f
+Char c (enc1) -> O
+Char 1 (enc2) -> E
+Char Y (enc3) -> Y
+Char \ (enc1) -> H
+Char 9 (enc2) -> M
+Char > (enc3) -> >
+Char b (enc1) -> N
+Char f (enc2) -> z
+Char 4 (enc3) -> 4
+Char ` (enc1) -> L
+Char a (enc2) -> u
+Char > (enc3) -> >
+Char b (enc1) -> N
+Char 9 (enc2) -> M
+Char 2 (enc3) -> 2
+Char \ (enc1) -> H
+Char Z (enc2) -> n
+Char _ (enc3) -> _
+Char 9 (enc1) -> %
+Char = (enc2) -> Q
+Char } (enc3) -> }
+Char 1 (enc1) -> 
+Char e (enc2) -> y
+Char 4 (enc3) -> 4
+Char ^ (enc1) -> J
+Char  (enc2) -> 
+Char : (enc3) -> :
+Char 4 (enc1) ->  
+Char c (enc2) -> w
+Char a (enc3) -> a
+Char \ (enc1) -> H
+Char a (enc2) -> u
+Char ] (enc3) -> ]
+Char b (enc1) -> N
+Char 7 (enc2) -> K
+Char 8 (enc3) -> 8
+Char ] (enc1) -> I
+Char Z (enc2) -> n

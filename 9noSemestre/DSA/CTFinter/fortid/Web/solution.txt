@@ -1,0 +1,3 @@
+Se inspeccionó la pagina y se logro ver el html completo, tenia una funcion "draw()" comentada al final del archivo. Se descomento y al entrar a la pagina aparecio la flag:
+
+
