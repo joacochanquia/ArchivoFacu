@@ -1,0 +1,22 @@
+Tengo que hacer un codigo para compilar en un Wemos D1, que lleva una ESP8266 con el ide de arduino.
+
+Necesito que el mismo lleve el control de un auto controlado por el wemos.
+
+El auto se controla a traves de dos servos 360, quiero que los pines se configuren al comienzo del archivo correspondiente (por ahora dejalos en los pines D6 y D7 para el servo del lado izquierdo y derecho correspondientemente).
+
+El Wemos debe ser capaz de comunicarse mediante consultas HTTP con otro ESP (con la configuracion de conexion tambien configurable al comienzo del archivo) y recibir comandos de respuesta en la forma de palabras, las cuales seran comandos que realizarán una accion en el auto (Tambien definidas como constantes al inicio del archivo para modularizar las acciones.). Te paso un ejemplo para la conexion Wifi.
+
+Las acciones a realizar por el auto inicialmente deberán ser:
+
+Avanzar, Detenerse, Reversa, GiroHorario, GiroAntihorario
+
+Los comandos recibidos por HTTP no necesariamente son los nombres de estas acciones.
+
+El sistema debe ser escalable para agregar facilmente nuevas acciones.
+
+Crea todos los archivos necesarios y sus respectivos archivos cabecera .h
+
+
+
+
+Agregá una opcion de configuración para que el Wemos se conecte y reciba las respuestas HTTP mediante consultas que el haga a la otra ESP o para que levante una pagina web y reciba los comandos mediante botones pulsados en la aplicación.

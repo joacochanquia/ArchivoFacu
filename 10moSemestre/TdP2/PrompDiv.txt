@@ -1,0 +1,9 @@
+Ahora me ayudas a actualizar ambos codigos?
+
+
+
+Quiero que la libreria "WifiHandler" del proyecto del Wemos y la libreria "ServerHandler" que me mandaste se combinen en una unica libreria "Wifi" que se encargue del manejo de la conexión ya sea como Access Point o como Cliente. 
+
+Para ello contara con dos funciones wifiInitAP() y wifiInitCli(), la información de la conexión la obtendran del archivo config.h como se hace actualmente.
+
+A su vez cada manejo especifico de 
