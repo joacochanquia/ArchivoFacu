@@ -1,0 +1,66 @@
+1. Objetivo General
+El objetivo principal de este proyecto es diseñar, desarrollar e implementar un sistema robusto para la migración de datos de ventas y la sincronización de datos maestros.
+
+El proyecto busca desacoplar el sistema de gerencia (basado en MySQL) de la base de datos AS/400, la cual se encuentra en proceso de obsolescencia. Esta modernización es crítica y se centrará en dos ejes:
+
+Nuevo Flujo de Ventas: Integrar una nueva fuente de datos de ventas (proveniente de un sistema externo en formato JSON) que los clientes depositarán en una base de datos de ingesta.
+
+Mantenimiento de Maestros: Asegurar la coherencia de los datos maestros (locales, vendedores, productos, proveedores) que, por el momento, continuarán residiendo en el AS/400, utilizando una estrategia de sincronización híbrida.
+
+2. Etapas del Proyecto y Distribución de Horas
+Etapa 1: Análisis y Relevamiento del Ecosistema de Datos
+Relevamiento del nuevo flujo de ventas:
+
+Análisis de la base de datos de ingesta y la estructura de los datos JSON.
+
+Definición de las reglas de negocio para el procesamiento y mapeo de las ventas hacia las tablas de destino en MySQL.
+
+Análisis de datos maestros (AS/400):
+
+Identificación y análisis de las tablas maestras críticas (ej. proveedores, productos, locales, vendedores).
+
+Evaluación de la frecuencia de cambio y volumen para definir las prioridades de sincronización.
+
+Análisis del destino (MySQL):
+
+Diseño y adecuación de las tablas en MySQL que recibirán tanto los datos de ventas procesados como los datos maestros.
+
+Etapa 2: Diseño de la Solución de Integración y Sincronización
+En base al relevamiento, se diseñará la arquitectura de la solución.
+
+Diseño del ETL de Ventas (JSON):
+
+Definición de la arquitectura del proceso ETL (Extracción, Transformación y Carga) para las ventas.
+
+Diseño del mecanismo de deserialización de JSON a objetos, la lógica de transformación y el mapeo relacional a las tablas de ventas en MySQL.
+
+Diseño del Sincronizador Híbrido de Maestros (AS/400):
+
+Diseño del Proceso Batch: Definición de un servicio configurable (por tabla) que ejecutará una comparación completa (delta check) entre AS/400 y MySQL, realizando inserciones o actualizaciones de forma periódica.
+Tambien se deberá crear un proceso de sincronizacion para migrar los datos de ventas existentes en as400.
+
+Diseño del Proceso Reactivo (Sincronización "Just-in-Time"): Definición de una lógica acoplada al procesamiento de ventas. Esta verificará las claves foráneas (ej. ID de local) de cada venta. Si el dato maestro no existe en MySQL, el sistema lo buscará en AS/400, lo migrará en el momento y luego asociará la venta. Se incluirá el manejo de datos huérfanos (si no existe en AS/400).
+
+Etapa 3: Desarrollo e Implementación
+Codificación y construcción del sistema diseñado.
+
+Sub-etapa 3.1: Desarrollo del Módulo de Procesamiento de Ventas (ITL-JSON).
+
+Implementación del servicio que lee la ingesta de JSON, lo transforma a objetos y lo persiste en las tablas de ventas de MySQL, creando las relaciones correspondientes.
+
+Sub-etapa 3.2.1: Desarrollo del Sincronizador Batch de Maestros.
+
+Implementación del proceso periódico configurable que lee las tablas maestras del AS/400, las compara con MySQL y aplica las actualizaciones o inserciones necesarias.
+
+Sub-etapa 3.2.2: Desarrollo del Sincronizador Batch de Ventas.
+
+Implementación de un proceso configurable donde se cargarán los meses a sincronizar de las tablas de ventas, para que en un tiempo configurable se comience la migracion por lotes de las mismas.
+
+Sub-etapa 3.3: Desarrollo del Sincronizador Reactivo (On-Demand).
+
+Integración en el flujo de ventas de la lógica de verificación de relaciones.
+
+Desarrollo de la funcionalidad que busca, transforma e inserta datos maestros individuales desde AS/400 al recibir una venta con datos nuevos.
+
+
+
