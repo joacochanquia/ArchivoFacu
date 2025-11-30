@@ -1,0 +1,33 @@
+Descripcion de las estaciones que conforman el SIMCAL
+
+---------------------------------
+
+el sistema se integra en una estacion de medicion en la forma de un cubículo de cemento, en el medio de un desierto del norte argentino con salares de mineria de litio al fondo.
+
+El cubiculo de cemento tiene dos postes saliendo por la parte superior.
+
+Una tuberia de agua por el lado izquierdo.
+
+Una tuberia de agua y una tuberia de cableado por la parte derecha.
+
+Este cubiculo cuenta con una puerta de metal que en la imagen se encuentra abierta.
+
+Dentro del cubiculo se debería ver una division en tres secciones horizontales:
+
+La seccion inferior es por donde pasa la tuberia de agua y se encuentra el caudalimetro ultrasonico no intrusivo.
+
+La seccion superior es la que incluye el modulo de comunicacion y de la que sale por la parte superior del cubiculo dos postes, uno con una antena satelital en la punta y el otro con un sensor de calidad de aire en la punta.
+
+La seccion media del cubiculo es la que contiene el controlador principal y la que se conecta a todos los sensores. Esta parte cuenta con una pantalla con informacion. Tambien por esta seccion es donde entra la tuberia de cableado, la cual en la parte exterior se conecta en parte de su recorrido a sensores de humedad y calidad de suelo y luego sigue hasta el final de la imagen.
+
+
+-----------------
+
+
+Hay una segunda estación.
+
+La segunda estacion deberá esta compuesta por una columna de cemento, que tiene en la base una conexion con la base principal. Esta se ubicara a la izquierda de la base principal. 
+
+En la punta de la columna de cemento tiene que haber un panel solar.
+
+En la base debe encontrarse la conexion a un sensor de suelo, conectado al suelo.

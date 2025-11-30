@@ -1,6 +1,0 @@
-Hola! tengo que corregir un trabajo practico que tiene la siguiente consigna:
-Cada grupo deberá presentar, en el plazo previsto, un informe inicial en formato pdf
-siguiendo las recomendaciones del documento “Plantilla_Informe_Inicial.pdf” disponible en
-el moodle de la materia. Esta presentación, una vez evaluada y aprobada por la cátedra, se
-utilizará como punto de partida para la fase de diseño del proyecto propuesto.
-Me ayudas a encontrar cosas que pueda corregir?
